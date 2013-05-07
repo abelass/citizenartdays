@@ -1,0 +1,54 @@
+
+
+.scrollable {
+
+	/* required settings */
+	position:relative;
+	overflow:hidden;
+	width: 977px;
+	height:530px;
+	margin:0 0 30px 0;
+	font-size:90%;
+	font-stretch:ultra-condensed;
+
+}
+
+.scrollable .items {
+	/* this cannot be too large */
+	width:20000em;
+	position:absolute;
+	clear:both;
+}
+
+.items div {
+	float:left;
+	width:1090px;
+	margin:0;
+}
+
+.scrollable ul {
+	margin:0;
+	padding:0;
+}
+
+/* single scrollable item */
+.scrollable li {
+	list-style:none;
+	float:left;
+	background-color:#fff;
+	margin:20px 20px 20px 0px;
+	padding:5px;
+	border:1px solid #ccc;
+	width:239px;
+	height:470px;
+	
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+
+/* active item */
+/*.scrollable .active {
+	border:2px solid #000;
+	position:relative;
+	cursor:default;
+}

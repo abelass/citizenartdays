@@ -1,0 +1,390 @@
+/* -- CSS definition for CITIZEN ART DAYS by PARALLELE WELTEN --- */
+
+
+html,body {
+	margin:0;
+	padding:0;
+}
+
+body {
+	font: 90% arial,sans-serif;
+	/*border:1px solid #ff0;*/
+}
+
+p { 
+	margin:0 12px 10px;
+}
+
+h1 {
+	font:130% arial,sans-serif;
+	font-weight:bold;
+	padding:0 0 10px 12px;
+	margin:10px 0;
+}
+
+h2 {
+	font:120% arial,sans-serif;
+	font-weight:bold;
+	padding:0 0 10px 12px;
+	margin:10px 0;
+}
+
+h3 {
+	font:110% arial,sans-serif;
+	font-weight:bold;
+	padding:0 0 10px 12px;
+	margin:10px 0 0 0;
+}
+
+h4 {
+	font:100% arial,sans-serif;
+	font-weight:bold;
+	padding:0 0 0 12px;
+	margin:10px 0 0 0;
+}
+
+h5 {
+	font:100% arial,sans-serif;
+	font-weight:bold;
+	padding: 0 0 0 12px;
+	margin:-10px 0 10px 0;
+	color:#555;
+}
+
+
+a,
+a:link,
+a:visited {
+	color:#000;
+}
+a:focus,
+a:active,
+a:hover {
+	color:#9716b3;
+}
+
+.gray {
+	color:#555;
+}
+
+.clear {
+	clear:both;
+}
+
+.highlight {
+	background-color:#e3acef;
+}
+
+.lila {
+	color: #9716b3;
+}
+
+.zitat {
+	margin:20px 80px 10px 150px;
+}
+
+
+/* ------------------------ BEGIN MENUE------------------------*/
+
+div#header {
+	margin:20px 0 0 0;
+}
+
+hr {
+	border-right:#666;
+	border-bottom:#666;
+	border-left:#666;
+}
+
+ul#navigation {
+	float:right;
+	font:130% courier;
+	margin:0; 
+	padding:0 0 25px 0;
+	/*letter-spacing:0.02em;
+	font-weight:lighter;*/
+}
+
+ul#navigation li {
+	list-style:none;
+	float:right;
+	padding:0 2px 0 20px;
+}
+
+ul#navigation a,
+ul#navigation a:link,
+ul#navigation a:visited {
+	text-decoration:none;
+	background-color:#000;
+	color:#fff;
+}
+
+ul#navigation a:focus,
+ul#navigation a:active,
+ul#navigation a:hover {
+	text-decoration:none;
+	background-color:#fff;
+	color:#000;
+}
+
+ul#navigation li.enabled a,
+ul#navigation li.enabled a:link,
+ul#navigation li.enabled a:visited,
+ul#navigation li.enabled a:focus,
+ul#navigation li.enabled a:active,
+ul#navigation li.enabled a:hover {
+	text-decoration:none;
+	display:block;
+	background-color:#fff;
+	color:#000;
+}
+
+ul#language {	
+	font-size: 120%;
+	font-family: courier;
+	margin:0; 
+	padding:0;
+}
+
+ul#language li {
+	list-style:none;
+	float:left;
+	padding:0 20px 0 2px;
+}
+
+ul#language a,
+ul#language a:link,
+ul#language a:visited {
+	text-decoration:none;
+	background-color:#000;
+	color:#fff;
+}
+
+ul#language a:focus,
+ul#language a:active,
+ul#language a:hover {
+	text-decoration:none;
+	background-color:#fff;
+	color:#000;
+}
+
+ul#language li.enabled a,
+ul#language li.enabled a:link,
+ul#language li.enabled a:visited,
+ul#language li.enabled a:focus,
+ul#language li.enabled a:active,
+ul#language li.enabled a:hover {
+	text-decoration:none;
+	background-color:#fff;
+	/*display:block;*/
+	color:#000;
+}
+
+
+/* ------------------------ BEGIN   CONTENT HOMEPAGE ------------------------*/
+
+
+div#wrapperHome {
+	/*border:1px solid red;*/
+	clear:both;
+}
+
+div#wrapperHome p {
+	line-height:1.4;
+}
+
+div#wrapper ul.listing li {
+	list-style:circle;
+}
+
+
+/* ------------------------ BEGIN   CONTENT INNER PAGES ------------------------*/
+
+
+
+div#breadcrumb {
+	clear:both;
+	font:90% arial,sans-serif;
+	color:#fff;
+	margin:10px 0;
+}
+
+div#breadcrumb a,
+div#breadcrumb a:link,
+div#breadcrumb a:visited {
+	text-decoration:underline;
+	color:#fff;
+}
+
+div#breadcrumb a:focus,
+div#breadcrumb a:active,
+div#breadcrumb a:hover {
+	text-decoration:none;
+	color:#9716b3;
+}
+
+div#content p {
+	line-height:1.4;
+}
+
+div#details {
+	background:#fff;
+	float:right;
+	width:29.9%;
+	line-height:1.4;
+	
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+
+div#details ul.auflistung {
+	margin:0 10px 10px 30px; 
+	padding:0;
+}
+
+div#details ul.auflistung li {
+	list-style:circle;
+}
+
+div#wrapper {
+	float:left;
+	width:68%;
+	background:#fff;
+	
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+
+div.top {
+	font:90% arial,sans-serif;
+	color:#000;
+	margin:0;
+	padding:10px 20px 10px 0;
+	text-align:right;
+}
+
+div.top a,
+div.top a:link,
+div.top a:visited {
+	text-decoration:underline;
+	color:#000;
+}
+
+div.top a:focus,
+div.top a:active,
+div.top a:hover {
+	text-decoration:none;
+	color:#9716b3;
+}
+
+
+
+/* ------------------------ BEGIN   PARALLELE WELTEN INFO + FOOTER ------------------------*/
+
+div#extra {
+	background:#fff;
+	clear:both;
+	padding:10px 0 10px 0;
+	text-align:left;
+	border-radius:4px;
+}
+
+/*div#extra img {
+	margin-top:-30px;
+}*/
+
+div#footer {
+	clear:both;
+	color: #fff;
+	text-align:left;
+	padding-top:20px;
+}
+
+div#footer p {
+	margin:0;
+	padding:5px 10px;
+}
+
+div#footer a,
+div#footer a:link,
+div#footer a:visited {
+	color:#fff;
+}
+
+div#footer a:focus,
+div#footer a:active,
+div#footer a:hover {
+	color:#000;
+}
+
+ul#utilities {
+	float:right;
+	margin:0 0 0 10px; 
+	padding:0;
+}
+
+ul#utilities li {
+	float:right;
+	list-style:none;
+	padding:0 10px;
+	font-size:90%;
+}
+
+ul#utilities a,
+ul#utilities a:link,
+ul#utilities a:visited {
+	text-decoration:none;
+	background-color:#000;
+	color:#fff;
+}
+
+ul#utilities a:focus,
+ul#utilities a:active,
+ul#utilities a:hover {
+	text-decoration:none;
+	color:#000;
+	background-color:#fff;
+}
+
+ul#utilities li.enabled a,
+ul#utilities li.enabled a:link,
+ul#utilities li.enabled a:visited,
+ul#utilities li.enabled a:focus,
+ul#utilities li.enabled a:active,
+ul#utilities li.enabled a:hover {
+	text-decoration:none;
+	display:block;
+	color:#000;
+	background-color:#fff;
+}
+
+/* ------------------------ BEGIN   GENERALS ------------------------*/
+
+
+.end {
+	clear:both;
+	height:50px;
+}
+
+.clear {
+	clear:both;
+}
+
+div#container {
+	width:1036px;
+	text-align:left;
+	padding:0;
+	margin:0;
+}
+
+a:active {
+  outline:none;
+}
+
+:focus {
+  -moz-outline-style:none;
+}
+
+
+
+/*div {border:1px solid #f00}*/
