@@ -19,7 +19,13 @@
 	<auteur lien='http://websimple.be/'>Rainer Müller</auteur>
 
 	<licence>GNU/GPL</licence>
-
+	
+	<necessite nom="mcp_ml" compatibilite="[0.1.2;]" />
+	<necessite nom="selection_objet" compatibilite="[1.8.2;]" />	
+	<necessite nom="mcp1" compatibilite="[0.2.3;]" />	
+	<necessite nom="auteur_evenement" compatibilite="[1.0.0;]" />		
+	<utilise nom="z" compatibilite="[1.7.21;]" />	
+	
 	<!--
 		Exemple de commandes
 		* dependances
@@ -39,7 +45,6 @@
 		<onglet nom="citizenartdays" titre="citizenartdays:citizenartdays_titre" parent="configuration" icone="images/citizenartdays-24.png" />
 	-->
 
-	<pipeline nom="autoriser" inclure="citizenartdays_autorisations.php" /> 
 
 
 </paquet>
