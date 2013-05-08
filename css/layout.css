@@ -105,7 +105,8 @@ ul#navigation {
 	font-weight:lighter;*/
 }
 
-ul#navigation li {
+ul#navigation li,
+#header .menu-liste li {
 	list-style:none;
 	float:right;
 	padding:0 2px 0 20px;
@@ -127,17 +128,21 @@ ul#navigation a:hover {
 	color:#000;
 }
 
-ul#navigation li.enabled a,
-ul#navigation li.enabled a:link,
-ul#navigation li.enabled a:visited,
-ul#navigation li.enabled a:focus,
-ul#navigation li.enabled a:active,
-ul#navigation li.enabled a:hover {
+ul#navigation li.on a,
+ul#navigation li.on a:link,
+ul#navigation li.on a:visited,
+ul#navigation li.on a:focus,
+ul#navigation li.on a:active,
+ul#navigation li.on a:hover {
 	text-decoration:none;
 	display:block;
 	background-color:#fff;
 	color:#000;
 }
+
+.menuder, .menuder ul {background:none;border:none;width:auto}
+
+.menuder a {padding:0}
 
 ul#language {	
 	font-size: 120%;
@@ -168,12 +173,12 @@ ul#language a:hover {
 	color:#000;
 }
 
-ul#language li.enabled a,
-ul#language li.enabled a:link,
-ul#language li.enabled a:visited,
-ul#language li.enabled a:focus,
-ul#language li.enabled a:active,
-ul#language li.enabled a:hover {
+ul#language li.on a,
+ul#language li.on a:link,
+ul#language li.on a:visited,
+ul#language li.on a:focus,
+ul#language li.on a:active,
+ul#language li.on a:hover {
 	text-decoration:none;
 	background-color:#fff;
 	/*display:block;*/
@@ -232,9 +237,8 @@ div#details {
 	float:right;
 	width:29.9%;
 	line-height:1.4;
-	
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
+	border-radius:4px;
+    behavior: url(/PIE.htc);
 }
 
 div#details ul.auflistung {
@@ -250,9 +254,8 @@ div#wrapper {
 	float:left;
 	width:68%;
 	background:#fff;
-	
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
+	border-radius:4px;
+	behavior: url(/PIE.htc);
 }
 
 div.top {
@@ -287,6 +290,7 @@ div#extra {
 	padding:10px 0 10px 0;
 	text-align:left;
 	border-radius:4px;
+	behavior: url(/PIE.htc);
 }
 
 /*div#extra img {
@@ -346,12 +350,12 @@ ul#utilities a:hover {
 	background-color:#fff;
 }
 
-ul#utilities li.enabled a,
-ul#utilities li.enabled a:link,
-ul#utilities li.enabled a:visited,
-ul#utilities li.enabled a:focus,
-ul#utilities li.enabled a:active,
-ul#utilities li.enabled a:hover {
+ul#utilities li.on a,
+ul#utilities li.on a:link,
+ul#utilities li.on a:visited,
+ul#utilities li.on a:focus,
+ul#utilities li.on a:active,
+ul#utilities li.on a:hover {
 	text-decoration:none;
 	display:block;
 	color:#000;
