@@ -7,12 +7,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// C
 	'citizenartdays_titre' => 'Citizen Art Days',
-	'cfg_exemple' => 'Exemple',
-	'cfg_exemple_explication' => 'Explication de cet exemple',
-	'cfg_titre_parametrages' => 'Paramétrages',
 
-	// T
-	'titre_page_configurer_citizenartdays' => 'Citizen Art Days',
+    //
+    'mehr_ueber'=>'Mehr über'
 );
 
 ?>
