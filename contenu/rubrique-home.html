@@ -1,38 +1,28 @@
 <B_content>
 <div id="wrapperHome">
-
 <!-- "previous page" action -->
 <a class="prev browse left"></a>
-
 <!-- root element for scrollable -->
 <div class="scrollable">   
-   
    <!-- root element for the items -->
    <div class="items">
              <div>
           <ul> 
     <BOUCLE_content(SELECTION_OBJETS){objet_dest=rubrique}{id_objet_dest=#ID_RUBRIQUE}{type_lien=slider}{par ordre}>
-
       [<li>(#ID_OBJET|generer_modele{#OBJET,modeles_so/slider,#ARRAY{descriptif,#DESCRIPTIF,titre,#TITRE,url,#URL}})</li>]
     [(#COMPTEUR_BOUCLE|modulo{4}|=={0})
         </ul>  
     </div>      
     <div>
-          <ul> 
-              ]
-
+         <ul>]
     </BOUCLE_content>
         </ul>  
     </div>  
-      
    </div><!-- end items -->
-   
 </div><!-- end scrollable -->
-
 <!-- "next page" action -->
 <a class="next browse right"></a>    
 </div><!-- end wrapperHome -->
-    
 </B_content>
 
 <div id="extra">
