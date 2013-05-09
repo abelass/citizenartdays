@@ -11,7 +11,7 @@
           <ul> 
     <BOUCLE_slider(SELECTION_OBJETS){objet_dest=rubrique}{id_objet_dest=#ID_RUBRIQUE}{type_lien=slider}{par ordre}>
       [<li>(#ID_OBJET|generer_modele{#OBJET,modeles_so/slider,#ARRAY{descriptif,#DESCRIPTIF,titre,#TITRE,url,#URL}})</li>]
-    [(#COMPTEUR_BOUCLE|modulo{4}|=={0}|et{#COMPTEUR_BOUCLE|>{4}}|oui)
+    [(#COMPTEUR_BOUCLE|modulo{4}|=={0}|et{#TOTAL_BOUCLE|>{4}}|oui)
         </ul>  
     </div>      
     <div>
