@@ -1,11 +1,18 @@
-<div id="fb-root"></div>
+[(#COMPOSITION|=={home}|oui)
+<div id="fb-root"></div>]
 <center>
 <div id="container">
+    <a name="top"> </a>
 	<div id="header">
 		<INCLURE{fond=inclure/entete,env}>
 	</div>
 
 	<INCLURE{fond=contenu/#ENV{type},env}>
+	
+	[(#COMPOSITION|=={home}|non)
+	<div id="details">
+        <INCLURE{fond=details/#ENV{type},env}>
+    </div>]
 
 
 	<div id="footer">
