@@ -3,20 +3,20 @@
 
 <INCLURE{fond=inclure/file_ariane,id_rubrique,titre=#TITRE,id_trad,imprimer}/>
 
-<div class="contenu-principal">
-
-	<div class="cartouche">
-		[(#LOGO_RUBRIQUE||image_reduire{200,200})]
-		<h1 class="h1 #EDIT{titre}">#TITRE</h1>
-	</div>
-
-	
-	[<div class="#EDIT{texte} chapo">(#TEXTE)</div>]
-</div>
-<BOUCLE_auteur(AUTEURS){statut=0minirezo}{tout}{1,1}>
-	#FORMULAIRE_ECRIRE_AUTEUR
-</BOUCLE_auteur>
-
+<div id="wrapper">
+    <div id="content">
+    	<div class="cartouche">
+    		[(#LOGO_RUBRIQUE||image_reduire{200,200})]
+    		<h1 class="h1 #EDIT{titre}">#TITRE</h1>
+    	</div>
+    
+    	
+    	[<div class="#EDIT{texte} chapo">(#TEXTE)</div>]
+    <BOUCLE_auteur(AUTEURS){statut=0minirezo}{tout}{1,1}>
+    	#FORMULAIRE_ECRIRE_AUTEUR
+    </BOUCLE_auteur>
+    </div><!-- ende content -->
+</div><!-- ende Wrapper -->
 </BOUCLE_contenu_rubrique>
 
 
