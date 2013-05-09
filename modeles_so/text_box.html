@@ -1,0 +1,12 @@
+[(#ENV{logo_objet}|image_reduire{187,*})]
+<h2>#TITRE</h2> 
+<B_doc>
+<p>
+    <BOUCLE_doc(DOCUMENTS documents_liens){objet}{id_objet}{extension !IN jpg,gif,png}{doublons}>
+        [(#LOGO_DOCUMENT|#URL_DOCUMENT|image_reduire{25,*}|inserer_attribut{hspace,10})]
+        <a href="#URL_DOCUMENT"><img src="img/Adobe-PDF.gif" width="54" height="50" border="0" align="left" hspace="10"></a>
+        <:bouton_telecharger:>: <a href="#URL_DOCUMENT" title="[(#TITRE|sinon{<:bouton_telecharger:>}|textebrut)]">[(#TITRE|sinon{#FICHIER|basename})]</a>  (#TYPE_DOCUMENT[, (#TAILLE|taille_en_octets)])
+    </BOUCLE_doc>
+</p><br/>
+</B_doc>
+[(#DESCRIPTIF|sinon{#TEXTE})]

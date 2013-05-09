@@ -1,4 +1,5 @@
-<B_content>
+[(#REM) The slider]
+<B_slider>
 <div id="wrapperHome">
 <!-- "previous page" action -->
 <a class="prev browse left"></a>
@@ -8,14 +9,14 @@
    <div class="items">
              <div>
           <ul> 
-    <BOUCLE_content(SELECTION_OBJETS){objet_dest=rubrique}{id_objet_dest=#ID_RUBRIQUE}{type_lien=slider}{par ordre}>
+    <BOUCLE_slider(SELECTION_OBJETS){objet_dest=rubrique}{id_objet_dest=#ID_RUBRIQUE}{type_lien=slider}{par ordre}>
       [<li>(#ID_OBJET|generer_modele{#OBJET,modeles_so/slider,#ARRAY{descriptif,#DESCRIPTIF,titre,#TITRE,url,#URL}})</li>]
-    [(#COMPTEUR_BOUCLE|modulo{4}|=={0})
+    [(#COMPTEUR_BOUCLE|modulo{4}|=={0}|et{#COMPTEUR_BOUCLE|>{4}}|oui)
         </ul>  
     </div>      
     <div>
          <ul>]
-    </BOUCLE_content>
+    </BOUCLE_slider>
         </ul>  
     </div>  
    </div><!-- end items -->
@@ -23,25 +24,9 @@
 <!-- "next page" action -->
 <a class="next browse right"></a>    
 </div><!-- end wrapperHome -->
-</B_content>
+</B_slider>
 
-<div id="extra">
-<!--<a href="cad-spot.html"><img src="img/eroeffnung.png" width="" height="" border="0" align="right" hspace="10"></a>
-<br><br>-->
-<img src="img/citizen_art_days_logo_klein.gif" width="187" height="29" border="0" hspace="10">
-<h2>Kooperative Kunststrategien und Beteiligungspotenziale im &ouml;ffentlichen Raum</h2> 
-<p><a href="download/CAD12_Dokumenatation.pdf"><img src="img/Adobe-PDF.gif" width="54" height="50" border="0" align="left" hspace="10"></a>Eine Dokumentation der Citizen Art Days kann hier heruntergeladen werden:<br /><a href="download/CAD12_Dokumenatation.pdf">Citizen Art Days 2012</a>  (PDF, 3 MB)</p>
-<br /><br />
-<p class="clear"><b>Citizen Art Days hei&szlig;t:</b><br> 
-Aktiv Deine Stadt mitgestalten. Gemeinsam mit renommierten K&uuml;nstlern kreative Projekte entwickeln. Eigene Ideen zu wichtigen Fragen von Heute einbringen. Erfahrungen teilen und sich gegenseitig inspirieren! <br><br>
-<b>Citizen Art Days bietet: </b><br>
-Workshops, Vortr&auml;ge, Diskussionen und Stadterkundungen von und mit K&uuml;nstlern f&uuml;r alle Interessierten. Kreatives Arbeiten und Austausch. <br>
-Themen sind: &Ouml;konomie, Nachhaltigkeit und Miteinander im &ouml;ffentlichen Raum Berlins.<br><br>
-
-</p>
-<!--<p><b>Nimm Dir Zeit! <br>Nimm teil! </b><br>
-<span class="highlight">Jetzt <a href="anmeldung.html">anmelden</a></span></p>
-<p><b>Citizen Art Days &ndash; Spot</b><br>
-<b>Berlin 23. Mai 2012 </b><br>
-Alexanderplatz, Berlin<br></p>-->
-</div>
+[(#REM) The Text boxes]
+<BOUCLE_box(SELECTION_OBJETS){objet_dest=rubrique}{id_objet_dest=#ID_RUBRIQUE}{type_lien=text_box}{par ordre}>
+      [<div class="extra">(#ID_OBJET|generer_modele{#OBJET,modeles_so/text_box,#ARRAY{descriptif,#DESCRIPTIF,titre,#TITRE,url,#URL}})</div>]
+</BOUCLE_box>
