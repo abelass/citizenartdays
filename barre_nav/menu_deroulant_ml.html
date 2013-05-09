@@ -3,7 +3,7 @@
 <B_rubriques>
 <div class="menu-conteneur">
     <ul class="menuder menu-liste menu-items" id="navigation">
-            <BOUCLE_rubriques(RUBRIQUES){id_parent} {!par num titre, titre}{tout}{composition!=fomulaire_contact}>
+            <BOUCLE_rubriques(RUBRIQUES){id_parent} {!par num titre, titre}{tout}{composition!=fomulaire_contact}{id_trad !IN 20}>
             <li class="item menu-entree[ (#EXPOSE)]">
                 <a href="#URL_RUBRIQUE" class="intitule">[(#TITRE|supprimer_numero|couper{80})]</a>
 
