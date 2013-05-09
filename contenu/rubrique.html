@@ -3,8 +3,8 @@
 
 [(#ID_RUBRIQUE|=={1}|oui)#SET{home,oui}]
 <INCLURE{fond=inclure/file_ariane,id_rubrique,titre=#TITRE,id_parent}/>
-
-<div class="contenu-principal">
+<div id="wrapper">
+    <div id="content">
 
 	<div class="cartouche">
 		[(#LOGO_RUBRIQUE||image_reduire{200,200})]
@@ -15,7 +15,7 @@
 	[(#INCLURE{fond=inclure/outils,env})]
 	
 	[<div class="#EDIT{texte} chapo">(#TEXTE)</div>]
-</div>
+
 
 <B_articles>
 <div class="liste articles">
@@ -99,4 +99,6 @@
 #FORMULAIRE_SITE
 
 [<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]
+</div><!-- ende content -->
+</div><!-- ende Wrapper -->
 </BOUCLE_contenu_rubrique>
