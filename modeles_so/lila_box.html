@@ -1,5 +1,5 @@
 [(#ENV{logo_objet}|!={''}|?{
-    [(#ENV{logo_objet}|image_reduire{187,*})] <h2>#TITRE</h2>,
+    [(#ENV{logo_objet}|image_reduire{187,*}|inserer_attribut{class,image_typo}|inserer_attribut{alt,#TITRE})],
     [(#TITRE|image_typo{largeur=300,taille=40}|image_rotation{-30}|inserer_attribut{class,image_typo})]
 })]
 
