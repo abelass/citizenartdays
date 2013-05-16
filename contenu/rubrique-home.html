@@ -27,6 +27,11 @@
 </B_slider>
 
 [(#REM) The Text boxes]
+<BOUCLE_lila(SELECTION_OBJETS){objet_dest=rubrique}{id_objet_dest=#ID_RUBRIQUE}{type_lien=lila_box}{par ordre}>
+      [<div class="extra lila">(#ID_OBJET|generer_modele{#OBJET,modeles_so/lila_box,#ARRAY{descriptif,#DESCRIPTIF,titre,#TITRE,url,#URL}})</div>]
+</BOUCLE_lila>
+
+[(#REM) The Text boxes]
 <BOUCLE_box(SELECTION_OBJETS){objet_dest=rubrique}{id_objet_dest=#ID_RUBRIQUE}{type_lien=text_box}{par ordre}>
       [<div class="extra">(#ID_OBJET|generer_modele{#OBJET,modeles_so/text_box,#ARRAY{descriptif,#DESCRIPTIF,titre,#TITRE,url,#URL}})</div>]
 </BOUCLE_box>

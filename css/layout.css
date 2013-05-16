@@ -291,6 +291,13 @@ div.extra {
 	text-align:left;
 	border-radius:4px;
 	behavior: url(/PIE.htc);
+	margin-bottom:1.5em;
+	position:relative
+}
+
+div.extra.lila {
+	background:#9716B3;
+	color:white;
 }
 
 /*div#extra img {
@@ -389,6 +396,9 @@ a:active {
   -moz-outline-style:none;
 }
 
+/*Rainer*/
 
+.image_typo{float:left}
+.clear{clear:both;margin:0;padding:0}
 
 /*div {border:1px solid #f00}*/
