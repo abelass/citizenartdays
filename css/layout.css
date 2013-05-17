@@ -315,19 +315,48 @@ div#footer {
 	color: #fff;
 	text-align:left;
 	padding-top:20px;
+	background:#2a2424;
 }
 
-div#footer p {
-	margin:0;
-	padding:5px 10px;
+
+div#footer .wrapper {
+	width: 1036px;margin:0 auto;
 }
+
+div#footer p{padding:0;margin:0 0 2em 0}
+
+div#footer .wrapper .menu {widtH:113%;overflow:hidden}
+
+div#footer .wrapper .menu div{float:left;width:20%;}
+
+div#footer ul {
+	list-style: none;
+	margin:0;
+	padding:0
+}
+div#footer ul#language{margin-bottom:1em}
+
+div#footer ul#language li{float:none}
 
 div#footer a,
 div#footer a:link,
 div#footer a:visited {
 	color:#fff;
+	background:none;
+	text-decoration:none;
+	font: 14px arial,sans-serif;
 }
-
+div#footer ul#language li.on a,
+div#footer ul#language li.on a:link,
+div#footer ul#language li.on a:visited,
+div#footer ul#language li.on a:focus,
+div#footer ul#language li.on a:active,
+div#footer ul#language li.on a:hover {
+  background: none;
+  color:#fff;
+font: 14px arial,sans-serif;
+text-decoration:none;
+}
 div#footer a:focus,
 div#footer a:active,
 div#footer a:hover {
