@@ -314,7 +314,7 @@ div#footer {
 	clear:both;
 	color: #fff;
 	text-align:left;
-	padding-top:20px;
+	padding:20px 0;
 	background:#2a2424;
 }
 
@@ -325,7 +325,7 @@ div#footer .wrapper {
 
 div#footer p{padding:0;margin:0 0 2em 0}
 
-div#footer .wrapper .menu {widtH:113%;overflow:hidden}
+div#footer .wrapper .menu {widtH:110%;overflow:hidden}
 
 div#footer .wrapper .menu div{float:left;width:20%;}
 
@@ -363,46 +363,13 @@ div#footer a:hover {
 	color:#000;
 }
 
-ul#utilities {
-	float:right;
-	margin:0 0 0 10px; 
-	padding:0;
-}
+#menu_5 td{padding:5px; 0}
 
-ul#utilities li {
-	float:right;
-	list-style:none;
-	padding:0 10px;
-	font-size:90%;
-}
+#menu_5 td.link{border-right:#F3F4F5 1px solid;padding-right:5px;}
+#menu_5 td.icon{border-left:#F3F4F5  1px solid;padding-left:5px;}
 
-ul#utilities a,
-ul#utilities a:link,
-ul#utilities a:visited {
-	text-decoration:none;
-	background-color:#000;
-	color:#fff;
-}
-
-ul#utilities a:focus,
-ul#utilities a:active,
-ul#utilities a:hover {
-	text-decoration:none;
-	color:#000;
-	background-color:#fff;
-}
-
-ul#utilities li.on a,
-ul#utilities li.on a:link,
-ul#utilities li.on a:visited,
-ul#utilities li.on a:focus,
-ul#utilities li.on a:active,
-ul#utilities li.on a:hover {
-	text-decoration:none;
-	display:block;
-	color:#000;
-	background-color:#fff;
-}
+#menu_5 tr.first td.link, #menu_5 tr.first td.icon{border-top:#F3F4F5 1px solid;}
+#menu_5 tr.last td.link, #menu_5 tr.last td.icon{border-bottom:#F3F4F5 1px solid;}
 
 /* ------------------------ BEGIN   GENERALS ------------------------*/
 
