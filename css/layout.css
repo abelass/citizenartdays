@@ -404,10 +404,22 @@ a:active {
 
 /*Rainer*/
 
+#top_menu{background:#9716B3;padding:0.5em 0;}
+
+#top_menu a{color:#FFFFFF; text-decoration:none}
+
+#top_menu .wrapper{width: 1036px;margin:0 auto;}
+
+#top_menu .menu{float:right}
+
+#top_menu .menu div{float:left; margin-left:5em}
+
 .image_typo{
 	float:left;
 	margin:0 0 2em 2em;
 	}
 .clear{clear:both;margin:0;padding:0}
+
+ul#ticker{list-style: none;margin:0;padding:0;float:left}
 
 /*div {border:1px solid #f00}*/

@@ -28,6 +28,9 @@
 	<necessite nom="agenda" compatibilite="[3.11.8;]" />				
 	<utilise nom="z" compatibilite="[1.7.21;]" />	
 	
+	
+	<pipeline nom="jquery_plugins" inclure="citizenartdays_pipelines.php" />
+	
 	<!--
 		Exemple de commandes
 		* dependances

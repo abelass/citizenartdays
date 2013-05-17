@@ -1,0 +1,27 @@
+<div id="top_menu">
+    <div class="wrapper">
+<B_ticker>
+<ul id="ticker">
+    <BOUCLE_ticker(SELECTION_OBJETS){type_lien=news_ticker}{par ordre}>
+      [<li>(#ID_OBJET|generer_modele{#OBJET,modeles_so/news_ticker,#ARRAY{titre,#TITRE,url,#URL}})</li>]
+    </BOUCLE_ticker>
+ </ul>  
+</B_ticker>        
+    <B_rub>
+       <div class="menu">
+       <BOUCLE_rub(RUBRIQUES){id_trad IN 22,24}{lang}{tout}{par num titre}>
+        <div><a href="#URL_RUBRIQUE" title="[(#TITRE|textebrut)]">#TITRE</a></div>
+       </BOUCLE_rub>
+        </div>
+    </B_rub>
+   </div>
+   <br class="clear"/>
+</div>
+
+<script type="text/javascript">
+    $("#ticker").ticker({
+controls: false, //show controls, to be implemented
+    interval: 4000, //interval to show next item
+    effect: "fadeIn", // available effects: fadeIn, slideUp, slideDown   
+    });
+</script>

@@ -18,6 +18,10 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  * sur des pipelines existants.
  */
 
+function citizenartdays_jquery_plugins($scripts){
+    $scripts[] = "javascript/jquery.ticker.js";
+    return $scripts;
+}
 
 
 ?>
