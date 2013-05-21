@@ -1,4 +1,4 @@
-<BOUCLE_art_or(EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{par date_debut}>
+<BOUCLE_art_or(EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{par date_debut,date_fin}>
     #SET{descriptif,''}
     [<h4>[(#DATE_DEBUT|nom_jour), ](#DATE_DEBUT|affdate{d}|unique).[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]</h4>]
     <p>
@@ -11,4 +11,5 @@
     </BOUCLE_article_lang>
     [<br />(#DESCRIPTIF|sinon{#GET{descriptif}}|couper{100})]
     </p>
+    [(#FORMULAIRE_PARTICIPER_EVENEMENT{#ID_EVENEMENT})]
 </BOUCLE_art_or>
