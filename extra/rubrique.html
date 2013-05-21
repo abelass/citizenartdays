@@ -12,10 +12,27 @@
         [<br/><strong>(#LIEU)</strong>]    
     </p>
 </BOUCLE_rub>
-<B_art_or>
-<ul class="auflistung">
-    <BOUCLE_art_or(EVENEMENTS){fusion id_article}{id_rubrique IN #ENV{id_rub_prog}}{par date_debut}>
-      <li><a href="#URL_ARTICLE">#TITRE</a></li>
-    </BOUCLE_art_or>
-</ul>
-</B_art_or>
+    <B_art_or>
+    <ul class="auflistung">
+        <BOUCLE_art_or(EVENEMENTS){fusion id_article}{id_rubrique IN #ENV{id_rub_prog}}{par date_debut}>
+          <li><a href="#URL_ARTICLE">#TITRE</a></li>
+        </BOUCLE_art_or>
+    </ul>
+    </B_art_or>
+</B_rub>
+    <B_articles_rubrique>
+    <ul class="auflistung">
+        <BOUCLE_articles_rubrique(ARTICLES) {id_rubrique}{par num titre,titre}>
+        <li><a href="#URL_ARTICLE"[ class="(#EXPOSE)"]>#TITRE</a></li>
+        </BOUCLE_articles_rubrique>
+    </ul>
+    </B_articles_rubrique>
+        <B_sous_rubrique>
+        <ul class="auflistung">
+            <BOUCLE_sous_rubrique(RUBRIQUES) {id_parent=#ID_RUBRIQUE}{par num titre,titre}>
+            <li><a href="#URL_ARTICLE"[ class="(#EXPOSE)"]>#TITRE</a></li>
+            </BOUCLE_sous_rubrique>
+        </ul>
+        </B_sous_rubrique>
+    <//B_articles_rubrique>
+
