@@ -1,0 +1,21 @@
+<BOUCLE_rub(RUBRIQUES){id_rubrique IN #ENV{id_rub_prog}}{si #COMPOSITION|=={programme}|ou{#COMPOSITION|=={archive}}|oui}{lang}>
+    <h3>#TITRE</h3>
+    <p>
+        <strong>
+        <BOUCLE_ev(EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{par date_debut}{0,1}>
+        [(#DATE_DEBUT|affdate{d.m})]
+        </BOUCLE_ev>
+        <BOUCLE_ev_last(EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{!par date_fin}{0,1}>
+        [- (#DATE_FIN|affdate{d.m})]
+        </BOUCLE_ev_last>
+        </strong>
+        [<br/><strong>(#LIEU)</strong>]    
+    </p>
+</BOUCLE_rub>
+<B_art_or>
+<ul class="auflistung">
+    <BOUCLE_art_or(EVENEMENTS){fusion id_article}{id_rubrique IN #ENV{id_rub_prog}}{par date_debut}>
+      <li><a href="#URL_ARTICLE">#TITRE</a></li>
+    </BOUCLE_art_or>
+</ul>
+</B_art_or>
