@@ -3,5 +3,6 @@
         <nom>Rubrique Programme</nom>
 
         <description>Event Liste</description>
-
+		<branche type="article" composition="programme" />
+		<branche type="rubrique" composition="programme" />	
 </composition>

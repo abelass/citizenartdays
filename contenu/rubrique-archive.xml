@@ -1,0 +1,8 @@
+<composition>
+
+        <nom>Rubrique Archive</nom>
+
+        <description>Event Liste Archive</description>
+		<branche type="article" composition="archive" />
+		<branche type="rubrique" composition="archive" />		
+</composition>
