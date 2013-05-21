@@ -1,20 +1,14 @@
-#SET{id_rubrique,#ARRAY}
-<BOUCLE_ev_recent(EVENEMENTS articles){0,1}{!par date}>
-<BOUCLE_rub_actuel(RUBRIQUES){id_trad=#ID_RUBRIQUE}>
-    #SET{id_rubrique,#GET{id_rubrique}|push{#ID_RUBRIQUE}}
-</BOUCLE_rub_actuel>
-    #SET{id_rubrique,#GET{id_rubrique_actuel}}
-<//B_rub_actuel>    
-</BOUCLE_ev_recent>
-
-
-<BOUCLE_art_or(ARTICLES){id_rubrique IN #GET{id_rubrique}}{origine_traduction}>
-    #SET{id_art_or,#ID_ARTICLE}
-    <BOUCLE_article_lang(ARTICLES){traduction}{lang}>
-        <INCLURE{fond=inclure/inc-agenda_#ENV{details,court},id_article,id_art_or=#GET{id_art_or},titre,env}/>
+<BOUCLE_art_or(EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{par date_debut}>
+    #SET{descriptif,''}
+    [<h4>[(#DATE_DEBUT|nom_jour), ](#DATE_DEBUT|affdate{d}|unique).[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]</h4>]
+    <p>
+       [(#DATE_DEBUT|affdate{G:i})][(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|oui)[ - (#DATE_FIN|affdate{G:i})]]<br/>
+       <a href="#URL_ARTICLE">#TITRE</a>
+       [<br/>(#LIEU)]
+            <BOUCLE_article_lang(ARTICLES){id_article}>
+        [: (#LESAUTEURS)]
+        #SET{descriptif,#INTRODUCTION}
     </BOUCLE_article_lang>
-        <BOUCLE_article_or(ARTICLES){id_article}>
-            <INCLURE{fond=inclure/inc-agenda_#ENV{details,court},id_article,id_art_or=#GET{id_art_or},titre,env}/>
-        </BOUCLE_article_or>
-    <//B_article_lang>
+    [<br />(#DESCRIPTIF|sinon{#GET{descriptif}}|couper{100})]
+    </p>
 </BOUCLE_art_or>
