@@ -10,11 +10,11 @@
 #SET{id_rub_prog_head,#GET{id_rub_prog}}
 #SET{id_rub_prog_body,#GET{id_rub_prog}}
 [(#REM)Special background for the archives]
-[(#COMPOSITION|=={archive}|oui)
+[(#COMPOSITION|=={archive}|et{#ID_TRAD|!={26}}|oui)
     #SET{id_rub_prog_head,#ARRAY}
     #SET{id_rub_prog_body,#ID_RUBRIQUE}    
     ]
-<BOUCLE_archive(RUBRIQUES){id_rubrique}{si #COMPOSITION|=={archive}|oui}>
+<BOUCLE_archive(RUBRIQUES){id_rubrique}{si #COMPOSITION|=={archive}|oui}{id_trad!=26}>
     <BOUCLE_trad_archive(RUBRIQUES){traduction}>
      #SET{id_rub_prog_head,#GET{id_rub_prog_head}|push{#ID_RUBRIQUE}}
    </BOUCLE_trad_archive>
