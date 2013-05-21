@@ -1,4 +1,4 @@
-<BOUCLE_rub(RUBRIQUES){id_rubrique IN #ENV{id_rub_prog}}{si #COMPOSITION|=={programme}|ou{#COMPOSITION|=={archive}}|oui}{lang}>
+<BOUCLE_rub(RUBRIQUES){id_rubrique IN #ENV{id_rub_prog}}{si #COMPOSITION|=={programme}|ou{#COMPOSITION|=={archive}}|et{#ID_TRAD|!={26}}|oui}{lang}>
     <h3>#TITRE</h3>
     <p>
         <strong>
@@ -14,25 +14,31 @@
 </BOUCLE_rub>
     <B_art_or>
     <ul class="auflistung">
-        <BOUCLE_art_or(EVENEMENTS){fusion id_article}{id_rubrique IN #ENV{id_rub_prog}}{par date_debut}>
-          <li><a href="#URL_ARTICLE">#TITRE</a></li>
+        <BOUCLE_art_or(EVENEMENTS){fusion id_article}{id_rubrique IN #ENV{id_rub_prog}}{par date_debut}{doublons}>
+          <li><a href="#URL_ARTICLE"[(#ENV{id_article}|=={#ID_ARTICLE}|oui) class="on"]>#TITRE</a></li>
         </BOUCLE_art_or>
     </ul>
     </B_art_or>
 </B_rub>
-    <B_articles_rubrique>
-    <ul class="auflistung">
-        <BOUCLE_articles_rubrique(ARTICLES) {id_rubrique}{par num titre,titre}>
-        <li><a href="#URL_ARTICLE"[ class="(#EXPOSE)"]>#TITRE</a></li>
-        </BOUCLE_articles_rubrique>
-    </ul>
-    </B_articles_rubrique>
-        <B_sous_rubrique>
-        <ul class="auflistung">
-            <BOUCLE_sous_rubrique(RUBRIQUES) {id_parent=#ID_RUBRIQUE}{par num titre,titre}>
-            <li><a href="#URL_ARTICLE"[ class="(#EXPOSE)"]>#TITRE</a></li>
-            </BOUCLE_sous_rubrique>
-        </ul>
-        </B_sous_rubrique>
-    <//B_articles_rubrique>
+  <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
+        <B_articles_rubrique>
+        sous_rubrique>
+        <h3>#TITRE</h3>
+            <ul class="auflistung">
+                <BOUCLE_articles_rubrique(ARTICLES) {id_rubrique}{par num titre,titre}{doublons}>
+                <li><a href="#URL_ARTICLE"[ class="(#EXPOSE)"]>#TITRE</a></li>
+                </BOUCLE_articles_rubrique>
+            </ul>
+            </B_articles_rubrique>
+                <B_sous_rubrique>
+                <h3>#TITRE</h3>
+                <ul class="auflistung">
+                    <BOUCLE_sous_rubrique(RUBRIQUES) {id_parent=#ID_RUBRIQUE}{par num titre,titre}>
+                    <li><a href="#URL_RUBRIQUE"[ class="(#EXPOSE)"]>#TITRE</a></li>
+                    </BOUCLE_sous_rubrique>
+                </ul>
+                </B_sous_rubrique>
+            <//B_articles_rubrique>
 
+    </BOUCLE_rubrique>
+<//B_rub>
