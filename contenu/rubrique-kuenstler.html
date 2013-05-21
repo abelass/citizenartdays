@@ -1,0 +1,38 @@
+<BOUCLE_contenu_rubrique(RUBRIQUES){id_rubrique}{tout}>
+[(#REM) Fil d'Ariane ]
+
+[(#ID_RUBRIQUE|=={1}|oui)#SET{home,oui}]
+<INCLURE{fond=inclure/file_ariane,id_rubrique,titre=#TITRE,id_parent}/>
+<div id="wrapper">
+    <div id="content">
+        <div class="cartouche">
+            [(#LOGO_RUBRIQUE|image_reduire{200,200})]
+            <h1 class="h1 #EDIT{titre}">#TITRE</h1>
+        </div>
+        
+        
+        [<div class="#EDIT{texte} chapo">(#TEXTE)</div>]
+        
+        <hr />
+        #SET{id_article,#ARRAY}
+        <BOUCLE_art_or(EVENEMENTS){fusion id_article}{id_rubrique IN #ENV{id_rub_prog}}>
+            #SET{id_article,#GET{id_article}|push{#ID_ARTICLE}}
+        </BOUCLE_art_or>
+        <BOUCLE_auteurs(AUTEURS){id_article IN #GET{id_article}}>
+        <h4>#NOM</h4>
+        [<p>
+            [(#LOGO_AUTEUR|image_reduire{241})]
+            (#BIO)
+        </p>]
+            <BOUCLE_art(ARTICLES) {id_article IN #GET{id_article}}{id_auteur}>
+            <p>
+                <a href="#URL_ARTICLE">#TITRE</a>
+             </p>
+            </BOUCLE_art>
+        </BOUCLE_auteurs>
+
+        
+        [<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]
+    </div><!-- ende content -->
+</div><!-- ende Wrapper -->
+</BOUCLE_contenu_rubrique>
