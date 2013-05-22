@@ -1,7 +1,7 @@
 <BOUCLE_contenu_rubrique(RUBRIQUES){id_rubrique}{tout}>
 [(#REM) Fil d'Ariane ]
 
-[(#ID_RUBRIQUE|=={1}|oui)#SET{home,oui}]
+
 <INCLURE{fond=inclure/file_ariane,id_rubrique,titre=#TITRE,id_parent}/>
 <div id="wrapper">
     <div id="content">
@@ -15,11 +15,11 @@
         
         <hr />
         #SET{id_article,#ARRAY}
-        <BOUCLE_art_or(EVENEMENTS){fusion id_article}{id_rubrique IN #ENV{id_rub_prog}}>
+        <BOUCLE_art_or(EVENEMENTS){fusion id_article}{id_rubrique IN #ENV{id_rub_event,#ENV{id_rub_prog}}}>
             #SET{id_article,#GET{id_article}|push{#ID_ARTICLE}}
         </BOUCLE_art_or>
         <BOUCLE_auteurs(AUTEURS){id_article IN #GET{id_article}}>
-        <h4>#NOM</h4>
+        <h4 id="artist_#ID_AUTEUR">#NOM</h4>
         [<p>
             [(#LOGO_AUTEUR|image_reduire{241})]
             (#BIO)
@@ -29,6 +29,10 @@
                 <a href="#URL_ARTICLE">#TITRE</a>
              </p>
             </BOUCLE_art>
+        <div class="top">
+            <a href="#top">↑ Top</a>
+        </div>    
+             <hr />
         </BOUCLE_auteurs>
 
         
