@@ -1,3 +1,43 @@
+<BOUCLE_rub_act(RUBRIQUES){id_rubrique}{tout}>
+    #SET{racine_cq,#ID_RUBRIQUE}
+        <BOUCLE_niveler(RUBRIQUES){id_enfant}{id_parent!=0}{tout}{lang}>
+            #SET{racine_cq,#ID_RUBRIQUE}
+            <BOUCLE_re_act(BOUCLE_niveler)>
+            </BOUCLE_re_act>
+        </BOUCLE_niveler>
+</BOUCLE_rub_act>
+<BOUCLE_rubriques(RUBRIQUES) {id_rubrique=#GET{racine_cq}}{tout}>
+        <B_racines>
+        <p>
+        <h3>#TITRE</h3>
+        <ul class="auflistung">
+        <BOUCLE_racines(RUBRIQUES){id_parent=#ID_RUBRIQUE}{par num titre, titre}{tout}>
+        <li class="menu-entree">
+            <a href="#URL_RUBRIQUE"[ class="(#EXPOSE)"]>[(#TITRE|couper{80})]</a>
+            <B_sous_rubriques>
+            <ul>
+                <BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, titre}><BOUCLE_test_expose(RUBRIQUES) {id_enfant}{tout}>#EXPOSE{' '}</BOUCLE_test_expose>
+                    <li><a href="#URL_RUBRIQUE"[ class="(#EXPOSE)"]>[(#TITRE|couper{80})]</a><BOUCLE_re(BOUCLE_sous_rubriques)></BOUCLE_re> </li>
+                </B_test_expose></BOUCLE_sous_rubriques>
+            </ul>
+            </B_sous_rubriques>
+        <B_art_sousr>
+
+            <ul class="auflistung">
+           <BOUCLE_art_sousr(ARTICLES){id_rubrique}{id_rubrique=#ENV{id_rubrique}}{si #COMPOSITION|=={programme}|non}>
+            <li><a href="#URL_ARTICLE"[ class="(#EXPOSE)"]>[(#TITRE|couper{80})]</a></li>
+           </BOUCLE_art_sousr>
+            </ul>
+
+        </B_art_sousr>            
+        </li>
+        </BOUCLE_racines>
+        </ul>
+        </p>
+        </B_racines>        
+    </BOUCLE_rubriques>
+
+
 <BOUCLE_rub(RUBRIQUES){id_rubrique IN #ENV{id_rub_prog}}{si #COMPOSITION|=={programme}|ou{#COMPOSITION|=={archive}}|et{#ID_TRAD|!={26}}|oui}{lang}>
     <h3>#TITRE</h3>
     <p>
@@ -14,32 +54,15 @@
 </BOUCLE_rub>
     <B_art_or>
     <ul class="auflistung">
-        <BOUCLE_art_or(EVENEMENTS){fusion id_article}{id_rubrique IN #ENV{id_rub_prog}}{par date_debut}{doublons}>
+        <BOUCLE_art_or(EVENEMENTS){fusion id_article}{id_rubrique IN #ENV{id_rub_prog}}{!par date_debut}{doublons}>
           <li><a href="#URL_ARTICLE"[(#ENV{id_article}|=={#ID_ARTICLE}|oui) class="on"]>#TITRE</a></li>
         </BOUCLE_art_or>
     </ul>
     </B_art_or>
 </B_rub>
-  <BOUCLE_rubrique(RUBRIQUES){id_rubrique}{tout}>
-        <B_articles_rubrique>
-        <h3>#TITRE</h3>
-            <ul class="auflistung">
-                <BOUCLE_articles_rubrique(ARTICLES) {id_rubrique}{par num titre,titre}{doublons}>
-                <li><a href="#URL_ARTICLE"[ class="(#EXPOSE)"]>#TITRE</a></li>
-                </BOUCLE_articles_rubrique>
-            </ul>
-            </B_articles_rubrique>
-                <B_sous_rubrique>
-                <h3>#TITRE</h3>
-                <ul class="auflistung">
-                    <BOUCLE_sous_rubrique(RUBRIQUES) {id_parent=#ID_RUBRIQUE}{par num titre,titre}>
-                    <li><a href="#URL_RUBRIQUE"[ class="(#EXPOSE)"]>#TITRE</a></li>
-                    </BOUCLE_sous_rubrique>
-                </ul>
-                </B_sous_rubrique>
-            <//B_articles_rubrique>
 
-    </BOUCLE_rubrique>
+
+
 <//B_rub>
 
 [(#REM) Künstler menü]
