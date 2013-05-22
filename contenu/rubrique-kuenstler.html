@@ -21,13 +21,58 @@
         <BOUCLE_auteurs(AUTEURS){id_article IN #GET{id_article}}>
         <h4 id="artist_#ID_AUTEUR">#NOM</h4>
         [<p>
-            [(#LOGO_AUTEUR|image_reduire{241})]
+            [(#LOGO_AUTEUR|image_reduire{*,150})]
             (#BIO)
         </p>]
             <BOUCLE_art(ARTICLES) {id_article IN #GET{id_article}}{id_auteur}>
+             
+            <B_lieu>
+            
+               <BOUCLE_lieu(RUBRIQUES){id_rubrique}>
+                #SET{lieu,#LIEU}
+               </BOUCLE_lieu>
+            
+            </B_lieu>
+            
+             <//B_lieu>
             <p>
-                <a href="#URL_ARTICLE">#TITRE</a>
-             </p>
+                <a href="#URL_ARTICLE">#TITRE</a><br/>
+
+             <B_events>
+
+             <:citizenartdays:termine:>
+                <BOUCLE_events(EVENEMENTS){id_article}{'|'}{par date_debut,date_fin}>
+                [(#LIEU|oui)#SET{lieu,#GET{lieu}|concat{-#LIEU}}]
+                [(#DATE_DEBUT|nom_jour), ][(#DATE_DEBUT|affdate{d})].[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]
+                [(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|?{
+                     [ - (#DATE_FIN|nom_jour), ][(#DATE_FIN|affdate{d})].[ (#DATE_FIN|nom_mois)][ (#DATE_FIN|affdate{Y})]
+                     [(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|?{
+                         [: (#DATE_DEBUT|affdate{G:i})][ - (#DATE_FIN|affdate{G:i})]
+                         ,
+                         [(#DATE_DEBUT|affdate{G:i}|!={0:00}|oui)[: (#DATE_DEBUT|affdate{G:i})]]
+                     })]
+                        ,
+                     [(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|?{
+                         [: (#DATE_DEBUT|affdate{G:i})][ - (#DATE_FIN|affdate{G:i})]
+                         ,
+                         [(#DATE_DEBUT|affdate{G:i}|!={0:00}|oui)[: (#DATE_DEBUT|affdate{G:i})]]
+                     })]
+                    }
+                    )]
+                </BOUCLE_events>
+             </B_events>
+             [<br/><:citizenartdays:ort:> (#GET{lieu})]
+             #SET{lieu,''}
+
+             <B_inscr>
+              <br/>
+             <br/>            
+                <BOUCLE_inscr(RUBRIQUES){id_trad=7}{lang}{tout}>
+                    <a href="[(#URL_RUBRIQUE|parametre_url{id_article,#ID_ARTICLE})]">#TITRE</a>
+                </BOUCLE_inscr>
+             
+        </p>
+        
             </BOUCLE_art>
         <div class="top">
             <a href="#top">↑ Top</a>
