@@ -1,3 +1,6 @@
+#SET{trie,0}
+[(#COMPOSITION|=={archive}|oui)#SET{trie,1}]
+
 <BOUCLE_rub_act(RUBRIQUES){id_rubrique}{tout}>
     #SET{racine_cq,#ID_RUBRIQUE}
         <BOUCLE_niveler(RUBRIQUES){id_enfant}{id_parent!=0}{tout}{lang}>
@@ -11,12 +14,13 @@
         <p>
         <h3>#TITRE</h3>
         <ul class="auflistung">
-        <BOUCLE_racines(RUBRIQUES){id_parent=#ID_RUBRIQUE}{par num titre, titre}{tout}>
+        <BOUCLE_racines(RUBRIQUES){id_parent=#ID_RUBRIQUE}{par num titre,date}{inverse #GET{trie}}{tout}>
         <li class="menu-entree">
             <a href="#URL_RUBRIQUE"[ class="(#EXPOSE)"]>[(#TITRE|couper{80})]</a>
+            
             <B_sous_rubriques>
             <ul>
-                <BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, titre}><BOUCLE_test_expose(RUBRIQUES) {id_enfant}{tout}>#EXPOSE{' '}</BOUCLE_test_expose>
+                <BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, date}{inverse #GET{trie}}><BOUCLE_test_expose(RUBRIQUES) {id_enfant}{tout}>#EXPOSE{' '}</BOUCLE_test_expose>
                     <li><a href="#URL_RUBRIQUE"[ class="(#EXPOSE)"]>[(#TITRE|couper{80})]</a><BOUCLE_re(BOUCLE_sous_rubriques)></BOUCLE_re> </li>
                 </B_test_expose></BOUCLE_sous_rubriques>
             </ul>
@@ -24,7 +28,7 @@
         <B_art_sousr>
 
             <ul class="auflistung">
-           <BOUCLE_art_sousr(ARTICLES){id_rubrique}{id_rubrique=#ENV{id_rubrique}}{si #COMPOSITION|=={programme}|non}>
+           <BOUCLE_art_sousr(ARTICLES){id_rubrique}{id_rubrique=#ENV{id_rubrique}}{si #COMPOSITION|=={programme}|non}{par num titre,date}{inverse #GET{trie}}>
             <li><a href="#URL_ARTICLE"[ class="(#EXPOSE)"]>[(#TITRE|couper{80})]</a></li>
            </BOUCLE_art_sousr>
             </ul>
