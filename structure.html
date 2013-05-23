@@ -2,7 +2,7 @@
 #SET{id_rub_prog,#ARRAY}
 <BOUCLE_ev_recent(EVENEMENTS articles){0,1}{!par date}>
     <BOUCLE_rub_actuel(RUBRIQUES){id_rubrique}>
-         <BOUCLE_trad(RUBRIQUES){traduction}>
+         <BOUCLE_trad(RUBRIQUES){id_rubrique}{traduction}>
              #SET{id_rub_prog,#GET{id_rub_prog}|push{#ID_RUBRIQUE}}
            </BOUCLE_trad>
     </BOUCLE_rub_actuel>
