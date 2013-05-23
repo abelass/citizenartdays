@@ -25,16 +25,9 @@
             (#BIO)
         </p>]
             <BOUCLE_art(ARTICLES) {id_article IN #GET{id_article}}{id_auteur}>
-             
-            <B_lieu>
-            
                <BOUCLE_lieu(RUBRIQUES){id_rubrique}>
                 #SET{lieu,#LIEU}
                </BOUCLE_lieu>
-            
-            </B_lieu>
-            
-             <//B_lieu>
             <p>
                 <a href="#URL_ARTICLE">#TITRE</a><br/>
 
