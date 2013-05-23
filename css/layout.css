@@ -418,7 +418,9 @@ a:active {
 
 ul#ticker{list-style: none;margin:0;padding:0;float:left}
 
-.spip_logos{float:right}
+.spip_logos{float:right;margin:0 12px}
+
+dl.spip_documents{margin:0 12px}
 
 .formulaire_spip{padding:0 10px;}
 
