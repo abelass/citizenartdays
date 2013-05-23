@@ -1,4 +1,5 @@
-<BOUCLE_art_or(EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{par date_debut,date_fin}>
+<BOUCLE_art_or(EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{id_article ?}{par date_debut,date_fin}>
+
     #SET{descriptif,''}
     [<h4>[(#DATE_DEBUT|nom_jour), ](#DATE_DEBUT|affdate{d}|unique).[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]</h4>]
     <p>
