@@ -7,12 +7,12 @@
     <div id="content">
         <div class="cartouche">
             [(#LOGO_RUBRIQUE|image_reduire{200,200})]
-            <h1 class="h1 #EDIT{titre}">#TITRE</h1>
+            <h1 class="h1 #EDIT{titre}">[(#TITEL)<br/>]#TITRE</h1>
         </div>
         
         
         [<div class="#EDIT{texte} chapo">(#TEXTE)</div>]
-        <INCLURE{fond=inclure/agenda,details=complet,env}/>
+        <INCLURE{fond=inclure/agenda,env}/>
         
         [<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]
     </div><!-- ende content -->
