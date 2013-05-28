@@ -11,6 +11,9 @@
         #SET{descriptif,#INTRODUCTION}
     </BOUCLE_article_lang>
     [<br />(#DESCRIPTIF|sinon{#GET{descriptif}}|couper{100})]
+    <BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}>
+    <a href="[(#URL_RUBRIQUE|parametre_url{id_evenement,#LISTE{#ID_EVENEMENT}})]">#TITRE</a>
+    </BOUCLE_rubrique>    
     </p>
-    [(#FORMULAIRE_PARTICIPER_EVENEMENT{#ID_EVENEMENT})]
+
 </BOUCLE_art_or>
