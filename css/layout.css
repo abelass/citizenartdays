@@ -436,7 +436,12 @@ a:active {
 
 ul#ticker{list-style: none;margin:0;padding:0;float:left}
 
-.spip_logos{float:right;margin:0 12px}
+.spip_logos{
+	float:right;
+	margin:0 12px;
+	position: relative;
+	z-index: 100;
+	}
 
 dl.spip_documents{margin:0 12px}
 
@@ -459,6 +464,10 @@ a[hreflang]:after{display:none}
 div#footer a:focus,
 div#footer a:active,
 div#footer a:hover {color:#595454;}
+
+dl.spip_documents { 
+	width: 100%;
+}
 /*.rubrique_kuenstler #details{position:fixed;left:68%;width:inherit;max-width:29%}*/
 
 /*div {border:1px solid #f00}*/
