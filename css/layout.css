@@ -441,6 +441,8 @@ dl.spip_documents{margin:0 12px}
 
 .extra .spip_logos{float:none}
 
+a[hreflang]:after{display:none}
+
 .extra.lila a:link,
 .extra.lila a:visited {
 	color:#fff;
@@ -450,6 +452,10 @@ dl.spip_documents{margin:0 12px}
 .extra.lila a:hover {
 	color:#da91d5;
 }
+
+div#footer a:focus,
+div#footer a:active,
+div#footer a:hover {color:#595454;}
 /*.rubrique_kuenstler #details{position:fixed;left:68%;width:inherit;max-width:29%}*/
 
 /*div {border:1px solid #f00}*/
