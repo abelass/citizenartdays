@@ -331,11 +331,16 @@ div#footer {
 	text-align:left;
 	padding:20px 0;
 	background:#2a2424;
+	min-width: 1036px;
+	width:100%
+	
 }
 
 
 div#footer .wrapper {
-	width: 1036px;margin:0 auto;
+	width: 1036px;
+	margin:0 auto;
+	overflow:hidden
 }
 
 div#footer p{padding:0;margin:0 0 2em 0}
@@ -380,11 +385,9 @@ div#footer a:hover {
 
 #menu_5 td{padding:5px;}
 
-#menu_5 td.link{border-right:#F3F4F5 1px solid;padding-right:5px;}
-#menu_5 td.icon{border-left:#F3F4F5  1px solid;padding-left:5px;}
+#menu_5 td.link{padding-right:5px;}
+#menu_5 td.icon{padding-left:5px;}
 
-#menu_5 tr.first td.link, #menu_5 tr.first td.icon{border-top:#F3F4F5 1px solid;}
-#menu_5 tr.last td.link, #menu_5 tr.last td.icon{border-bottom:#F3F4F5 1px solid;}
 
 /* ------------------------ BEGIN   GENERALS ------------------------*/
 
@@ -415,7 +418,7 @@ a:active {
 
 /*Rainer*/
 
-#top_menu{background:#9716B3;padding:0.5em 0;}
+#top_menu{background:#9716B3;padding:0.5em 0;	min-width: 1036px; width:100%;}
 
 #top_menu a{color:#FFFFFF; text-decoration:none}
 
