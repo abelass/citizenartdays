@@ -71,16 +71,29 @@ a:hover {
 	clear:both;
 }
 
-.highlight {
+.texteencadre-spip {
 	background-color:#e3acef;
+	border:none;
+	color:#000000;
+	padding:0;
+	margin: 0px 12px 10px;
+	line-height: 1.4;
 }
+
 
 .lila {
 	color: #9716b3;
 }
 
 .zitat {
+	
+}
+blockquote.spip { 
 	margin:20px 80px 10px 150px;
+	background-color:transparent;
+	border: none;
+	font-family:arial,sans-serif;
+	color: #000000;
 }
 
 
@@ -300,16 +313,18 @@ div.extra.lila {
 	color:white;
 }
 
-.lila p{
+.lila .texte{
     bottom: 1.5em;
-    font-size: 20px;
     left: 250px;
     position: absolute;
 }
+
+.extra.lila p,.extra.lila h2 {margin:0}
 /*div#extra img {
 	margin-top:-30px;
 }*/
-
+.extra.lila h2 {padding:0;margin-left:0}
+	
 div#footer {
 	clear:both;
 	color: #fff;
@@ -363,7 +378,7 @@ div#footer a:hover {
 	color:#000;
 }
 
-#menu_5 td{padding:5px; 0}
+#menu_5 td{padding:5px;}
 
 #menu_5 td.link{border-right:#F3F4F5 1px solid;padding-right:5px;}
 #menu_5 td.icon{border-left:#F3F4F5  1px solid;padding-left:5px;}
@@ -424,6 +439,17 @@ dl.spip_documents{margin:0 12px}
 
 .formulaire_spip{padding:0 10px;}
 
+.extra .spip_logos{float:none}
+
+.extra.lila a:link,
+.extra.lila a:visited {
+	color:#fff;
+}
+.extra.lila a:focus,
+.extra.lila a:active,
+.extra.lila a:hover {
+	color:#da91d5;
+}
 /*.rubrique_kuenstler #details{position:fixed;left:68%;width:inherit;max-width:29%}*/
 
 /*div {border:1px solid #f00}*/

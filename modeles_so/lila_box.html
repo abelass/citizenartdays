@@ -3,5 +3,9 @@
     [(#TITRE|image_typo{largeur=300,taille=40}|image_rotation{-30}|inserer_attribut{class,image_typo})]
 })]
 
-[(#DESCRIPTIF|sinon{#TEXTE})]
+<div class="texte">
+[(#DESCRIPTIF)]
+<a href="[(#URL|sinon{#ID_OBJET|generer_url_entite{#OBJET}})]"><:citizenartdays:mehr_ueber:> &bdquo;[(#TITRE|couper{30})]&rdquo;</a>
+</div>
+
 <br class="clear"/>
