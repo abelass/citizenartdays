@@ -17,6 +17,7 @@
         #SET{id_article,#ARRAY}
         <BOUCLE_art_or(EVENEMENTS){fusion id_article}{id_rubrique IN #ENV{id_rub_event,#ENV{id_rub_prog}}}>
             #SET{id_article,#GET{id_article}|push{#ID_ARTICLE}}
+
         </BOUCLE_art_or>
         <BOUCLE_auteurs(AUTEURS){id_article IN #GET{id_article}}>
         <h4 id="artist_#ID_AUTEUR">#NOM</h4>
@@ -25,6 +26,7 @@
             (#BIO)
         </p>]
             <BOUCLE_art(ARTICLES) {id_article IN #GET{id_article}}{id_auteur}>
+            #SET{current_event,''}
                <BOUCLE_lieu(RUBRIQUES){id_rubrique}>
                 #SET{lieu,#LIEU}
                </BOUCLE_lieu>
@@ -35,7 +37,8 @@
 
              <:citizenartdays:termine:>
                 <BOUCLE_events(EVENEMENTS){id_article}{'|'}{par date_debut,date_fin}>
-                #SET[id_evenement,#ID_EVENEMENT]
+                [(#DATE_FIN|>={#ENV{date}}|oui)#SET{current_event,yes}]
+                #SET{id_evenement,#ID_EVENEMENT}
                 [(#LIEU|oui)#SET{lieu,#GET{lieu}|concat{-#LIEU}}]
                 [(#DATE_DEBUT|nom_jour), ][(#DATE_DEBUT|affdate{d})].[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]
                 [(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|?{
@@ -58,10 +61,10 @@
              [<br/><:citizenartdays:ort:> (#GET{lieu})]
              #SET{lieu,''}
 
-             <B_inscr>
+
               <br/>
              <br/>            
-            <BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}>
+            <BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}{si #GET{current_event}|oui}>
             <a href="[(#URL_RUBRIQUE|parametre_url{id_evenement,#LISTE{#GET{id_evenement}}})]">#TITRE</a>
             </BOUCLE_rubrique>   
              
