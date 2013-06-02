@@ -5,6 +5,9 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
+    //A
+    'adresse' => 'Adresse',    
+
 	// C
 	'citizenartdays_titre' => 'Citizen Art Days',
 	
@@ -14,7 +17,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     //M
     'mehr_ueber'=>'Mehr über',
     
-    //t
+    //T
+    'telefon'=>'Telefon:',  
     'termine'=>'Termine:',    
 );
 
