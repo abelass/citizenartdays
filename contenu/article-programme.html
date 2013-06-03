@@ -1,4 +1,6 @@
 <BOUCLE_contenu_article(ARTICLES){id_article}>
+#SET{id_article,#ID_ARTICLE}
+[(#ID_TRAD|!={0}|oui)#SET{id_article,#ID_TRAD}]
 [(#REM) Fil d'Ariane ]
 <div id="breadcrumb"><a href="#URL_SITE_SPIP/"><:accueil_site:></a> &gt; <BOUCLE_ariane(HIERARCHIE){id_article}{' &gt; '}><a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></BOUCLE_ariane>[ &gt; <strong class="on">(#TITRE|couper{80})</strong>]</div>
 <div id="wrapper">
@@ -27,8 +29,8 @@
             
             <BOUCLE_lieu(RUBRIQUES){id_rubrique}>
                 #SET{lieu,#LIEU}
-             </BOUCLE_lieu>
-                <BOUCLE_events(EVENEMENTS){id_article}{par date_debut,date_fin}>
+            </BOUCLE_lieu>
+                <BOUCLE_events(EVENEMENTS){id_article=#GET{id_article}}{par date_debut,date_fin}>
                 <p>[(#LIEU|oui)#SET{lieu,#GET{lieu}|concat{-#LIEU}}]
                 [(#DATE_DEBUT|nom_jour), ][(#DATE_DEBUT|affdate{d})].[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]
                 [(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|?{
@@ -64,20 +66,8 @@
         
         [(#REM) Gestion du portfolio et des documents ]
         [(#INCLURE{fond=inclure/documents}{id_article})]
-        
+         <INCLURE{fond=inclure/social}/>       
         </div>
-        
-        [(#REM) Petition :
-        La petition ayant une PAGINATION il faut absolument {env}
-        et pourquoi pas ajax
-        ][(#PETITION|oui)<INCLURE{fond=inclure/petition}{id_art<div class="contenu-principal">icle}{env}{ajax}>]
-        
-        [<div class="notes surlignable"><h2 class="h2 pas_surlignable"><:info_notes:></h2>(#NOTES)</div>]
-        
-        [(#REM) Forum de l'article ]
-        <a href="#forum" name="forum" id="forum"></a>
-        <INCLURE{fond=inclure/forum}{id_article} />
-        [<p class="repondre"><a href="(#PARAMETRES_FORUM|url_reponse_forum)" rel="noindex nofollow"><:repondre_article:></a></p>]
     </div><!-- ende content -->
 </div><!-- ende Wrapper -->
 </BOUCLE_contenu_article>

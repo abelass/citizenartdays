@@ -47,6 +47,8 @@
 <link rel="stylesheet" href="#CHEMIN{css/scrollable-buttons.css}" type="text/css" media="screen" />
 <link rel="STYLESHEET" href="#CHEMIN{css/layout.css}" type="text/css" media="screen">
 
+<link rel="STYLESHEET" href="#CHEMIN{javascript/socialshareprivacy/socialshareprivacy.css}" type="text/css" media="screen">
+
 
 <script src="#CHEMIN{javascript/jquery.tools.min.js}"></script>
 <script src="#CHEMIN{javascript/jquery.backstretch.min.js}"></script>
@@ -58,16 +60,16 @@
 </BOUCLE_trad>
 </script>
 
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/de_DE/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-<script>
+<script type="text/javascript" src="#CHEMIN{javascript/jquery.socialshareprivacy.js}"></script>
+<script type="text/javascript" src="#CHEMIN{javascript/jquery.socialshareprivacy.min.js}"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+      if($('#socialshareprivacy').length > 0){
+        $('#socialshareprivacy').socialSharePrivacy(); 
+      }
+    });
+  </script>
+<script type="text/javascript">
 // execute your scripts when the DOM is ready. this is mostly a good habit
 $(function() {
 

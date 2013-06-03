@@ -83,7 +83,7 @@
    <BOUCLE_rubriques_events(RUBRIQUES){id_rubrique IN #GET{id_rubrique}}>
     #SET{id_rubr_or,#ID_RUBRIQUE}
     <BOUCLE_rub_org(RUBRIQUES){traduction}{lang}>
-    <h4><a href="[(#SELF|parametre_url{id_rub_event,#GET{id_rubr_or}})]">#TITRE</a></h4>
+    <h4><a href="[(#URL_RUBRIQUE{#ENV{id_rubrique}}|parametre_url{id_rub_event,#GET{id_rubr_or}})]">#TITRE</a></h4>
     </BOUCLE_rub_org>
             #SET{id_article,#ARRAY}
         <BOUCLE_art_or2(EVENEMENTS){fusion id_article}{id_rubrique}{id_rubrique IN #ENV{id_rub_event,#ENV{id_rub_prog}}}>
@@ -92,7 +92,7 @@
         <B_auteurs>
          <ul class="auflistung">        
         <BOUCLE_auteurs(AUTEURS){id_article IN #GET{id_article}}{par nom}>
-        <li><a href="#artist_#ID_AUTEUR">#NOM</a></li>
+        <li[ class="(#EXPOSE)"]><a href="[(#URL_AUTEUR|parametre_url{id_rub_event,#ENV{id_rub_event}})]">#NOM</a></li>
         </BOUCLE_auteurs>
         </ul>
     </B_auteurs>       
