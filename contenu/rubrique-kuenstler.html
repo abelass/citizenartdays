@@ -15,11 +15,14 @@
         
         <hr />
         #SET{id_article,#ARRAY}
-        <BOUCLE_art_or(EVENEMENTS){fusion id_article}{id_rubrique IN #ENV{id_rub_event,#ENV{id_rub_prog}}}>
+        <BOUCLE_art_or(EVENEMENTS){fusion id_article}{id_rubrique ?IN #ENV{id_rub_event,#ENV{id_rub_prog}}}>
+        #SET{affiche,oui}
             #SET{id_article,#GET{id_article}|push{#ID_ARTICLE}}
-
         </BOUCLE_art_or>
-        <BOUCLE_auteurs(AUTEURS){id_article IN #GET{id_article}}>
+        [(#ENV{id_auteur}|non)#SET{affiche,non}]
+        <//B_art_or>
+        
+        <BOUCLE_auteurs(AUTEURS){id_article IN #GET{id_article}}{id_auteur ?}{par nom}{si #GET{affiche}|=={oui}|oui}>
         <h4 id="artist_#ID_AUTEUR">#NOM</h4>
         [<p>
             [(#LOGO_AUTEUR|image_reduire{*,150})]
@@ -71,9 +74,10 @@
         </p>
         
             </BOUCLE_art>
+        [(#ENV{id_auteur}|non)    
         <div class="top">
             <a href="#top">↑ Top</a>
-        </div>    
+        </div> ]  
              <hr />
         </BOUCLE_auteurs>
 
