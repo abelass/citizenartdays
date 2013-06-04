@@ -254,12 +254,12 @@ div#details {
     behavior: url(/PIE.htc);
 }
 
-div#details ul.auflistung {
+div#details ul.auflistung,ul.spip  {
 	margin:0 10px 10px 30px; 
 	padding:0;
 }
 
-div#details ul.auflistung li {
+div#details ul.auflistung li,ul.spip li {
 	list-style:circle;
 }
 
