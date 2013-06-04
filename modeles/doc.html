@@ -10,7 +10,7 @@
     Dans le cas d'une simple image (mode=image), on affiche
     le document lui-meme, sans lien de telechargement
 -->]
-[(#ENV{mode_force,#MODE}|=={image}|oui)1
+[(#ENV{mode_force,#MODE}|=={image}|oui)
     #SET{fichier,#FICHIER}
     #SET{width,#ENV{width,#LARGEUR}}
     #SET{height,#ENV{height,#HAUTEUR}}
@@ -29,7 +29,7 @@
 -->]
 
 [
-(#ENV{width,0}|ou{#ENV{height,0}})2
+(#ENV{width,0}|ou{#ENV{height,0}})
     #SET{fichier,#GET{fichier}|image_reduire{#ENV{width,0},#ENV{height,0}}}
     #SET{width,#GET{fichier}|largeur}
     #SET{height,#GET{fichier}|hauteur}
