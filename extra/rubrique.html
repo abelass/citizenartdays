@@ -1,6 +1,7 @@
 #SET{trie,0}
 [(#COMPOSITION|=={archive}|oui)#SET{trie,1}]
 
+[(#REM)on cherche la racine pour le menu]
 <BOUCLE_rub_act(RUBRIQUES){id_rubrique}{tout}>
     #SET{racine_cq,#ID_RUBRIQUE}
         <BOUCLE_niveler(RUBRIQUES){id_enfant}{id_parent!=0}{tout}{lang}>
@@ -9,15 +10,16 @@
             </BOUCLE_re_act>
         </BOUCLE_niveler>
 </BOUCLE_rub_act>
+
+[(#REM)Le menu]
 <BOUCLE_rubriques(RUBRIQUES) {id_rubrique=#GET{racine_cq}}{tout}>
-        <B_racines>
-        <p>
+    <B_racines>
+    <div class="item">
         <h3>#TITRE</h3>
         <ul class="auflistung">
         <BOUCLE_racines(RUBRIQUES){id_parent=#ID_RUBRIQUE}{par num titre,date}{inverse #GET{trie}}{tout}>
         <li class="menu-entree">
             <a href="#URL_RUBRIQUE"[ class="(#EXPOSE)"]>[(#TITRE|couper{80})]</a>
-            
             <B_sous_rubriques>
             <ul>
                 <BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, date}{inverse #GET{trie}}><BOUCLE_test_expose(RUBRIQUES) {id_enfant}{tout}>#EXPOSE{' '}</BOUCLE_test_expose>
@@ -32,16 +34,17 @@
             <li><a href="#URL_ARTICLE"[ class="(#EXPOSE)"]>[(#TITRE|couper{80})]</a></li>
            </BOUCLE_art_sousr>
             </ul>
-
         </B_art_sousr>            
         </li>
         </BOUCLE_racines>
         </ul>
-        </p>
+        </div>
         </B_racines>        
     </BOUCLE_rubriques>
 
-
+[(#REM)les sousrubriques]
+<B_rub>
+<div class="item">
 <BOUCLE_rub(RUBRIQUES){id_rubrique IN #ENV{id_rub_prog}}{si #COMPOSITION|=={programme}|ou{#COMPOSITION|=={archive}}|et{#ID_TRAD|!={26}}|oui}{lang}>
     <h3>#TITRE</h3>
     <p>
@@ -63,11 +66,8 @@
         </BOUCLE_art_or>
     </ul>
     </B_art_or>
+</div>
 </B_rub>
-
-
-
-<//B_rub>
 
 [(#REM) Künstler menü]
 
@@ -79,7 +79,8 @@
      #SET{id_rubrique,#GET{id_rubrique}|push{#ID_RUBRIQUE}}
     </BOUCLE_rubriques_event_tab>
 </BOUCLE_art_org>
-
+<B_rubriques_events>
+<div class="item">
    <BOUCLE_rubriques_events(RUBRIQUES){id_rubrique IN #GET{id_rubrique}}>
     #SET{id_rubr_or,#ID_RUBRIQUE}
     <BOUCLE_rub_org(RUBRIQUES){traduction}{lang}>
@@ -98,9 +99,8 @@
     </B_auteurs>       
    </BOUCLE_rubriques_events>
    <br />
+</div>   
 </B_rubriques_events>
-
- <//B_rubriques_events>
 
 
 

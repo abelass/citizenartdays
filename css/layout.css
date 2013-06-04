@@ -246,10 +246,17 @@ div#content p {
 }
 
 div#details {
-	background:#fff;
+
 	float:right;
 	width:29.9%;
 	line-height:1.4;
+
+}
+
+div#details div.item{
+	margin:0 0 20px 0;
+	padding:5px 0;
+	background:#fff;
 	border-radius:4px;
     behavior: url(/PIE.htc);
 }
