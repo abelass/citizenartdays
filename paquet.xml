@@ -28,6 +28,8 @@
 	<necessite nom="agenda" compatibilite="[3.11.8;]" />
 	<necessite nom="facteur" compatibilite="[2.4.5;]" />
 	<necessite nom="reservation_evenement" compatibilite="[1.0.0;]" />
+	<necessite nom="typoenluminee" compatibilite="[3.3.2;]" />	
+	<necessite nom="couteau_suisse" compatibilite="[1.8.133;]" />		
 	<utilise nom="z" compatibilite="[1.7.21;]" />
 
 	<pipeline nom="jquery_plugins" inclure="citizenartdays_pipelines.php" />
