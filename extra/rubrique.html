@@ -61,7 +61,7 @@
 </BOUCLE_rub>
     <B_art_or>
     <ul class="auflistung">
-        <BOUCLE_art_or(EVENEMENTS){fusion id_article}{id_rubrique IN #ENV{id_rub_prog}}{!par date_debut}{doublons}>
+        <BOUCLE_art_or(ARTICLES){id_rubrique IN #ENV{id_rub_prog}}{par date}{doublons}>
           <li><a href="#URL_ARTICLE"[(#ENV{id_article}|=={#ID_ARTICLE}|oui) class="on"]>#TITRE</a></li>
         </BOUCLE_art_or>
     </ul>
