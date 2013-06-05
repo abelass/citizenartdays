@@ -12,7 +12,7 @@
     </BOUCLE_article_lang>
     [<br />(#DESCRIPTIF|sinon{#GET{descriptif}}|couper{100})]
    [(#DATE_FIN|>={#ENV{date}}|oui)#SET{actif,yes}]
-    <BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}{si }{id_trad=7}{lang}{tout}{si #GET{actif}|oui}>
+    <BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}{si #GET{actif}|oui}>
     <a href="[(#URL_RUBRIQUE|parametre_url{id_evenement,#LISTE{#ID_EVENEMENT}})]">#TITRE</a>
     </BOUCLE_rubrique>    
     </p>
