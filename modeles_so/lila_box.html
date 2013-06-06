@@ -1,6 +1,6 @@
 [(#ENV{logo_objet}|!={''}|?{
-    [(#ENV{logo_objet}|image_reduire{187,*}|inserer_attribut{class,image_typo}|inserer_attribut{alt,#TITRE})],
-    [(#TITRE|image_typo{police=3Dumb.ttf,taille=50,padding=0,margin=0,hauteur_ligne=140,couleur=ffffff}|image_rotation{-35}|image_reduire{250}|inserer_attribut{class,image_typo})]
+    [<a href="[(#URL|sinon{#ID_OBJET|generer_url_entite{#OBJET}})]">(#ENV{logo_objet}|image_reduire{187,*}|inserer_attribut{class,image_typo}|inserer_attribut{alt,#TITRE})</a>],
+    [<a href="[(#URL|sinon{#ID_OBJET|generer_url_entite{#OBJET}})]">(#TITRE|image_typo{police=3Dumb.ttf,taille=50,padding=0,margin=0,hauteur_ligne=140,couleur=ffffff}|image_rotation{-35}|image_reduire{250}|inserer_attribut{class,image_typo})</a>]
 })]
 
 <div class="texte">
