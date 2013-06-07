@@ -3,16 +3,18 @@
 
 [(#REM)on cherche la racine pour le menu]
 <BOUCLE_rub_act(RUBRIQUES){id_rubrique}{tout}>
+    [(#BLOCK_SPALTE_RECHTS|oui)#SET{block_rechts,#BLOCK_SPALTE_RECHTS}]
     #SET{racine_cq,#ID_RUBRIQUE}
         <BOUCLE_niveler(RUBRIQUES){id_enfant}{id_parent!=0}{tout}{lang}>
+            [(#BLOCK_SPALTE_RECHTS|oui)#SET{block_rechts,#BLOCK_SPALTE_RECHTS}]
             #SET{racine_cq,#ID_RUBRIQUE}
             <BOUCLE_re_act(BOUCLE_niveler)>
             </BOUCLE_re_act>
         </BOUCLE_niveler>
 </BOUCLE_rub_act>
-
 [(#REM)Le menu]
 <BOUCLE_rubriques(RUBRIQUES) {id_rubrique=#GET{racine_cq}}{tout}>
+[<div class="item">(#GET{block_rechts}|sinon{#BLOCK_SPALTE_RECHTS})</div>]
     <B_racines>
     <div class="item">
         <h3>#TITRE</h3>
