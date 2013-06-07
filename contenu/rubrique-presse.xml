@@ -1,0 +1,7 @@
+<composition>
+
+        <nom>Rubrik Presse</nom>
+
+        <description>Rubrik Presse</description>
+		<branche type="rubrique" composition="presse" />	
+</composition>
