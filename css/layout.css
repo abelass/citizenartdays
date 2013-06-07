@@ -454,7 +454,13 @@ dl.spip_documents{margin:0 12px}
 
 .formulaire_spip{padding:0 10px;}
 
-.extra .spip_logos{float:none}
+.extra .spip_logos, .documents_joints .spip_logos {float:none}
+
+.documents_joints ul{padding-left:0;margin-left:0}
+
+.documents_joints li{list-style:none}
+
+.documents_joints h2 {display:none}
 
 a[hreflang]:after{display:none}
 
