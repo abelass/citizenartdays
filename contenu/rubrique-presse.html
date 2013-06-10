@@ -18,7 +18,7 @@
             #ANCRE_PAGINATION
             <ul class="liste-items">
                 <BOUCLE_articles(ARTICLES){id_rubrique} {!par date} {pagination 5}>
-                    <a href="#URL_ARTICLE">[(#TITRE)]</a>
+                   #INCLURE{fond=inclure/article-resume,id_article}
                 </BOUCLE_articles>
             </ul>
             [<p class="pagination">(#PAGINATION)</p>]
