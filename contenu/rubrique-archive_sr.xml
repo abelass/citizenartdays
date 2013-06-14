@@ -1,0 +1,7 @@
+<composition>
+
+        <nom>Rubrique Archive Sousrubrique</nom>
+
+        <description>Event Liste Archive subsections</description>
+		<branche type="article" composition="archive_sr" />	
+</composition>

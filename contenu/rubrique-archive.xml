@@ -4,5 +4,5 @@
 
         <description>Event Liste Archive</description>
 		<branche type="article" composition="archive" />
-		<branche type="rubrique" composition="archive" />		
+		<branche type="rubrique" composition="archive_sr" />		
 </composition>
