@@ -13,7 +13,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'ort' => 'Ort:',  
 	
     //L
-    'lire_la_suite'=>'Mehr',      
+    'lire_la_suite'=>'Mehr...',      
 	
     //M
     'mehr_ueber'=>'Mehr über',
