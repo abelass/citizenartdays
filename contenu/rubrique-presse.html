@@ -15,42 +15,29 @@
     
         <B_articles>
         <div class="liste articles">
-            #ANCRE_PAGINATION
+
             <ul class="liste-items">
-                <BOUCLE_articles(ARTICLES){id_rubrique} {!par date} {pagination 5}>
+                <BOUCLE_rubriques(RUBRIQUES){id_parent} {!par date} >
+                   <li class="item hentry">
+                        <h3 class="h3 entry-title"><a href="#URL_RUBRIQUE" rel="bookmark">[(#LOGO_RUBRIQUE||image_reduire{150,100})]#TITRE</a></h3>
+                        [<div class="#EDIT{descriptif} introduction entry-content">(#DESCRIPTIF)</div>]
+                        <div class="meta-publi">
+                            <p>
+                                <a class="lire-la-suite" href="#URL_RUBRIQUE">
+                                    <:citizenartdays:lire_la_suite:> 
+                               </a>
+                            </p>
+                        </div>
+                    </li>
+                </BOUCLE_rubriques>                
+                <BOUCLE_articles(ARTICLES){id_rubrique} {!par date} >
                    #INCLURE{fond=inclure/article-resume,id_article}
                 </BOUCLE_articles>
             </ul>
-            [<p class="pagination">(#PAGINATION)</p>]
+
         </div>
         </B_articles>
-        
-            [(#REM) Si aucun article, affiche un plan de la rubrique ]
-            <B_sous_rubriques>
-            <div class="menu rubriques">
-                <ul class="menu-liste">
-                    <BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, titre}>
-                    <li class="menu-entree">
-                        <a href="#URL_RUBRIQUE">[(#TITRE)]</a>
-        
-                        [(#REM) Une boucle recursive pour le mini plan]
-                        <B_miniplan>
-                        <ul class="menu-liste">
-                            <BOUCLE_miniplan(RUBRIQUES) {id_parent} {par num titre, titre}>
-                            <li class="menu-entree">
-                                <a href="#URL_RUBRIQUE">[(#TITRE)]</a>
-                                <BOUCLE_m2(BOUCLE_miniplan)></BOUCLE_m2>
-                            </li>
-                            </BOUCLE_miniplan>
-                        </ul>
-                        </B_miniplan>
-        
-                    </li>
-                    </BOUCLE_sous_rubriques>
-                </ul>
-                </div>
-            </B_sous_rubriques>
-        <//B_articles>
+
        <INCLURE{fond=inclure/social}/>
         
         [<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]
