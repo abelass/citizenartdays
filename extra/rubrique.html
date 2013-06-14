@@ -1,5 +1,5 @@
 #SET{trie,0}
-[(#COMPOSITION|=={archive}|oui)#SET{trie,1}]
+[(#COMPOSITION|=={archive}|ou{#COMPOSITION|=={archive_sr}}|oui)#SET{trie,1}]
 
 [(#REM)on cherche la racine pour le menu]
 <BOUCLE_rub_act(RUBRIQUES){id_rubrique}{tout}>
@@ -49,7 +49,7 @@
 [(#REM)les sousrubriques]
 <B_rub>
 <div class="item">
-<BOUCLE_rub(RUBRIQUES){id_rubrique IN #ENV{id_rub_prog}}{si #COMPOSITION|=={programme}|ou{#COMPOSITION|=={archive}}|et{#ID_TRAD|!={26}}|oui}{lang}>
+<BOUCLE_rub(RUBRIQUES){id_rubrique IN #ENV{id_rub_prog}}{si #COMPOSITION|=={programme}|ou{#COMPOSITION|=={archive_sr}}|et{#ID_TRAD|!={26}}|oui}{lang}>
     <h3>#TITRE</h3>
     <p>
         <strong>
