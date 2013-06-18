@@ -1,14 +1,25 @@
 <BOUCLE_art_or(EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{id_article ?}{par date_debut,date_fin}>
 
     #SET{descriptif,''}
+    #SET{titre,''}    
+    
+      <BOUCLE_article_lang(ARTICLES){id_article}>
+        #SET{auteur,#LESAUTEURS}
+           <BOUCLE_trad(ARTICLES){traduction}{lang=#ENV{lang}}>
+            #SET{descriptif,#INTRODUCTION}
+            #SET{titre,#TITRE}
+           </BOUCLE_trad>
+          #SET{descriptif,#INTRODUCTION}
+          #SET{titre,#TITRE}
+         <//B_trad>
+          
+    
     [<h4>[(#DATE_DEBUT|nom_jour), ](#DATE_DEBUT|affdate{d}|unique).[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]</h4>]
     <p>
        [(#DATE_DEBUT|affdate{G:i})][(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|oui)[ - (#DATE_FIN|affdate{G:i})]]<br/>
-       <a href="#URL_ARTICLE">#TITRE</a>
+       <a href="#URL_ARTICLE">#GET{titre}</a>[: (#GET{auteur})]
        [<br/>(#LIEU)]
-            <BOUCLE_article_lang(ARTICLES){id_article}>
-        [: (#LESAUTEURS)]
-        #SET{descriptif,#INTRODUCTION}
+
     </BOUCLE_article_lang>
     [<br />(#DESCRIPTIF|sinon{#GET{descriptif}}|couper{100})]
    [(#DATE_FIN|>={#ENV{date}}|oui)#SET{actif,yes}]
