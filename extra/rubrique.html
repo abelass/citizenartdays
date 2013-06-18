@@ -45,11 +45,10 @@
         </div>
         </B_racines>        
 </BOUCLE_rubriques>
-
 [(#REM)les sousrubriques]
 <B_rub>
 <div class="item">
-<BOUCLE_rub(RUBRIQUES){id_rubrique IN #ENV{id_rub_prog}}{si #COMPOSITION|=={programme}|ou{#COMPOSITION|=={archive_sr}}|et{#ID_TRAD|!={26}}|oui}{lang}>
+<BOUCLE_rub(RUBRIQUES){id_trad IN #ENV{id_rub_prog}}{si #COMPOSITION|=={programme}|ou{#COMPOSITION|=={archive_sr}}|et{#ID_TRAD|!={26}}|oui}{lang}>
     <h3>#TITRE</h3>
     <p>
         <strong>
@@ -66,7 +65,11 @@
     <B_art_or>
     <ul class="auflistung">
         <BOUCLE_art_or(ARTICLES){id_rubrique IN #ENV{id_rub_prog}}{par date}{doublons}>
-          <li><a href="#URL_ARTICLE"[(#ENV{id_article}|=={#ID_ARTICLE}|oui) class="on"]>#TITRE</a></li>
+            <BOUCLE_trad(ARTICLES){traduction}{lang=#ENV{lang}}>
+            <li><a href="#URL_ARTICLE"[(#ENV{id_article}|=={#ID_ARTICLE}|oui) class="on"]>#TITRE</a></li>
+            </BOUCLE_trad>
+            <li><a href="#URL_ARTICLE"[(#ENV{id_article}|=={#ID_ARTICLE}|oui) class="on"]>#TITRE [#LANG]</a></li>
+            <//B_trad>          
         </BOUCLE_art_or>
     </ul>
     </B_art_or>
