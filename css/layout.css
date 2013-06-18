@@ -338,14 +338,14 @@ div#footer {
 	text-align:left;
 	padding:20px 0;
 	background:#2a2424;
-	min-width: 1036px;
+	min-width: 1121px;
 	width:100%
 	
 }
 
 
 div#footer .wrapper {
-	width: 1036px;
+	width: 1121px;
 	margin:0 auto;
 	overflow:hidden
 }
@@ -409,7 +409,7 @@ div#footer a:hover {
 }
 
 div#container {
-	width:1036px;
+	width:1121px;
 	text-align:left;
 	padding:0;
 	margin:0;
@@ -425,11 +425,11 @@ a:active {
 
 /*Rainer*/
 
-#top_menu{background:#9716B3;padding:0.5em 0;	min-width: 1036px; width:100%;}
+#top_menu{background:#9716B3;padding:0.5em 0;	min-width: 1121px; width:100%;}
 
 #top_menu a{color:#FFFFFF; text-decoration:none}
 
-#top_menu .wrapper{width: 1036px;margin:0 auto;}
+#top_menu .wrapper{width: 1121px;margin:0 auto;}
 
 #top_menu .menu{float:right}
 
