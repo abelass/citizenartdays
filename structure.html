@@ -1,8 +1,10 @@
 [(#REM)SECTION Id of the most recent event]
 #SET{id_rub_prog,#ARRAY}
-<BOUCLE_ev_recent(EVENEMENTS articles){0,1}{!par date}>
+<BOUCLE_ev_recent(EVENEMENTS articles){id_evenement?}{0,1}{!par date}>
+[(#ID_EVENEMENT|=={#ENV{id_evenement}}|oui)#SET{composition,programme}  ]
+
     <BOUCLE_rub_actuel(RUBRIQUES){id_rubrique}>
-         <BOUCLE_trad(RUBRIQUES){id_rubrique}{traduction}>
+         <BOUCLE_trad(RUBRIQUES){id_rubrique}{traduction}{tout}>
              #SET{id_rub_prog,#GET{id_rub_prog}|push{#ID_RUBRIQUE}}
            </BOUCLE_trad>
     </BOUCLE_rub_actuel>
@@ -12,9 +14,9 @@
 [(#REM)Special background for the archives]
 [(#COMPOSITION|=={archive_sr}|et{#ID_TRAD|!={26}}|oui)
     #SET{id_rub_prog_head,#ARRAY}
-    #SET{id_rub_prog_body,#ID_RUBRIQUE}    
+    #SET{id_rub_prog_body,#ID_TRAD}    
     ]
-<BOUCLE_archive(RUBRIQUES){id_rubrique}{si #COMPOSITION|=={archive_sr}|oui}{id_trad!=26}>
+<BOUCLE_archive(RUBRIQUES){id_rubrique}{si #COMPOSITION|=={archive_sr}|oui}{id_trad!=26}{tout}>
     <BOUCLE_trad_archive(RUBRIQUES){traduction}>
      #SET{id_rub_prog_head,#GET{id_rub_prog_head}|push{#ID_RUBRIQUE}}
    </BOUCLE_trad_archive>
@@ -27,7 +29,7 @@
 <INCLURE{fond=inclure/head,id_rub_prog=#GET{id_rub_prog_head}}>
 </head>
 <body class="page_#ENV{type,page}[ #ENV{type,page}_(#ENV{composition,''})]">
-<INCLURE{fond=body,id_rub_prog=#GET{id_rub_prog_body},env}>
+<INCLURE{fond=body,id_rub_prog=#GET{id_rub_prog_body},composition=#ENV{composition,#GET{composition}},env}>
 #SPIP_CRON
 </body>
 </html>
