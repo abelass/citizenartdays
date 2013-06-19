@@ -14,7 +14,7 @@
          <//B_trad>
           
     
-    [<h4>[(#DATE_DEBUT|nom_jour), ](#DATE_DEBUT|affdate{d}|unique).[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]</h4>]
+    [<h4 class="upperspace">[(#DATE_DEBUT|nom_jour), ](#DATE_DEBUT|affdate{d}|unique).[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]</h4>]
     <p>
        [(#DATE_DEBUT|affdate{G:i})][(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|oui)[ - (#DATE_FIN|affdate{G:i})]]<br/>
        <a href="#URL_ARTICLE">#GET{titre}</a>[: (#GET{auteur})]

@@ -25,7 +25,7 @@
                 [<div class="#EDIT{texte} texte">(#TEXTE|image_reduire{500,0})</div>]
             </div>
              <B_events>
-             <h2><:citizenartdays:termine:></h2>
+             <h2 class="upperspace"><:citizenartdays:termine:></h2>
             
             <BOUCLE_lieu(RUBRIQUES){id_rubrique}>
                 #SET{lieu,#LIEU}
@@ -48,13 +48,13 @@
                      })]
                     }
                     )]</p>
-                 [<h2><:citizenartdays:ort:></h2>
+                 [<h2 class="upperspace"><:citizenartdays:ort:></h2>
                  <p>(#LIEU|sinon{#GET{lieu}})</p>]   
                 </BOUCLE_events>
              </B_events>
-             
-               
-             <B_inscr>
+            <BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}{si ##COMPOSITION|=={programme}|oui}>
+            <p><a href="[(#URL_RUBRIQUE|parametre_url{id_evenement,#LISTE{#ID_EVENEMENT}})]">#TITRE</a></p>
+            </BOUCLE_rubrique>    
         
         
             [<p class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
