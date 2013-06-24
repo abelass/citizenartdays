@@ -11,14 +11,14 @@
 
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
+//Mettre par défaut le cookie langue en DE
+if(!isset($_COOKIE['spip_lang'])){
+        include_spip('inc/cookie');
+        //Soit un cookie lang est présent
+        spip_setcookie('spip_langue_preferee', 'de', time() + 3660*24*365, chemin_cookie());
+        spip_setcookie('spip_lang', 'de', time() + 3660*24*365, chemin_cookie());        
 
-/*
- * Un fichier d'options permet de définir des éléments
- * systématiquement chargés à chaque hit sur SPIP.
- *
- * Il vaut donc mieux limiter au maximum son usage
- * tout comme son volume !
- * 
- */
+    }
+
 
 ?>
