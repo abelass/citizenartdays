@@ -12,6 +12,7 @@
             </BOUCLE_re_act>
         </BOUCLE_niveler>
 </BOUCLE_rub_act>
+
 [(#REM)Le menu]
 <BOUCLE_rubriques(RUBRIQUES) {id_rubrique=#GET{racine_cq}}{tout}>
 [<div class="item">(#GET{block_rechts}|sinon{#BLOCK_SPALTE_RECHTS})</div>]
@@ -77,37 +78,9 @@
 </B_rub>
 
 [(#REM) Künstler menü]
-
-#SET{id_article,#ARRAY}
-#SET{id_rubrique,#ARRAY}
-<BOUCLE_art_org(EVENEMENTS){fusion id_article}{si #COMPOSITION|=={kuenstler}}{!par date_debut}>
-    #SET{id_article,#GET{id_article}|push{#ID_ARTICLE}}
-    <BOUCLE_rubriques_event_tab(ARTICLES){id_article}>
-     #SET{id_rubrique,#GET{id_rubrique}|push{#ID_RUBRIQUE}}
-    </BOUCLE_rubriques_event_tab>
-</BOUCLE_art_org>
-<B_rubriques_events>
-<div class="item">
-   <BOUCLE_rubriques_events(RUBRIQUES){id_rubrique IN #GET{id_rubrique}}>
-    #SET{id_rubr_or,#ID_RUBRIQUE}
-    <BOUCLE_rub_org(RUBRIQUES){traduction}{lang}>
-    <h4><a href="[(#URL_RUBRIQUE{#ENV{id_rubrique}}|parametre_url{id_rub_event,#GET{id_rubr_or}})]">#TITRE</a></h4>
-    </BOUCLE_rub_org>
-            #SET{id_article,#ARRAY}
-        <BOUCLE_art_or2(EVENEMENTS){fusion id_article}{id_rubrique}{id_rubrique IN #ENV{id_rub_event,#ENV{id_rub_prog}}}>
-            #SET{id_article,#GET{id_article}|push{#ID_ARTICLE}}
-        </BOUCLE_art_or2>
-        <B_auteurs>
-         <ul class="auflistung">        
-        <BOUCLE_auteurs(AUTEURS){id_article IN #GET{id_article}}{par nom}>
-        <li[ class="(#EXPOSE)"]><a href="[(#URL_AUTEUR|parametre_url{id_rub_event,#ENV{id_rub_event}})]">#NOM</a></li>
-        </BOUCLE_auteurs>
-        </ul>
-    </B_auteurs>       
-   </BOUCLE_rubriques_events>
-   <br />
-</div>   
-</B_rubriques_events>
+[(#COMPOSITION|=={kuenstler}|oui)
+<INCLURE{fond=extra/inc-rubrique_kuenstler,composition=#COMPOSITION,env,ajax}/>
+]
 
 
 
