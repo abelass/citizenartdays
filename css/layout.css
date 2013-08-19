@@ -88,6 +88,10 @@ a:hover {
 .zitat {
 	
 }
+
+.bkg_lila a{background-color:#E3ACEF}
+
+#content .reservation{margin-top:50px}
 blockquote.spip { 
 	margin:20px 80px 10px 150px;
 	background-color:transparent;
