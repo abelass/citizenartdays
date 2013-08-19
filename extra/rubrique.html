@@ -20,7 +20,7 @@
     <div class="item">
         <h3>#TITRE</h3>
         <ul class="auflistung">
-        <BOUCLE_racines(RUBRIQUES){id_parent=#ID_RUBRIQUE}{par num titre,date}{inverse #GET{trie}}{tout}>
+        <BOUCLE_racines(RUBRIQUES){id_parent=#ID_RUBRIQUE}{par num titre,date}{inverse #GET{trie}}{tout}{si #COMPOSITION|!={programme}|oui}>
          #SET{id_rubrique,#ENV{id_rubrique}}
         <li class="menu-entree">
             <a href="#URL_RUBRIQUE"[ class="(#EXPOSE)"]>[(#TITRE|couper{80})]</a>
