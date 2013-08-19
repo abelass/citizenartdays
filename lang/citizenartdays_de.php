@@ -9,6 +9,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// C
 	'citizenartdays_titre' => 'Citizen Art Days',
 	
+    //E
+    'empfehlen'=>'Empfehlen Sie uns weiter!',
+	
 	// O
 	'ort' => 'Ort:',  
 	
