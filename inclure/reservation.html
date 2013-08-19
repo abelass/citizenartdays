@@ -28,25 +28,14 @@
 
 <:prix:label_total_ttc:> : [(#GET{total}|prix_formater)]
    </BOUCLE_test_format_texte>
-      <table class="reservation" cellspacing="0">
-         <thead>
-            <tr>
-               <th class="description"><:reservation:designation:></th>
-               <th class="statut"><:reservation:label_statut:></th>               
-            </tr>
-         </thead>
-         <tbody>
+      <ul class="reservation">
             #SET{total,0}
             <BOUCLE_details(POUR){tableau #GET{reservation}|table_valeur{details}}>
-            <tr class="detail [(#VALEUR|table_valeur{quantite}|>{0}|?{avec_quantite,sans_quantite})]">
-               <td class="description">[(#VALEUR|table_valeur{descriptif})]</td>
-               <td class="statut">
-                   [(#VAL{reservation:texte_statut[_(#VALEUR{statut}|trim)]}|_T)]
-                   </td>               
-            </tr>
+            <li class="detail [(#VALEUR|table_valeur{quantite}|>{0}|?{avec_quantite,sans_quantite})]">
+               <span class="description">[(#VALEUR|table_valeur{descriptif})]</span><span class="statut">, <:reservation:label_statut:>[ (#VAL{reservation:texte_statut[_(#VALEUR{statut}|trim)]}|_T)]</span>               
+            </li>
 
             </BOUCLE_details>
-         </tbody>
-      </table>
+      </ul>
    <//B_test_format_texte>
 </BOUCLE_test>
