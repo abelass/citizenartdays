@@ -1,6 +1,7 @@
 <BOUCLE_contenu_article(ARTICLES){id_article}>
 #SET{id_article,#ID_ARTICLE}
 [(#ID_TRAD|!={0}|oui)#SET{id_article,#ID_TRAD}]
+#SET{id_evenement,#ARRAY}
 [(#REM) Fil d'Ariane ]
 <div id="breadcrumb"><a href="#URL_SITE_SPIP/"><:accueil_site:></a> &gt; <BOUCLE_ariane(HIERARCHIE){id_article}{' &gt; '}><a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></BOUCLE_ariane>[ &gt; <strong class="on">(#TITRE|couper{80})</strong>]</div>
 <div id="wrapper">
@@ -26,11 +27,12 @@
             </div>
              <B_events>
              [<h2 class="upperspace">(#GRAND_TOTAL|singulier_ou_pluriel{citizenartdays:termin,citizenartdays:termine})</h2>]
-            
+
             <BOUCLE_lieu(RUBRIQUES){id_rubrique}>
                 [(#LIEU|oui)#SET{lieu,#LIEU}]
             </BOUCLE_lieu>
                 <BOUCLE_events(EVENEMENTS){id_article=#GET{id_article}}{par date_debut,date_fin}>
+                #SET{id_evenement,#GET{id_evenement}|push{#ID_EVENEMENT}}
                 #SET{inscription,#INSCRIPTION}
                 <p>[(#LIEU|oui)#SET{lieu,#GET{lieu}|concat{-#LIEU}}]
                 [(#DATE_DEBUT|nom_jour), ][(#DATE_DEBUT|affdate{d})].[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]
@@ -54,8 +56,8 @@
              </B_events>
             [<h2 class="upperspace"><:citizenartdays:ort:></h2>
                  <p>(#GET{lieu})</p>]  
-            <BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}{si ##COMPOSITION|=={programme}|oui}{si #GET{inscription}|=={1}|oui}>
-            <p class="reservation bkg_lila"><a href="[(#URL_RUBRIQUE|parametre_url{id_evenement,#LISTE{#ID_EVENEMENT}})]">#TITRE</a></p>
+            <BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}{si #COMPOSITION|=={programme}|oui}{si #GET{inscription}|=={1}|oui}>
+            <p class="reservation bkg_lila"><a href="[(#URL_RUBRIQUE|parametre_url{id_evenement,#GET{id_evenement}})]">#TITRE</a></p>
             </BOUCLE_rubrique>    
         
         
