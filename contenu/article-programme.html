@@ -31,6 +31,7 @@
                 [(#LIEU|oui)#SET{lieu,#LIEU}]
             </BOUCLE_lieu>
                 <BOUCLE_events(EVENEMENTS){id_article=#GET{id_article}}{par date_debut,date_fin}>
+                #SET{inscription,#INSCRIPTION}
                 <p>[(#LIEU|oui)#SET{lieu,#GET{lieu}|concat{-#LIEU}}]
                 [(#DATE_DEBUT|nom_jour), ][(#DATE_DEBUT|affdate{d})].[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]
                 [(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|?{
@@ -53,7 +54,7 @@
              </B_events>
             [<h2 class="upperspace"><:citizenartdays:ort:></h2>
                  <p>(#GET{lieu})</p>]  
-            <BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}{si ##COMPOSITION|=={programme}|oui}>
+            <BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}{si ##COMPOSITION|=={programme}|oui}{si #GET{inscription}|=={1}|oui}>
             <p class="reservation bkg_lila"><a href="[(#URL_RUBRIQUE|parametre_url{id_evenement,#LISTE{#ID_EVENEMENT}})]">#TITRE</a></p>
             </BOUCLE_rubrique>    
         
