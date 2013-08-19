@@ -22,7 +22,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'mehr_ueber'=>'Mehr über',
     
     //T
-    'termine'=>'Termine:',    
+    'termin'=>'Termin:', 
+    'termine'=>'Termine:',       
 );
 
 ?>
