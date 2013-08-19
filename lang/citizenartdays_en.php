@@ -9,13 +9,13 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'citizenartdays_titre' => 'Citizen Art Days',
 	
 	// O
-	'ort' => 'Ort:',    
+	'ort' => 'Place:',    
 	
     //L
     'lire_la_suite'=>'More',    
     
     //M
-    'mehr_ueber'=>'Mehr über',
+    'mehr_ueber'=>'More about',
     
     'termine'=>'Termine:',    
 );
