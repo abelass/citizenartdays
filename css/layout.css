@@ -157,6 +157,11 @@ ul#navigation li.on a:hover {
 	color:#000;
 }
 
+ul#navigation li.on a:hover {
+	background-color:#000000;
+	color:#fff;
+}
+
 .menuder, .menuder ul {background:none;border:none;width:auto}
 
 .menuder a {padding:0}
