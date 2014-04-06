@@ -2,7 +2,7 @@
 <h2>#TITRE</h2> 
 <B_doc>
 <p>
-    <BOUCLE_doc(DOCUMENTS documents_liens){objet}{id_objet}{extension !IN jpg,gif,png}{doublons}>
+    <BOUCLE_doc(DOCUMENTS documents_liens){objet}{id_objet}{extension !IN jpg,gif,png}{doublons}{par num titre, titre}>
         [(#LOGO_DOCUMENT|#URL_DOCUMENT|image_reduire{25,*}|inserer_attribut{hspace,10})]
         <:bouton_telecharger:>: <a href="#URL_DOCUMENT" title="[(#TITRE|sinon{<:bouton_telecharger:>}|textebrut)]">[(#TITRE|sinon{#FICHIER|basename})]</a>  (#TYPE_DOCUMENT[, (#TAILLE|taille_en_octets)])
     </BOUCLE_doc>
