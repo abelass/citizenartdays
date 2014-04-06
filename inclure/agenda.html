@@ -4,7 +4,7 @@
     #SET{titre,''}    
     
       <BOUCLE_article_lang(ARTICLES){id_article}>
-        #SET{auteur,#LESAUTEURS}
+        #SET{id_rubrique,#ID_RUBRIQUE}
            <BOUCLE_trad(ARTICLES){traduction}{lang=#ENV{lang}}>
             #SET{descriptif,#INTRODUCTION}
             #SET{titre,#TITRE}
@@ -17,7 +17,11 @@
     [<h4 class="upperspace">[(#DATE_DEBUT|nom_jour), ](#DATE_DEBUT|affdate{d}|unique).[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]</h4>]
     <p>
        [(#DATE_DEBUT|affdate{G:i})][(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|oui)[ - (#DATE_FIN|affdate{G:i})]]<br/>
-       <a href="#URL_ARTICLE">#GET{titre}</a>[: (#GET{auteur})]
+       <a href="#URL_ARTICLE">#GET{titre}</a><B_auteur>: 
+        <BOUCLE_auteur(AUTEURS){id_article}{', '}>
+            <a href="[(#URL_AUTEUR|parametre_url{id_rub_event,#ID_RUBRIQUE})]">#NOM</a>
+        </BOUCLE_auteur>
+
        [<br/>(#LIEU)]
 
     </BOUCLE_article_lang>
