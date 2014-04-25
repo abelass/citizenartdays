@@ -54,14 +54,18 @@
 <script src="#CHEMIN{javascript/jquery.backstretch.min.js}"></script>
 <script type="text/javascript" src="#CHEMIN{javascript/jquery.socialshareprivacy.js}"></script>
 <script type="text/javascript">
-<BOUCLE_trad(RUBRIQUES){id_rubrique IN #ENV{id_rub_prog}}{origine_traduction}>
-    <BOUCLE_rub_agenda(DOCUMENTS){id_rubrique}{tout}{background_image=on}{0,1}{par date}>
+<BOUCLE_rub(RUBRIQUES){id_rubrique}{origine_traduction}>
+    <BOUCLE_rub_agenda_or(DOCUMENTS){id_rubrique}{tout}{background_image=on}{0,1}{par date}>
         $.backstretch("#FICHIER");
-    </BOUCLE_rub_agenda> 
-</BOUCLE_trad>
+    </BOUCLE_rub_agenda_or>
+		<BOUCLE_trad(RUBRIQUES){id_rubrique IN #ENV{id_rub_prog}}{origine_traduction}>
+			<BOUCLE_rub_agenda(DOCUMENTS){id_rubrique}{tout}{background_image=on}{0,1}{par date}>
+				$.backstretch("#FICHIER");
+			</BOUCLE_rub_agenda> 
+		</BOUCLE_trad>	
+    <//B_rub_agenda_or> 	
+</BOUCLE_rub>
 </script>
-
-
 
 <script type="text/javascript">
     jQuery(document).ready(function($){
@@ -86,3 +90,4 @@ $(document).ready(function(){
 });
 
 </script>
+link rel=
