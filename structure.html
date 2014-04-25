@@ -26,7 +26,7 @@
 <head>
 <INCLURE{fond=head/#ENV{type},env}>
 
-<INCLURE{fond=inclure/head,id_rub_prog=#GET{id_rub_prog_head}}>
+<INCLURE{fond=inclure/head,id_rub_prog=#GET{id_rub_prog_head},id_rubrique}>
 </head>
 <body class="page_#ENV{type,page}[ #ENV{type,page}_(#ENV{composition,''})]">
 <INCLURE{fond=body,id_rub_prog=#GET{id_rub_prog_body},composition=#ENV{composition,#GET{composition}},env}>
