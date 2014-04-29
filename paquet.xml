@@ -31,6 +31,7 @@
 	<necessite nom="typoenluminee" compatibilite="[3.3.2;]" />	
 	<necessite nom="couteau_suisse" compatibilite="[1.8.133;]" />		
 	<utilise nom="z" compatibilite="[1.7.21;]" />
+	<utilise nom="menuder" compatibilite="[2.2.0;]" />
 
 	<pipeline nom="jquery_plugins" inclure="citizenartdays_pipelines.php" />
 
