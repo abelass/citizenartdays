@@ -73,7 +73,27 @@
 <script type="text/javascript">
     jQuery(document).ready(function($){
       if($('#socialshareprivacy').length > 0){
-        $('#socialshareprivacy').socialSharePrivacy(); 
+      	var settings={
+            'services' : {
+                'facebook' : {
+                    'dummy_img'         : '#CHEMIN{javascript/socialshareprivacy/images/dummy_facebook.png}',
+                    'language'          : '#LANG'                    
+                }, 
+                'twitter' : {
+
+                    'dummy_img'         : '#CHEMIN{javascript/socialshareprivacy/images/dummy_twitter.png}',
+                    'language'          : '#LANG'                    
+
+                },
+                'gplus' : {
+                    'status'            : 'off',
+                    'dummy_img'         : '#CHEMIN{javascript/socialshareprivacy/images/dummy_gplus.png}',
+                    'language'          : '#LANG'
+                }
+            },
+        };;
+   	
+        $('#socialshareprivacy').socialSharePrivacy(settings); 
       }
     });
   </script>
