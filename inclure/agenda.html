@@ -19,7 +19,7 @@
        [(#DATE_DEBUT|affdate{G:i})][(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|oui)[ - (#DATE_FIN|affdate{G:i})]]<br/>
        <a href="#URL_ARTICLE">#GET{titre}</a><B_auteur>: 
         <BOUCLE_auteur(AUTEURS){id_article}{', '}>
-            <a href="[(#URL_AUTEUR|parametre_url{id_rub_event,#ID_RUBRIQUE})]">#NOM</a>
+           [(#TOTAL_BOUCLE|>{5}|?{<div class="total">#TOTAL_BOUCLE <:kuenstler:> <a href="[(#URL_AUTEUR|parametre_url{id_rub_event,#ID_RUBRIQUE})]">#NOM</a>,<a href="[(#URL_AUTEUR|parametre_url{id_rub_event,#ID_RUBRIQUE})]">#NOM</a>})]
         </BOUCLE_auteur>
 
        [<br/>(#LIEU)]
