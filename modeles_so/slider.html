@@ -7,5 +7,5 @@
      </BOUCLE_auteur>
  </b><br>
  </B_auteur>
-    #DESCRIPTIF**<br><br>
+    [(#DESCRIPTIF**|sinon{#BIO**})]<br><br>
     <a href="[(#URL|sinon{#ID_OBJET|generer_url_entite{#OBJET}})]"><:citizenartdays:mehr_ueber:> &bdquo;[(#TITRE|couper{30})]&rdquo;</a>
