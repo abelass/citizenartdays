@@ -9,15 +9,15 @@
             [(#LOGO_RUBRIQUE|image_reduire{200,200})]
             <h1 class="h1 #EDIT{titre}">#TITRE</h1>
         </div>
-        
-        
+
+
         [<div class="#EDIT{texte} chapo">(#TEXTE)</div>]
         <hr />
         #SET{id_article,#ARRAY}
-        <BOUCLE_art_or(EVENEMENTS){fusion id_article}{id_rubrique ?IN #ENV{id_rub_event,#ENV{id_rub_prog}}}{si #ENV{id_rub_event}|oui}>
+        <BOUCLE_art_or(EVENEMENTS){fusion id_article}{id_rubrique ?IN #ENV{id_rub_event,#ENV{id_rub_prog}}}{si #ENV{id_rub_event}|oui}{par date_debut}{inverse}>
             #SET{id_article,#GET{id_article}|push{#ID_ARTICLE}}
         </BOUCLE_art_or>
-	       	<BOUCLE_art_or2(EVENEMENTS){fusion id_article}>
+	       	<BOUCLE_art_or2(EVENEMENTS){fusion id_article}{par date_debut}{inverse}>
 	            #SET{id_article,#GET{id_article}|push{#ID_ARTICLE}}
 	        </BOUCLE_art_or2>
         <//B_art_or>
@@ -36,7 +36,7 @@
                 <a href="#URL_ARTICLE">#TITRE</a><br/>
              <B_events>
              <:citizenartdays:termine:>
-                <BOUCLE_events(EVENEMENTS){id_article}{'|'}{par date_debut,date_fin}>
+                <BOUCLE_events(EVENEMENTS){id_article}{'|'}{par date_debut,date_fin}{inverse}>
                 [(#DATE_FIN|>={#ENV{date}}|oui)#SET{current_event,yes}]
                 #SET{id_evenement,#ID_EVENEMENT}
                 [(#LIEU|oui)#SET{lieu,#GET{lieu}|concat{-#LIEU}}]
@@ -61,16 +61,16 @@
              [<br/><:citizenartdays:ort:> (#GET{lieu})]
              #SET{lieu,''}
               <br/>
-             <br/>            
+             <br/>
             <BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}{si #GET{current_event}|oui}>
             <a href="[(#URL_RUBRIQUE|parametre_url{id_evenement,#LISTE{#GET{id_evenement}}})]">#TITRE</a>
-            </BOUCLE_rubrique>    
+            </BOUCLE_rubrique>
         </p>
             </BOUCLE_art>
-        [(#ENV{id_auteur}|non)    
+        [(#ENV{id_auteur}|non)
         <div class="top">
             <a href="#top">↑ Top</a>
-        </div> ]  
+        </div> ]
              <hr />
         </BOUCLE_auteurs>
 <BOUCLE_auteurs2(AUTEURS){id_auteur}>
@@ -90,7 +90,7 @@
              <B_events2>
 
              <:citizenartdays:termine:>
-                <BOUCLE_events2(EVENEMENTS){id_article}{'|'}{par date_debut,date_fin}>
+                <BOUCLE_events2(EVENEMENTS){id_article}{'|'}{par date_debut,date_fin}{inverse}>
                 [(#DATE_FIN|>={#ENV{date}}|oui)#SET{current_event,yes}]
                 #SET{id_evenement,#ID_EVENEMENT}
                 [(#LIEU|oui)#SET{lieu,#GET{lieu}|concat{-#LIEU}}]
@@ -117,18 +117,18 @@
 
 
               <br/>
-             <br/>            
+             <br/>
             <BOUCLE_rubrique2(RUBRIQUES){id_trad=7}{lang}{tout}{si #GET{current_event}|oui}>
             <a href="[(#URL_RUBRIQUE|parametre_url{id_evenement,#LISTE{#GET{id_evenement}}})]">#TITRE</a>
-            </BOUCLE_rubrique2>   
-             
+            </BOUCLE_rubrique2>
+
         </p>
-        
-            </BOUCLE_art2> 
+
+            </BOUCLE_art2>
              <hr />
-        </BOUCLE_auteurs2>        
-        <//B_auteurs>        
-        [<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]     
+        </BOUCLE_auteurs2>
+        <//B_auteurs>
+        [<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]
     </div><!-- ende content -->
 </div><!-- ende Wrapper -->
 </BOUCLE_contenu_rubrique>
