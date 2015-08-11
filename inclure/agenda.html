@@ -1,8 +1,8 @@
 <BOUCLE_art_or(EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{id_article ?}{par date_debut,date_fin}>
 
     #SET{descriptif,''}
-    #SET{titre,''}    
-    
+    #SET{titre,''}
+
       <BOUCLE_article_lang(ARTICLES){id_article}>
         #SET{id_rubrique,#ID_RUBRIQUE}
            <BOUCLE_trad(ARTICLES){traduction}{lang=#ENV{lang}}>
@@ -12,16 +12,17 @@
           #SET{descriptif,#INTRODUCTION}
           #SET{titre,#TITRE}
          <//B_trad>
-          
-    
+
+
     [<h4 class="upperspace">[(#DATE_DEBUT|nom_jour), ](#DATE_DEBUT|affdate{d}|unique).[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]</h4>]
     <p>
        [(#DATE_DEBUT|affdate{G:i})][(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|oui)[ - (#DATE_FIN|affdate{G:i})]]<br/>
-       <a href="#URL_ARTICLE">#GET{titre}</a><B_auteur>: 
+       <a href="#URL_ARTICLE">#GET{titre}</a><B_auteur>:[ (#TOTAL_BOUCLE|>{5}|oui)#SET{fermeture_tag,</span></span>}<span class="total_kuenstler"><span class="label">#TOTAL_BOUCLE <:citizenartdays:kuenstler:></span><span class="kuenstler_detail">]
         <BOUCLE_auteur(AUTEURS){id_article}{', '}>
-           [(#TOTAL_BOUCLE|>{5}|?{<div class="total">#TOTAL_BOUCLE <:kuenstler:> <a href="[(#URL_AUTEUR|parametre_url{id_rub_event,#ID_RUBRIQUE})]">#NOM</a>,<a href="[(#URL_AUTEUR|parametre_url{id_rub_event,#ID_RUBRIQUE})]">#NOM</a>})]
+           <a href="[(#URL_AUTEUR|parametre_url{id_rub_event,#ID_RUBRIQUE})]">#NOM</a>
         </BOUCLE_auteur>
-
+           #GET{fermeture_tag}
+        </B_auteur>
        [<br/>(#LIEU)]
 
     </BOUCLE_article_lang>
@@ -29,7 +30,7 @@
    [(#DATE_FIN|>={#ENV{date}}|oui)#SET{actif,yes}]
     <BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}{si #GET{actif}|oui}>
     <a href="[(#URL_RUBRIQUE|parametre_url{id_evenement,#LISTE{#ID_EVENEMENT}})]">#TITRE</a>
-    </BOUCLE_rubrique>    
+    </BOUCLE_rubrique>
     </p>
 
 </BOUCLE_art_or>

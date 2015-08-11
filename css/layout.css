@@ -11,7 +11,7 @@ body {
 	/*border:1px solid #ff0;*/
 }
 
-p { 
+p {
 	margin:0 12px 10px;
 }
 
@@ -86,13 +86,13 @@ a:hover {
 }
 
 .zitat {
-	
+
 }
 
 .bkg_lila a{background-color:#E3ACEF}
 
 #content .reservation{margin-top:50px}
-blockquote.spip { 
+blockquote.spip {
 	margin:20px 80px 10px 150px;
 	background-color:transparent;
 	border: none;
@@ -116,7 +116,7 @@ hr {
 ul#navigation {
 	float:right;
 	font:130% courier;
-	margin:0; 
+	margin:0;
 	padding:0 0 25px 0;
 	/*letter-spacing:0.02em;
 	font-weight:lighter;*/
@@ -166,10 +166,10 @@ ul#navigation li.on a:hover {
 
 .menuder a {padding:0}
 
-ul#language {	
+ul#language {
 	font-size: 120%;
 	font-family: courier;
-	margin:0; 
+	margin:0;
 	padding:0;
 }
 
@@ -271,7 +271,7 @@ div#details div.item{
 }
 
 div#details ul.auflistung,ul.spip  {
-	margin:0 10px 10px 30px; 
+	margin:0 10px 10px 30px;
 	padding:0;
 }
 
@@ -340,7 +340,7 @@ div.extra.lila {
 	margin-top:-30px;
 }*/
 .extra.lila h2 {padding:0;margin-left:0}
-	
+
 div#footer {
 	clear:both;
 	color: #fff;
@@ -349,7 +349,7 @@ div#footer {
 	background:#2a2424;
 	min-width: 1121px;
 	width:100%
-	
+
 }
 
 
@@ -492,6 +492,14 @@ h3.social{margin-top:50px}
 .liste-items {list-style:none;padding:0}
 
 .upperspace{margin-top:50px}
+
+.total_kuenstler{position:relative; display:inline-block}
+.total_kuenstler .label{text-decoration:underline; cursor: pointer}
+.total_kuenstler .kuenstler_detail{position:absolute;background-color:#fff; padding:0.5em; box-shadow: 2px 2px 2px 1px black;top:-1em}
+.total_kuenstler .kuenstler_detail{display:none}
+.total_kuenstler:hover {display:block;margin-top:-1.4em}
+.total_kuenstler:hover .kuenstler_detail{display:block;}
+.total_kuenstler:hover .label{display:none}
 /*.rubrique_kuenstler #details{position:fixed;left:68%;width:inherit;max-width:29%}*/
 
 /*div {border:1px solid #f00}*/
