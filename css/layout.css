@@ -503,7 +503,8 @@ h3.social{margin-top:50px}
 
 .login .explication {
   background-color:#9716b3;
-  color:#fff
+  color:#fff;
+  padding:0.5em
   }
 .login .explication a{color:#fff}
 /*.rubrique_kuenstler #details{position:fixed;left:68%;width:inherit;max-width:29%}*/
