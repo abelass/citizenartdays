@@ -500,6 +500,8 @@ h3.social{margin-top:50px}
 .total_kuenstler:hover {display:block;margin-top:-1.4em}
 .total_kuenstler:hover .kuenstler_detail{display:block;}
 .total_kuenstler:hover .label{display:none}
+
+.login .explication {background-color:#9716b3}
 /*.rubrique_kuenstler #details{position:fixed;left:68%;width:inherit;max-width:29%}*/
 
 /*div {border:1px solid #f00}*/
