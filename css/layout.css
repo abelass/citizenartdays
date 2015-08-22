@@ -557,6 +557,8 @@ div#wrapperHome .scrollable p {
   line-height: 1.1em;
   margin:0 0 0.3em;
 }
+
+.scrollable h3 {padding-left:0}
 /*.rubrique_kuenstler #details{position:fixed;left:68%;width:inherit;max-width:29%}*/
 
 /*div {border:1px solid #f00}*/
