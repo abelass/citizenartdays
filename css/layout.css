@@ -547,7 +547,8 @@ h3.social {
 .login .explication {
   background-color: #9716b3;
   color: #fff;
-  padding: 0.5em
+  padding: 0.5em;
+  display: block;
 }
 .login .explication a {
   color: #fff
