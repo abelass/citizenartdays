@@ -1,11 +1,7 @@
 [<a href="[(#URL|sinon{#ID_OBJET|generer_url_entite{#OBJET}})]">(#ENV{logo_objet}|image_passe_partout{241,241}|image_recadre{241,241}|sinon{#ENV{logo_objet}|image_passe_partout{241,241}|image_recadre{241,241}|inserer_attribut{class,spip_logos}})</a>]
 <h3>#TITRE</h3>
- <B_auteur>
-    <b>
-     <BOUCLE_auteur(AUTEURS auteurs_liens){objet}{id_objet}{', '}>
-      #NOM
-     </BOUCLE_auteur>
- </b><br>
- </B_auteur>
+[(#OBJET|=={article}|oui)
+  [<b>(#INCLURE{fond=inclure/kuenstler,id_article=#ID_OBJET}) </b><br>]
+]
     [(#DESCRIPTIF**|sinon{#BIO**})]<br><br>
     <a href="[(#URL|sinon{#ID_OBJET|generer_url_entite{#OBJET}})]"><:citizenartdays:mehr_ueber:> &bdquo;[(#TITRE|couper{30})]&rdquo;</a>
