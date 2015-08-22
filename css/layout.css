@@ -553,8 +553,9 @@ h3.social {
   color: #fff
 }
 
-.scrollable p {
-
+div#wrapperHome .scrollable p {
+  line-height: 1.1em;
+  margin:0 0 0.3em;
 }
 /*.rubrique_kuenstler #details{position:fixed;left:68%;width:inherit;max-width:29%}*/
 

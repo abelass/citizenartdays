@@ -3,5 +3,5 @@
 [(#OBJET|=={article}|oui)
   [<b>(#INCLURE{fond=inclure/kuenstler,id_article=#ID_OBJET}) </b><br>]
 ]
-    [(#DESCRIPTIF**|sinon{#BIO**})]<br><br>
+    [(#DESCRIPTIF|sinon{#BIO})]
     <a href="[(#URL|sinon{#ID_OBJET|generer_url_entite{#OBJET}})]"><:citizenartdays:mehr_ueber:> &bdquo;[(#TITRE|couper{30})]&rdquo;</a>
