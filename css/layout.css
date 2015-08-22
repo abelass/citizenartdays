@@ -54,7 +54,7 @@ a, a:link, a:visited {
   color: #000;
 }
 a:focus, a:active, a:hover {
-  color: #9716b3;
+  color: #ce0a53;
 }
 
 .gray {
@@ -66,7 +66,7 @@ a:focus, a:active, a:hover {
 }
 
 .texteencadre-spip {
-  background-color: #e3acef;
+  background-color: #fd6ca3;
   border: none;
   color: #000000;
   padding: 0;
@@ -75,7 +75,7 @@ a:focus, a:active, a:hover {
 }
 
 .lila {
-  color: #9716b3;
+  color: #ce0a53;
 }
 
 .zitat {
@@ -221,7 +221,7 @@ div#breadcrumb a, div#breadcrumb a:link, div#breadcrumb a:visited {
 
 div#breadcrumb a:focus, div#breadcrumb a:active, div#breadcrumb a:hover {
   text-decoration: none;
-  color: #9716b3;
+  color: #ce0a53;
 }
 
 div#content p {
@@ -275,7 +275,7 @@ div.top a, div.top a:link, div.top a:visited {
 
 div.top a:focus, div.top a:active, div.top a:hover {
   text-decoration: none;
-  color: #9716b3;
+  color: #ce0a53;
 }
 
 /* ------------------------ BEGIN   PARALLELE WELTEN INFO + FOOTER ------------------------*/
@@ -545,7 +545,7 @@ h3.social {
 }
 
 .login .explication {
-  background-color: #9716b3;
+  background-color: #ce0a53;
   color: #fff;
   padding: 0.5em;
   display: block;
