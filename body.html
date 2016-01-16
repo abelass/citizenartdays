@@ -12,13 +12,13 @@
 			</div>]
 
 			<div class="row">
-				<div class="content span8 " id="content">
-					<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
+				<div class="content [(#COMPOSITION|=={home}|?{span12,span9}) " id="content">
 					<INCLURE{fond=content/#ENV{type-page},env} />
 				</div>
 				<div class="aside secondary col span3 offset1" id="aside">
-					<INCLURE{fond=aside/#ENV{type-page},env} />
-					<INCLURE{fond=extra/#ENV{type-page},env} />
+					[(#COMPOSITION|=={home}|non)
+						<INCLURE{fond=aside/#ENV{type-page},env} />
+					]
 				</div>
 			</div>
 

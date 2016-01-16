@@ -16,7 +16,7 @@ a.browse {
 }
 
 /* right */
-a.right 				{ background-position: 0 0; clear:right; margin-right: -30px;}
+a.right 				{ background-position: 0 0; clear:right; margin-right: 0;}
 
 
 /* left */
@@ -26,5 +26,8 @@ a.left				{  background-position: -30px 0; margin-left: 0px; }
 /* disabled navigational button */
 a.disabled {
 	visibility:hidden !important;		
-} 	
+}
 
+a.browse:hover,a.browse:focus,a.browse:active{
+		background:url(../img/slider/arrow-mid.png) no-repeat;
+}
