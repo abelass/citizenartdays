@@ -21,30 +21,27 @@
 [(#REM) Lien vers le flux RSS du site ]
 [<link rel="alternate" type="application/rss+xml" title="<:syndiquer_site:>" href="(#URL_PAGE{backend})" />]
 
-
-[<link rel="stylesheet" href="(#CSS{css/reset.css})" type="text/css" />]
-[<link rel="stylesheet" href="(#CSS{css/typo.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/font.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/bootstrap.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/responsive.css})" type="text/css" />]
 [<link rel="stylesheet" href="(#CSS{css/box.css})" type="text/css" />]
 [<link rel="stylesheet" href="(#CSS{css/box_skins.css})" type="text/css" />]
-[<link rel="stylesheet" href="(#CSS{css/form.css})" type="text/css" />]
-
-[(#REM) Balise permettant aux plugins d'inserer des fichiers CSS ]
-#INSERT_HEAD_CSS
 
 [<link rel="stylesheet" href="(#CSS{css/spip.css})" type="text/css" />]
-[<link rel="stylesheet" href="(#CSS{css/spip.form.css})" type="text/css" />]
 [<link rel="stylesheet" href="(#CSS{css/spip.comment.css})" type="text/css" />]
 [<link rel="stylesheet" href="(#CSS{css/spip.list.css})" type="text/css" />]
 [<link rel="stylesheet" href="(#CSS{css/spip.petition.css})" type="text/css" />]
 [<link rel="stylesheet" href="(#CSS{css/spip.pagination.css})" type="text/css" />]
+[(#REM)
 [<link rel="stylesheet" href="(#CSS{css/spip.portfolio.css})" type="text/css" />]
-[<link rel="stylesheet" href="(#CSS{css/base.css})" type="text/css" />]
-[<link rel="stylesheet" href="(#CSS{css/grid.css})" type="text/css" />]
-[<link rel="stylesheet" href="(#CSS{css/button.css})" type="text/css" />]
-[<link rel="stylesheet" href="(#CSS{css/layout.css})" type="text/css" />]
+]
+[(#REM) Balise permettant aux plugins d'inserer des fichiers CSS ]
+#INSERT_HEAD_CSS
+
+[<link rel="stylesheet" href="(#CSS{css/spipr_dist.css})" type="text/css" />]
 
 
-[(#REM) Feuille de style du theme ]
+[(#REM) Feuille de style du theme]
 [<link rel="stylesheet" href="(#CSS{css/theme.css})" type="text/css" />]
 
 [(#REM) Feuille de style CSS pour l'impression, n'existe pas par defaut ]
@@ -65,6 +62,11 @@
 	si l'option est cochee dans Configuration
 ]
 #INSERT_HEAD
+[<script type="text/javascript" src="(#CHEMIN{js/bootstrap-collapse.js})"></script>]
+<!--[if lt IE 9]>
+[<script src="(#CHEMIN{js/html5.js})"></script>]
+[<script src="(#CHEMIN{js/respond.min.js})"></script>]
+<![endif]-->
 
 
  <link rel="stylesheet" href="#CHEMIN{css/scrollable-horizontal.css}" type="text/css" media="screen" />
