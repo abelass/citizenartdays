@@ -1,21 +1,30 @@
+<body class="page_#ENV{type-page,page}[ #ENV{type-page,page}_(#ENV{composition,''})]">
 <INCLURE{fond=inclure/top_menu,lang}/>
-[(#COMPOSITION|=={home}|oui)
-<div id="fb-root"></div>]
-<center>
-<div id="container">
-	<div id="header">
-		<INCLURE{fond=inclure/entete,env}>
-	</div>
+	[(#COMPOSITION|=={home}|oui)
+	<div id="fb-root"></div>]
+	<div class="page">
+		<div class="container">
+			<div class="header" id="header">
+				<INCLURE{fond=header/#ENV{type-page},env} />
+			</div>
+			[<div class="navbar navbar-inverse navbar-responsive" id="nav">
+				(#INCLURE{fond=inclure/nav,env}|navbar_responsive)
+			</div>]
 
-	<INCLURE{fond=contenu/#ENV{type},env}>
-	
-	[(#COMPOSITION|=={home}|non)
-	<div id="details">
-        <INCLURE{fond=extra/#ENV{type},env}>
-    </div>]
-    <div class="end"></div>
-</div>
-</center>
-<div id="footer">
-	<INCLURE{fond=inclure/pied,env}>
-</div>
+			<div class="row">
+				<div class="content span8 " id="content">
+					<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
+					<INCLURE{fond=content/#ENV{type-page},env} />
+				</div>
+				<div class="aside secondary col span3 offset1" id="aside">
+					<INCLURE{fond=aside/#ENV{type-page},env} />
+					<INCLURE{fond=extra/#ENV{type-page},env} />
+				</div>
+			</div>
+
+			<div class="footer" id="footer">
+				<INCLURE{fond=footer/#ENV{type-page},env} />
+			</div>
+		</div>
+	</div>
+</body>

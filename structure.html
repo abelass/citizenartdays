@@ -21,18 +21,32 @@
      #SET{id_rub_prog_head,#GET{id_rub_prog_head}|push{#ID_RUBRIQUE}}
    </BOUCLE_trad_archive>
 </BOUCLE_archive>
-[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG" dir="#LANG_DIR">
-<head>
-<INCLURE{fond=head/#ENV{type},env}>
 
-<INCLURE{fond=inclure/head,id_rub_prog=#GET{id_rub_prog_head},id_rubrique}>
-</head>
-<body class="page_#ENV{type,page}[ #ENV{type,page}_(#ENV{composition,''})]">
-<INCLURE{fond=body,id_rub_prog=#GET{id_rub_prog_body},composition=#ENV{composition,#GET{composition}},env}>
-#SPIP_CRON
-</body>
+[(#VAL{_Z_DOCTYPE}|defined|?{#VAL{_Z_DOCTYPE}|constant}|sinon{<!DOCTYPE HTML>})][
+(#SET{class,[page_(#ENV{type-page,page})[ #ENV{type-page,page}_(#ENV{composition,''})]][ composition_(#ENV{composition})]})][
+(#REM) http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/]
+<!--[if lt IE 7 ]> <html class="[(#GET{class})][ (#LANG_DIR)][ (#LANG)] no-js ie ie6 lte9 lte8 lte7" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG" dir="#LANG_DIR"> <![endif]-->
+<!--[if IE 7 ]>    <html class="[(#GET{class})][ (#LANG_DIR)][ (#LANG)] no-js ie ie7 lte9 lte8 lte7" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG" dir="#LANG_DIR"> <![endif]-->
+<!--[if IE 8 ]>    <html class="[(#GET{class})][ (#LANG_DIR)][ (#LANG)] no-js ie ie8 lte9 lte8" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG" dir="#LANG_DIR"> <![endif]-->
+<!--[if IE 9 ]>    <html class="[(#GET{class})][ (#LANG_DIR)][ (#LANG)] no-js ie ie9 lte9" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG" dir="#LANG_DIR"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="[(#GET{class})][ (#LANG_DIR)][ (#LANG)] no-js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG" dir="#LANG_DIR">
+<!--<![endif]-->
+	<head>
+		<script type='text/javascript'>/*<![CDATA[*/(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);/*]]>*/</script>
+		[(#REM) Preciser le charset avant tout]
+		<meta http-equiv="Content-Type" content="text/html; charset=#CHARSET" />
+
+		[(#REM) Debut du head particulier a chaque page
+		pour inserer un title, des css particulieres(mais surchargees), ou des js *inline*
+		]<INCLURE{fond=head/#ENV{type-page},env}>[
+
+		(#REM) Partie commune a toutes les pages, sans env
+		]<INCLURE{fond=inclure/head}>[
+
+		(#REM) Fin du head particulier a chaque page, pour inserer des js specifiques par exemple
+		pour inserer des js *externes*
+		]<INCLURE{fond=head_js/#ENV{type-page},id_rub_prog=#GET{id_rub_prog_head},id_rubrique,env}>
+	</head>
+	<INCLURE{fond=body,id_rub_prog=#GET{id_rub_prog_body},env}>
 </html>
-(#EVAL{#VAL{var_zajax}|_request}|non)][
-<INCLURE{fond=#VAL{var_zajax}|_request|concat{'/',#ENV{type}},env}>
-(#EVAL{#VAL{var_zajax}|_request}|oui)]
