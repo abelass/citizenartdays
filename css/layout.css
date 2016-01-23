@@ -58,6 +58,8 @@ a:focus, a:active, a:hover {
 	background: none;
 }
 
+.fix{margin-left:-27px}
+
 .gray {
 	color: #555;
 }
@@ -317,6 +319,7 @@ div.extra.lila {
 }
 
 div#footer {
+	border-top:none;
 	clear: both;
 	color: #fff;
 	text-align: left;
@@ -328,7 +331,8 @@ div#footer {
 
 div#footer .wrapper {
 	margin: 0 auto;
-	overflow: hidden
+	overflow: hidden;
+	width:940px;
 }
 
 div#footer p {
@@ -570,9 +574,14 @@ div#wrapperHome .scrollable p {
 
 
 @media (min-width: 1200px) {
-	.scrollable {
+	.fix{margin-left:0}
+	.scrollable{
 		width: 1110px;
 	}
+	div#footer .wrapper {
+		width: 1170px;
+	}
+	
 	
 	.scrollable li {
 		width: 250.3px;
