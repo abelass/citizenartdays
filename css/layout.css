@@ -327,7 +327,6 @@ div#footer {
 }
 
 div#footer .wrapper {
-	width: 1121px;
 	margin: 0 auto;
 	overflow: hidden
 }
@@ -568,3 +567,27 @@ div#wrapperHome .scrollable p {
 /*.rubrique_kuenstler #details{position:fixed;left:68%;width:inherit;max-width:29%}*/
 
 /*div {border:1px solid #f00}*/
+
+
+@media (min-width: 1200px) {
+	.scrollable {
+		width: 1110px;
+	}
+	
+	.scrollable li {
+		width: 250.3px;
+		margin:20px 20px 20px 0px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+		#header, #nav .menuder,.footer_container{
+		width:@gridRowWidth768;
+	}
+}
+
+@media (max-width: 767px) {
+	.navbar-inverse .navbar-inner {
+		background:transparent;;
+	}
+}
