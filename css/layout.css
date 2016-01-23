@@ -58,7 +58,7 @@ a:focus, a:active, a:hover {
 	background: none;
 }
 
-.fix{margin-left:-27px}
+.fix{margin-left:0}
 
 .gray {
 	color: #555;
@@ -93,7 +93,7 @@ a:focus, a:active, a:hover {
 	margin-top: 50px
 }
 blockquote.spip {
-	margin: 20px 80px 10px 150px;
+	margin: 20px 10px 10px 10px;
 	background-color: transparent;
 	border: none;
 	font-family: arial, sans-serif;
@@ -119,14 +119,15 @@ ul#navigation {
 	font: 130% courier;
 	margin: 0;
 	padding: 0 0 25px 0;
-	/*letter-spacing:0.02em;
-	 font-weight:lighter;*/
+}
+
+ul#navigation > li {
+	padding: 0 2px 0 18px;
 }
 
 ul#navigation li, #header .menu-liste li {
 	list-style: none;
 	float: right;
-	padding: 0 2px 0 20px;
 }
 
 ul#navigation a, ul#navigation a:link, ul#navigation a:visited {
@@ -159,6 +160,13 @@ ul#navigation li.on a:hover {
 	width: auto
 }
 
+.menuder ul {
+	text-align:right;
+}
+.menuder li li {
+	width: 10em;
+
+}
 .menuder a {
 	padding: 0
 }
@@ -191,10 +199,12 @@ ul#language a:focus, ul#language a:active, ul#language a:hover {
 ul#language li.on a, ul#language li.on a:link, ul#language li.on a:visited, ul#language li.on a:focus, ul#language li.on a:active, ul#language li.on a:hover {
 	text-decoration: none;
 	background-color: #fff;
-	/*display:block;*/
 	color: #000;
 }
 
+ #header .menu-liste li li {
+    float: left;
+}
 /* ------------------------ BEGIN   CONTENT HOMEPAGE ------------------------*/
 
 div#wrapperHome {
@@ -325,8 +335,6 @@ div#footer {
 	text-align: left;
 	padding: 20px 0;
 	background: #2a2424;
-	min-width: 1121px;
-	width: 100%
 }
 
 div#footer .wrapper {
@@ -341,13 +349,13 @@ div#footer p {
 }
 
 div#footer .wrapper .menu {
-	widtH: 110%;
+	width: 110%;
 	overflow: hidden
 }
 
 div#footer .wrapper .menu div {
 	float: left;
-	width: 20%;
+	width: 206px;
 }
 
 div#footer ul {
@@ -421,7 +429,6 @@ a:active {
 #top_menu {
 	background: #ce0a53;
 	padding: 0.5em 0;
-	min-width: 1121px;
 	width: 100%;
 }
 
@@ -431,7 +438,7 @@ a:active {
 }
 
 #top_menu .wrapper {
-	width: 1121px;
+	width: 940px;
 	margin: 0 auto;
 }
 
@@ -574,29 +581,116 @@ div#wrapperHome .scrollable p {
 
 
 @media (min-width: 1200px) {
+	
+blockquote.spip {
+	margin: 20px 80px 10px 150px;
+}
 	.fix{margin-left:0}
 	.scrollable{
 		width: 1110px;
 	}
-	div#footer .wrapper {
-		width: 1170px;
-	}
-	
-	
+
 	.scrollable li {
 		width: 250.3px;
 		margin:20px 20px 20px 0px;
 	}
+	
+	div#footer .wrapper,#top_menu .wrapper {
+		width: 1170px;
+	}
+	
+	div#footer .wrapper .menu div {
+		width: 257.4px;
+	}
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-		#header, #nav .menuder,.footer_container{
-		width:@gridRowWidth768;
+	.fix{margin-left:20px;}
+	
+	.scrollable{
+		width:692px
+	}
+
+	.scrollable li {
+		width: 157.4px;
+		margin:20px 5px 20px 0px;
+	}
+	div#footer .wrapper,#top_menu .wrapper {
+		width: 724px;
 	}
 }
 
-@media (max-width: 767px) {
-	.navbar-inverse .navbar-inner {
-		background:transparent;;
+@media (max-width: 979px) {
+	ul#navigation {
+		float: left;
 	}
+	
+	ul#language {
+		position: absolute;
+		top: 16px;
+		right: 0;
+		text-align: right;
+	}
+	
+	ul#language li {
+		padding: 0 0px 0 10px;
+	}
+
+	a.browse {
+		background:rgba(0, 0, 0, 0.8) url(../img/slider/arrow-mid_standalone.png);
+		background-position-y: 50%;
+		background-repeat:no-repeat;
+		background-color:;
+		height:261px;
+		width:15px
+		
+	}
+	
+	a.browse:hover, a.browse:focus, a.browse:active {
+		background:rgba(0, 0, 0, 0.8) url(../img/slider/arrow-mid_standalone.png);
+		background-repeat:no-repeat;
+		background-position-y: 50%;
+	}
+	
+	a.right, 
+	a.right.browse:hover, 
+	a.right.browse:focus, 
+	a.right.browse:active {background-position-x: 3px;}
+	
+	a.left, 
+	a.left.browse:hover, 
+	a.left.browse:focus, 
+	a.left.browse:active {background-position-x: -17px;}
+	
+	.scrollable{
+		height:280px
+	}
+	
+	.scrollable li{
+		height:248px
+	}
+	
+	.scrollable h3{
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	div#wrapperHome .scrollable p{
+		display:none;
+	}
+	
+}
+
+@media (max-width: 767px) {
+	.scrollable{
+		width: 667px;
+		height:280px
+	}
+	.scrollable li {
+		width: 150.1px;
+		margin:20px 5px 20px 0px;
+	}
+div#wrapperHome .scrollable p{
+	display:none;
+}
 }
