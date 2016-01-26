@@ -370,7 +370,7 @@ div#footer .wrapper .menu {
 
 div#footer .wrapper .menu div {
 	float: left;
-	width: 206px;
+	width: 20%;
 }
 
 div#footer ul {
@@ -614,9 +614,6 @@ blockquote.spip {
 		width: 1170px;
 	}
 	
-	div#footer .wrapper .menu div {
-		width: 257.4px;
-	}
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
@@ -633,6 +630,10 @@ blockquote.spip {
 	div#footer .wrapper,#top_menu .wrapper {
 		width: 724px;
 	}
+	div#footer .wrapper .menu div {
+		float: left;
+		width: 19%;
+	}
 }
 
 @media (max-width: 979px) {
@@ -640,14 +641,14 @@ blockquote.spip {
 		float: left;
 	}
 	
-	ul#language {
+	#header ul#language {
 		position: absolute;
 		top: 16px;
 		right: 0;
 		text-align: right;
 	}
 	
-	ul#language li {
+	#header ul#language li {
 		padding: 0 0px 0 10px;
 	}
 
@@ -655,7 +656,6 @@ blockquote.spip {
 		background:rgba(0, 0, 0, 0.8) url(../img/slider/arrow-mid_standalone.png);
 		background-position-y: 50%;
 		background-repeat:no-repeat;
-		background-color:;
 		height:261px;
 		width:15px
 		
@@ -694,18 +694,36 @@ blockquote.spip {
 		display:none;
 	}
 	
+	
 }
 
 @media (max-width: 767px) {
 	.scrollable{
-		width: 667px;
+		width: calc(100% - 30px);
 		height:280px
 	}
 	.scrollable li {
-		width: 150.1px;
+		width: calc((100vw - 110px) / 4);
 		margin:20px 5px 20px 0px;
 	}
-div#wrapperHome .scrollable p{
-	display:none;
-}
+	
+	.scrollable h3 {
+		hyphens:auto;
+		text-oveflow:auto;
+		white-space:normal;
+		margin: 5px 0 0;
+		padding:0;
+	}
+	
+	.scrollable b, .scrollable p, .scrollable br{display:none}
+	
+	div#footer .wrapper,#top_menu .wrapper {
+		width: 100%;
+	}
+	
+	div#footer .wrapper .menu div {
+		float: left;
+		width: 33%;
+	}
+
 }
