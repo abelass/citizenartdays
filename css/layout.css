@@ -123,6 +123,7 @@ ul#navigation {
 
 ul#navigation > li {
 	padding: 0 2px 0 18px;
+	position:relative;
 }
 
 ul#navigation li, #header .menu-liste li {
@@ -173,11 +174,12 @@ ul#navigation li.on a:hover {
 .menuder li ul {
     width: 10em;
     w\idth: 10em;
-}
+left:initial;
+right:6660px}
 
 .menuder li:hover ul, .menuder li li:hover ul, .menuder li li li:hover ul, .menuder li li li li:hover ul {
 	right: 0;
-	left: auto;
+	left: initial;
 }
 
 .menuder li ul ul {
