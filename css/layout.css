@@ -164,11 +164,24 @@ ul#navigation li.on a:hover {
 	text-align:right;
 }
 .menuder li li {
-	width: 10em;
-
+	width: 9em;
 }
 .menuder a {
 	padding: 0
+}
+
+.menuder li ul {
+    width: 10em;
+    w\idth: 10em;
+}
+
+.menuder li:hover ul, .menuder li li:hover ul, .menuder li li li:hover ul, .menuder li li li li:hover ul {
+	right: 0;
+	left: auto;
+}
+
+.menuder li ul ul {
+    margin: -1.75em 10em 0 0;
 }
 
 ul#language {
