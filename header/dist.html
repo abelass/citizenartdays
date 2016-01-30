@@ -4,7 +4,9 @@
 		<hr>
 	</header>
 
-		<INCLURE{fond=inclure/barre-nav,env}>
+	[<div class="navbar navbar-inverse navbar-responsive" id="nav">
+		(#INCLURE{fond=inclure/nav,env}|navbar_responsive)
+	</div>]
 	<div class="span3">
 		<INCLURE{fond=inclure/menu_langues,env}/>
 	</div>

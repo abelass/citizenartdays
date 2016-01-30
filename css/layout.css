@@ -101,6 +101,22 @@ blockquote.spip {
 
 /* ------------------------ BEGIN MENUE------------------------*/
 
+.navbar{float:right}
+
+.navbar-inverse .navbar-inner {
+	background-color: transparent;
+	background-image: none;
+}
+
+.navbar-inner{
+	border:none;
+	padding-right:0
+	}
+
+.navbar .nav > li > a {
+  padding: 0;
+}
+
 div#header {
 	margin: 20px 0 0 0;
 }
@@ -701,6 +717,31 @@ blockquote.spip {
 	margin-right: 0.5em;
 	}
 	
+.menuder li ul {
+    right: 0;
+    left: initial;
+    position:relative;
+}
+	
+	.menuder li li:hover ul, 
+	.menuder li li li:hover ul, 
+	.menuder li li li li:hover ul {
+	  display:none
+	}
+	ul#navigation li, #header .menu-liste li {
+		float:none;
+	}
+.navbar-responsive {
+  right: 0;
+}
+	.navbar-responsive.navbar-inverse .navbar-inner .nav-collapse {
+	    background-color: #222222;
+	    z-index: 100;
+	}
+	.menuder li ul ul{
+		display:none
+	}
+
 	.scrollable{
 		width: calc(100% - 30px);
 		height:150px
@@ -717,16 +758,17 @@ blockquote.spip {
 		font-size: 90%;
 	}
 	
-	.scrollable b, .scrollable br, .scrollable .more{
+	.scrollable b, .scrollable br, .scrollable .more, .spip_document_129 img{
 		display:none
 	}
+	
 	
 	a.browse {height: 121px;}
 	
 	div#footer .wrapper,#top_menu .wrapper {
 		width: 100%;
 	}
-	
+	blockquote.spip .spip_documents{display: block;}
 	div#footer .wrapper .menu div {
 		float: left;
 		width: 33%;
