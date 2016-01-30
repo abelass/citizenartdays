@@ -222,8 +222,8 @@ ul#language li.on a, ul#language li.on a:link, ul#language li.on a:visited, ul#l
 /* ------------------------ BEGIN   CONTENT HOMEPAGE ------------------------*/
 
 div#wrapperHome {
-	/*border:1px solid red;*/
 	clear: both;
+	position:relative;
 }
 
 div#wrapperHome p {
@@ -694,24 +694,34 @@ blockquote.spip {
 }
 
 @media (max-width: 767px) {
+	#top_menu {float:none}
+	
+	#top_menu .menu div {
+	margin-left:0;
+	margin-right: 0.5em;
+	}
+	
 	.scrollable{
 		width: calc(100% - 30px);
-		height:280px
+		height:150px
 	}
 	.scrollable li {
 		width: calc((100vw - 110px) / 4);
 		margin:20px 5px 20px 0px;
+		height:109px;
 	}
 	
 	.scrollable h3 {
-		hyphens:auto;
-		text-oveflow:auto;
-		white-space:normal;
 		margin: 5px 0 0;
 		padding:0;
+		font-size: 90%;
 	}
 	
-	.scrollable b, .scrollable p, .scrollable br{display:none}
+	.scrollable b, .scrollable br, .scrollable .more{
+		display:none
+	}
+	
+	a.browse {height: 121px;}
 	
 	div#footer .wrapper,#top_menu .wrapper {
 		width: 100%;
