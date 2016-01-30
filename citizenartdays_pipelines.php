@@ -9,8 +9,8 @@
  * @package    SPIP\Citizenartdays\Pipelines
  */
 
-if (!defined('_ECRIRE_INC_VERSION')) return;
-	
+if (!defined('_ECRIRE_INC_VERSION'))
+	return;
 
 /*
  * Un fichier de pipelines permet de regrouper
@@ -18,10 +18,8 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  * sur des pipelines existants.
  */
 
-function citizenartdays_jquery_plugins($scripts){
-    $scripts[] = "javascript/jquery.ticker.js";
-    return $scripts;
+function citizenartdays_jquery_plugins($scripts) {
+	$scripts[] = "javascript/jquery.ticker.js";
+	return $scripts;
 }
-
-
 ?>

@@ -1,27 +1,22 @@
 <BOUCLE_contenu_rubrique(RUBRIQUES){id_rubrique}{tout}>
-[(#REM) Fil d'Ariane ]
-
-<INCLURE{fond=inclure/file_ariane,id_rubrique,titre=#TITRE,id_parent}/>
-<div id="wrapper">
-    <div id="content">
-        
-        <BOUCLE_prog(RUBRIQUES){id_trad IN #ENV{id_rub_prog}}{si #COMPOSITION|=={programme}}{lang}>
-          <div class="cartouche">
-            [(#LOGO_RUBRIQUE|image_reduire{200,200})]
-            <h1>#INFO_TITRE{rubrique,#ID_PARENT}<br/>#TITRE</h1>
-        </div>
-        [<div class="#EDIT{texte} chapo">(#TEXTE)</div>]       
-            
-        </BOUCLE_prog>
-        <div class="cartouche">
-            [(#LOGO_RUBRIQUE|image_reduire{200,200})]
-            <h1 class="h1 #EDIT{titre}">[(#TITEL)<br/>]#TITRE</h1>
-        </div>
-        [<div class="#EDIT{texte} chapo">(#TEXTE)</div>]            
-        <//B_prog>        
-    
-        <INCLURE{fond=inclure/agenda,env}/>
-        [<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]     
-    </div><!-- ende content -->
-</div><!-- ende Wrapper -->
+	<div id="content">
+	    
+	    <BOUCLE_prog(RUBRIQUES){id_trad IN #ENV{id_rub_prog}}{si #COMPOSITION|=={programme}}{lang}>
+	      <div class="cartouche">
+	        [(#LOGO_RUBRIQUE|image_reduire{200,200})]
+	        <h1>#INFO_TITRE{rubrique,#ID_PARENT}<br/>#TITRE</h1>
+	    </div>
+	    [<div class="#EDIT{texte} chapo">(#TEXTE)</div>]       
+	        
+	    </BOUCLE_prog>
+	    <div class="cartouche">
+	        [(#LOGO_RUBRIQUE|image_reduire{200,200})]
+	        <h1 class="h1 #EDIT{titre}">[(#TITEL)<br/>]#TITRE</h1>
+	    </div>
+	    [<div class="#EDIT{texte} chapo">(#TEXTE)</div>]            
+	    <//B_prog>        
+	
+	    <INCLURE{fond=inclure/agenda,env}/>
+	    [<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]     
+	</div><!-- ende content -->
 </BOUCLE_contenu_rubrique>

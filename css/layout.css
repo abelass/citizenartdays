@@ -13,28 +13,28 @@ p {
 	margin: 0 12px 10px;
 }
 
-h1 {
+h1, .h1 {
 	font: 130% arial, sans-serif;
 	font-weight: bold;
 	padding: 0 0 10px 12px;
 	margin: 10px 0;
 }
 
-h2 {
+h2, .h2 {
 	font: 120% arial, sans-serif;
 	font-weight: bold;
 	padding: 0 0 10px 12px;
 	margin: 10px 0;
 }
 
-h3 {
+h3, .secondary h3, .h3 {
 	font: 110% arial, sans-serif;
 	font-weight: bold;
 	padding: 0 0 10px 12px;
 	margin: 10px 0 0 0;
 }
 
-h4 {
+h4,.secondary h4, .h4 {
 	font: 100% arial, sans-serif;
 	font-weight: bold;
 	padding: 0 0 0 12px;
@@ -240,6 +240,12 @@ ul#language li.on a, ul#language li.on a:link, ul#language li.on a:visited, ul#l
  #header .menu-liste li li {
     float: left;
 }
+
+/* -------------------------Begin Foms --------------------------------------*/
+
+.formulaire_spip .boutons {
+  margin: 0;
+}
 /* ------------------------ BEGIN   CONTENT HOMEPAGE ------------------------*/
 
 div#wrapperHome {
@@ -278,14 +284,11 @@ div#content p {
 	line-height: 1.4;
 }
 
-div#details {
-
-	float: right;
-	width: 29.9%;
+div.aside{
 	line-height: 1.4;
 }
 
-div#details div.item {
+div.aside div.item {
 	margin: 0 0 20px 0;
 	padding: 5px 0;
 	background: #fff;
@@ -293,17 +296,16 @@ div#details div.item {
 	behavior: url(/PIE.htc);
 }
 
-div#details ul.auflistung, ul.spip {
+div.aside ul.auflistung, ul.spip {
 	margin: 0 10px 10px 30px;
 	padding: 0;
 }
 
-div#details ul.auflistung li, ul.spip li {
+div.aside ul.auflistung li, ul.spip li {
 	list-style: circle;
 }
 
-div#wrapper {
-	float: left;
+div#content {
 	background: #fff;
 	border-radius: 4px;
 	behavior: url(/PIE.htc);
@@ -502,7 +504,9 @@ ul#ticker {
 	float: left
 }
 
-.spip_logos {
+.spip_logos,
+.entry-title .spip_logos,
+.cartouche .spip_logos {
 	float: right;
 	margin: 0 12px;
 	position: relative;

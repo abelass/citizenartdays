@@ -3,23 +3,20 @@
 #SET{id_rubrique,#ID_RUBRIQUE}
 
 <BOUCLE_source(RUBRIQUES){id_trad=26}>
-   #SET{titel,#TITRE}    
-  <BOUCLE_enfants(RUBRIQUES){id_parent}{si #ID_RUBRIQUE|=={#ENV{id_rubrique}}}>
-  #SET{id_rub_prog,#ARRAY}
-  #SET{id_rub,#GET{id_rub}|push{#ID_RUBRIQUE}}  
-  </BOUCLE_enfants>
+	#SET{titel,#TITRE}
+	<BOUCLE_enfants(RUBRIQUES){id_parent}{si #ID_RUBRIQUE|=={#ENV{id_rubrique}}}>
+		#SET{id_rub_prog,#ARRAY}
+		#SET{id_rub,#GET{id_rub}|push{#ID_RUBRIQUE}}
+	</BOUCLE_enfants>
 </BOUCLE_source>
-<BOUCLE_ev_recent(EVENEMENTS articles){id_rubrique IN #GET{id_rub}}{0,1}{!par date}>
-    <BOUCLE_rub_actuel(RUBRIQUES){id_rubrique}>
-       
-                    
-         <BOUCLE_trad(RUBRIQUES){id_rubrique}{traduction}>
-            [(#ENV{lang}|=={#LANG}|oui)
-            #SET{id_rubrique,#ID_RUBRIQUE}
-            ]
-             #SET{id_rub_prog,#GET{id_rub_prog}|push{#ID_RUBRIQUE}}
-           </BOUCLE_trad>
-    </BOUCLE_rub_actuel>
-</BOUCLE_ev_recent>
-
-<INCLURE{fond=contenu/rubrique-programme,id_rubrique=#GET{id_rubrique},id_rub_prog=#GET{id_rub_prog},titel=#GET{titel},env}/>
+		<BOUCLE_ev_recent(EVENEMENTS articles){id_rubrique IN #GET{id_rub}}{0,1}{!par date}>
+			<BOUCLE_rub_actuel(RUBRIQUES){id_rubrique}>
+				<BOUCLE_trad(RUBRIQUES){id_rubrique}{traduction}>
+					[(#ENV{lang}|=={#LANG}|oui)
+					#SET{id_rubrique,#ID_RUBRIQUE}
+					]
+					#SET{id_rub_prog,#GET{id_rub_prog}|push{#ID_RUBRIQUE}}
+				</BOUCLE_trad>
+			</BOUCLE_rub_actuel>
+		</BOUCLE_ev_recent>
+		<INCLURE{fond=content/rubrique-programme,id_rubrique=#GET{id_rubrique},id_rub_prog=#GET{id_rub_prog},titel=#GET{titel},env}/>
