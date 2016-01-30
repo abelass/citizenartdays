@@ -7,7 +7,6 @@ html, body {
 
 body {
 	font: 90% arial, sans-serif;
-	/*border:1px solid #ff0;*/
 }
 
 p {
@@ -654,7 +653,7 @@ blockquote.spip {
 
 	a.browse {
 		background:rgba(0, 0, 0, 0.8) url(../img/slider/arrow-mid_standalone.png);
-		background-position-y: 50%;
+		background-position: 3px 50%;
 		background-repeat:no-repeat;
 		height:261px;
 		width:15px
@@ -664,18 +663,14 @@ blockquote.spip {
 	a.browse:hover, a.browse:focus, a.browse:active {
 		background:rgba(0, 0, 0, 0.8) url(../img/slider/arrow-mid_standalone.png);
 		background-repeat:no-repeat;
-		background-position-y: 50%;
+		background-position: 3px 50%;
 	}
 	
-	a.right, 
-	a.right.browse:hover, 
-	a.right.browse:focus, 
-	a.right.browse:active {background-position-x: 3px;}
-	
+
 	a.left, 
 	a.left.browse:hover, 
 	a.left.browse:focus, 
-	a.left.browse:active {background-position-x: -17px;}
+	a.left.browse:active {background-position:-17px 50%;}
 	
 	.scrollable{
 		height:280px
