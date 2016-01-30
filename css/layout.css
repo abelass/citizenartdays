@@ -110,7 +110,8 @@ blockquote.spip {
 
 .navbar-inner{
 	border:none;
-	padding-right:0
+	padding-right:0;
+	box-shadow:none;
 	}
 
 .navbar .nav > li > a {
