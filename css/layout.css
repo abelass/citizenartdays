@@ -170,6 +170,10 @@ ul#navigation li.on a:hover {
 	color: #fff;
 }
 
+.menuder li:hover, .menuder li.hover {
+    background-color: inherit;
+}
+
 .menuder, .menuder ul {
 	background: none;
 	border: none;
@@ -299,7 +303,6 @@ div#details ul.auflistung li, ul.spip li {
 
 div#wrapper {
 	float: left;
-	width: 68%;
 	background: #fff;
 	border-radius: 4px;
 	behavior: url(/PIE.htc);
