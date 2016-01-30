@@ -642,7 +642,7 @@ blockquote.spip {
 	
 	#header ul#language {
 		position: absolute;
-		top: 16px;
+		top: -20px;
 		right: 0;
 		text-align: right;
 	}
@@ -666,7 +666,6 @@ blockquote.spip {
 		background-position: 3px 50%;
 	}
 	
-
 	a.left, 
 	a.left.browse:hover, 
 	a.left.browse:focus, 
@@ -688,7 +687,9 @@ blockquote.spip {
 	div#wrapperHome .scrollable p{
 		display:none;
 	}
-	
+	#ticker{
+		display:none;
+	}
 	
 }
 
