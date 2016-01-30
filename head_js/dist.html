@@ -4,17 +4,17 @@ Ce bloc permet l'insertion de JS specifiques a une page
 ]
 
 <script type="text/javascript">
-		<BOUCLE_rub(RUBRIQUES){id_rubrique}{tout}>
+<BOUCLE_rub(RUBRIQUES){id_rubrique}{tout}>
 	<BOUCLE_rub_agenda_or(DOCUMENTS){id_rubrique}{tout}{background_image=on}{0,1}{par date}>
-	$.backstretch("#FICHIER");
+		$.backstretch("#FICHIER");
 	</BOUCLE_rub_agenda_or>
-	<BOUCLE_trad(RUBRIQUES){id_rubrique IN #ENV{id_rub_prog}}{origine_traduction}>
-	<BOUCLE_rub_agenda(DOCUMENTS){id_rubrique}{tout}{background_image=on}{0,1}{par date}>
-	$.backstretch("#FICHIER");
-	</BOUCLE_rub_agenda>
-	</BOUCLE_trad>
+		<BOUCLE_trad(RUBRIQUES){id_rubrique IN #ENV{id_rub_prog}}{origine_traduction}>
+			<BOUCLE_rub_agenda(DOCUMENTS){id_rubrique}{tout}{background_image=on}{0,1}{par date}>
+			$.backstretch("#FICHIER");
+			</BOUCLE_rub_agenda>
+		</BOUCLE_trad>
 	<//B_rub_agenda_or>
-	</BOUCLE_rub></script>
+</BOUCLE_rub></script>
 
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
