@@ -130,17 +130,22 @@ hr {
 	background: #666;
 }
 
+.nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a {
+	background-color:#000000;
+}
+
 ul#navigation {
 	float: right;
 	font: 130% courier;
 	margin: 0;
-	padding: 0 0 25px 0;
+	padding: 0;
 }
 
 ul#navigation > li {
 	padding: 0 2px 0 18px;
 	position:relative;
 }
+
 
 ul#navigation li, #header .menu-liste li {
 	list-style: none;
@@ -159,7 +164,12 @@ ul#navigation a:focus, ul#navigation a:active, ul#navigation a:hover {
 	color: #000;
 }
 
-ul#navigation li.on a, ul#navigation li.on a:link, ul#navigation li.on a:visited, ul#navigation li.on a:focus, ul#navigation li.on a:active, ul#navigation li.on a:hover {
+ul#navigation li.on > a,
+ul#navigation li.on > a:link,
+ul#navigation li.on > a:visited,
+ul#navigation li.on > a:focus,
+ul#navigation li.on > a:active,
+ul#navigation li.on > a:hover {
 	text-decoration: none;
 	display: block;
 	background-color: #fff;
@@ -170,6 +180,11 @@ ul#navigation li.on a:hover {
 	background-color: #000000;
 	color: #fff;
 }
+
+.nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a {
+	border-radius:0;
+}
+
 
 .menuder li:hover, .menuder li.hover {
     background-color: inherit;
@@ -192,10 +207,12 @@ ul#navigation li.on a:hover {
 }
 
 .menuder li ul {
-    width: 10em;
-    w\idth: 10em;
-left:initial;
-right:6660px}
+	width: 10em;
+	w\idth: 10em;
+	left:initial;
+	right:6660px;
+	z-index:150
+}
 
 .menuder li:hover ul, .menuder li li:hover ul, .menuder li li li:hover ul, .menuder li li li li:hover ul {
 	right: 0;
@@ -746,6 +763,10 @@ blockquote.spip {
 		right: 0;
 	}
 	
+	.collapse ul#navigation > li {
+		padding: 0 2px;
+	}
+	
 	.navbar-responsive.navbar-inverse .navbar-inner .nav-collapse {
 		background-color: #222222;
 		z-index: 150;
@@ -754,14 +775,18 @@ blockquote.spip {
 		display:none
 	}
 
+	#responsive-menu-button{
+		left: 5px;
+	}
+
 	.scrollable{
 		width: calc(100% - 30px);
-		height:150px
+		height: 256px;
 	}
 	.scrollable li {
 		width: calc((100vw - 110px) / 4);
 		margin:20px 5px 20px 0px;
-		height:109px;
+		height:224px;
 	}
 	
 	.scrollable h3 {
@@ -770,11 +795,11 @@ blockquote.spip {
 		font-size: 90%;
 	}
 	
-	.scrollable b, .scrollable br, .scrollable .more, .spip_document_129 img{
+	.scrollable b, .scrollable br, .spip_document_129 img{
 		display:none
 	}
 	
-	a.browse {height: 121px;}
+	a.browse {height: 235px;}
 	
 	div#footer .wrapper,#top_menu .wrapper {
 		width: 100%;
@@ -784,4 +809,22 @@ blockquote.spip {
 		float: left;
 		width: 33%;
 	}
+}
+
+@media (max-width: 580px) {
+	.scrollable{
+		height: 167px;
+		margin-bottom:0;
+	}
+	.scrollable li {
+		height:135px;
+	}
+	
+	a.browse {height: 148px;}
+	
+	.scrollable .more{display:none}
+}
+
+@media (max-width: 400px) {
+	#wrapperHome{display:none}
 }
