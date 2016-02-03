@@ -22,6 +22,8 @@
 	<necessite nom="reservation_evenement" compatibilite="[1.21.8;]" />
 	<necessite nom="reservation_communication" compatibilite="[1.0.1;]" />
 	<necessite nom="typoenluminee" compatibilite="[3.5.4;]" />
+	<necessite nom="sidr" compatibilite="[ 1.2.4;[" />
+
 	<utilise nom="zcore" compatibilite="[2.4.5;]" />
 
 	<pipeline nom="jquery_plugins" inclure="citizenartdays_pipelines.php" />

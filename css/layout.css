@@ -715,34 +715,40 @@ blockquote.spip {
 	
 }
 
+
 @media (max-width: 767px) {
+	header.accueil {
+		text-align:center;
+	}
+	
 	#top_menu {float:none}
 	
 	#top_menu .menu div {
-	margin-left:0;
-	margin-right: 0.5em;
+		margin-left:0;
+		margin-right: 0.5em;
 	}
 	
-.menuder li ul {
-    right: 0;
-    left: initial;
-    position:relative;
-}
+	.menuder li ul {
+		right: 0;
+		left: initial;
+		position:relative;
+	}
 	
 	.menuder li li:hover ul, 
 	.menuder li li li:hover ul, 
 	.menuder li li li li:hover ul {
-	  display:none
+		display:none
 	}
 	ul#navigation li, #header .menu-liste li {
 		float:none;
 	}
-.navbar-responsive {
-  right: 0;
-}
+	.navbar-responsive {
+		right: 0;
+	}
+	
 	.navbar-responsive.navbar-inverse .navbar-inner .nav-collapse {
-	    background-color: #222222;
-	    z-index: 100;
+		background-color: #222222;
+		z-index: 100;
 	}
 	.menuder li ul ul{
 		display:none
@@ -768,7 +774,6 @@ blockquote.spip {
 		display:none
 	}
 	
-	
 	a.browse {height: 121px;}
 	
 	div#footer .wrapper,#top_menu .wrapper {
@@ -779,5 +784,4 @@ blockquote.spip {
 		float: left;
 		width: 33%;
 	}
-
 }
