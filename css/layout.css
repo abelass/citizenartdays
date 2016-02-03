@@ -20,7 +20,7 @@ h1, .h1 {
 	margin: 10px 0;
 }
 
-h2, .h2 {
+h2, .h2, h2.spip {
 	font: 120% arial, sans-serif;
 	font-weight: bold;
 	padding: 0 0 10px 12px;
@@ -748,7 +748,7 @@ blockquote.spip {
 	
 	.navbar-responsive.navbar-inverse .navbar-inner .nav-collapse {
 		background-color: #222222;
-		z-index: 100;
+		z-index: 150;
 	}
 	.menuder li ul ul{
 		display:none
