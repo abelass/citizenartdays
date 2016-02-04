@@ -765,7 +765,7 @@ blockquote.spip {
 	
 	.navbar-responsive {
 		right: 0;
-		top:-25px
+		top:-20px
 	}
 	
 	.collapse ul#navigation > li {
@@ -782,12 +782,13 @@ blockquote.spip {
 	
 	#header ul#language {
 		right:33%;
-		font-size:90%
+		font-size:90%;
+		top:-9px
 	}
 
 	#responsive-menu-button{
 		left: 5px;
-		top:-25px;
+		top:-20px;
 	}
 
 	#responsive-menu-button span{
