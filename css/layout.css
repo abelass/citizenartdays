@@ -20,7 +20,7 @@ h1, .h1 {
 	margin: 10px 0;
 }
 
-h2, .h2, h2.spip {
+h2, .h2, h2.spip, .secondary h2 {
 	font: 120% arial, sans-serif;
 	font-weight: bold;
 	padding: 0 0 10px 12px;
