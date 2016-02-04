@@ -735,7 +735,8 @@ blockquote.spip {
 @media (max-width: 767px) {
 	header.accueil {
 		text-align:center;
-		margin-bottom:1em;
+		margin: 1em 0;
+		
 	}
 	
 	header hr {display:none}
