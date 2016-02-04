@@ -654,26 +654,6 @@ blockquote.spip {
 	
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
-	.fix{margin-left:20px;}
-	
-	.scrollable{
-		width:692px
-	}
-
-	.scrollable li {
-		width: 157.4px;
-		margin:20px 5px 20px 0px;
-	}
-	div#footer .wrapper,#top_menu .wrapper {
-		width: 724px;
-	}
-	div#footer .wrapper .menu div {
-		float: left;
-		width: 19%;
-	}
-}
-
 @media (max-width: 979px) {
 	ul#navigation {
 		float: left;
@@ -732,6 +712,25 @@ blockquote.spip {
 	
 }
 
+@media (min-width: 768px) and (max-width: 979px) {
+	.fix{margin-left:20px;}
+	
+	.scrollable{
+		width:692px
+	}
+
+	.scrollable li {
+		width: 157.4px;
+		margin:20px 5px 20px 0px;
+	}
+	div#footer .wrapper,#top_menu .wrapper {
+		width: 724px;
+	}
+	div#footer .wrapper .menu div {
+		float: left;
+		width: 19%;
+	}
+}
 
 @media (max-width: 767px) {
 	header.accueil {
@@ -741,7 +740,7 @@ blockquote.spip {
 	
 	header hr {display:none}
 	
-	#top_menu {float:none}
+	#top_menu .menu {float:none}
 	
 	#top_menu .menu div {
 		margin-left:0;
