@@ -1,10 +1,9 @@
 [(#REM)
 	Head standard de toutes les pages ; les elements specifiques
-	(title, description) figurent dans le squelette article.html
+	(title, description) figurent dans les fichiers du dossier head/
 ]
 [(#REM) Preciser le charset ]
 <meta http-equiv="Content-Type" content="text/html; charset=#CHARSET" />
-
 <meta name="Author" content="Parallele Welten: Stefan Kr&uuml;skemper, Mar&iacute;a Linares, Kerstin Polzin"/>
 <meta name="Copyright" content="Parallele Welten: Stefan Kr&uuml;skemper, Mar&iacute;a Linares, Kerstin Polzin"/>
 <meta name="Publisher" content="Parallele Welten: Stefan Kr&uuml;skemper, Mar&iacute;a Linares, Kerstin Polzin"/>
@@ -18,10 +17,11 @@
 
 [(#REM) Lien vers le flux RSS du site ]
 [<link rel="alternate" type="application/rss+xml" title="<:syndiquer_site:>" href="(#URL_PAGE{backend})" />]
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 [(#REM) Lien vers le flux RSS du site ]
 [<link rel="alternate" type="application/rss+xml" title="<:syndiquer_site:>" href="(#URL_PAGE{backend})" />]
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 [<link rel="stylesheet" href="(#CSS{css/font.css})" type="text/css" />]
 [<link rel="stylesheet" href="(#CSS{css/bootstrap.css})" type="text/css" />]
@@ -76,7 +76,7 @@
 <link rel="STYLESHEET" href="#CHEMIN{javascript/socialshareprivacy/socialshareprivacy.css}" type="text/css" media="screen"/>
 <link rel="STYLESHEET" href="#CHEMIN{css/layout.css}" type="text/css" media="screen"/>
 
-
+<script src="#CHEMIN{javascript/jquery.tools.min.js}"></script>
 <script src="#CHEMIN{javascript/jquery.backstretch.min.js}"></script>
 <script type="text/javascript" src="#CHEMIN{javascript/jquery.socialshareprivacy.js}"></script>
 
