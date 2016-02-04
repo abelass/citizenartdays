@@ -736,7 +736,10 @@ blockquote.spip {
 @media (max-width: 767px) {
 	header.accueil {
 		text-align:center;
+		margin-bottom:1em;
 	}
+	
+	header hr {display:none}
 	
 	#top_menu {float:none}
 	
@@ -759,8 +762,10 @@ blockquote.spip {
 	ul#navigation li, #header .menu-liste li {
 		float:none;
 	}
+	
 	.navbar-responsive {
 		right: 0;
+		top:-25px
 	}
 	
 	.collapse ul#navigation > li {
@@ -774,11 +779,20 @@ blockquote.spip {
 	.menuder li ul ul{
 		display:none
 	}
+	
+	#header ul#language {
+		right:33%;
+		font-size:90%
+	}
 
 	#responsive-menu-button{
 		left: 5px;
+		top:-25px;
 	}
 
+	#responsive-menu-button span{
+		border-width: 9px;
+	}
 	.scrollable{
 		width: calc(100% - 30px);
 		height: 256px;
