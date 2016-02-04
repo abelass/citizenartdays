@@ -741,11 +741,15 @@ blockquote.spip {
 	
 	header hr {display:none}
 	
-	#top_menu .menu {float:none}
+	#top_menu .menu {float:none;text-align:center}
+	
+	#top_menu br{display:none}
 	
 	#top_menu .menu div {
 		margin-left:0;
 		margin-right: 0.5em;
+		float:none;
+		display:inline-block;
 	}
 	
 	.menuder li ul {
