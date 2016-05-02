@@ -1,6 +1,6 @@
 <B_auteur>[ (#TOTAL_BOUCLE|>{5}|oui)#SET{fermeture_tag,</span></span>}<span class="total_kuenstler"><span class="label">#TOTAL_BOUCLE <:citizenartdays:kuenstler:></span><span class="kuenstler_detail">]
   <BOUCLE_auteur(AUTEURS){id_article}{', '}>
-    <a href="[(#URL_AUTEUR|parametre_url{id_rub_event,#ID_RUBRIQUE})]">#NOM</a>
+    <a href="[(#URL_AUTEUR|parametre_url{id_rub_event,#ENV{id_rubrique})]">#NOM</a>
   </BOUCLE_auteur>
    #GET{fermeture_tag}
 </B_auteur>
