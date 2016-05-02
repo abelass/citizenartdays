@@ -1,4 +1,4 @@
-<BOUCLE_art_or (EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{id_article ?}{pardate_debut,date_fin}>
+<BOUCLE_art_or (EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{id_article ?}{par date_debut,date_fin}>
 	#SET{descriptif,''} #SET{titre,''}
 	<BOUCLE_article_lang(ARTICLES){id_article}>
 		#SET{id_rubrique,#ID_RUBRIQUE} 
