@@ -16,6 +16,7 @@
 			<a href="#URL_ARTICLE">#GET{titre}</a>
 			[:(#INCLURE{fond=inclure/kuenstler,id_article})]
 			[<br />(#LIEU)]
+			[<br />(#ADRESSE)]
 		</BOUCLE_article_lang>
 		[<br />(#DESCRIPTIF|sinon{#GET{descriptif}}|couper{100})]
 		[(#DATE_FIN|>={#ENV{date}}|oui)#SET{actif,yes}]
