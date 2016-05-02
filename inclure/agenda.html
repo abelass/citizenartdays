@@ -1,25 +1,26 @@
-<BOUCLE_art_or(EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{id_article ?}{par date_debut,date_fin}>
-    #SET{descriptif,''}
-    #SET{titre,''}
-      <BOUCLE_article_lang(ARTICLES){id_article}>
-        #SET{id_rubrique,#ID_RUBRIQUE}
-           <BOUCLE_trad(ARTICLES){traduction}{lang=#ENV{lang}}>
-            #SET{descriptif,#INTRODUCTION}
-            #SET{titre,#TITRE}
-           </BOUCLE_trad>
-          #SET{descriptif,#INTRODUCTION}
-          #SET{titre,#TITRE}
-         <//B_trad>
-    [<h4 class="upperspace">[(#DATE_DEBUT|nom_jour), ](#DATE_DEBUT|affdate{d}|unique).[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]</h4>]
-    <p>
-       [(#HORAIRE|=={oui}|oui)[(#DATE_DEBUT|affdate{G:i})][(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|oui)[ - (#DATE_FIN|affdate{G:i})]]<br/>]
-       <a href="#URL_ARTICLE">#GET{titre}</a>[: (#INCLURE{fond=inclure/kuenstler,id_article})]
-       [<br/>(#LIEU)]
-    </BOUCLE_article_lang>
-    [<br />(#DESCRIPTIF|sinon{#GET{descriptif}}|couper{100})]
-   [(#DATE_FIN|>={#ENV{date}}|oui)#SET{actif,yes}]
-    <BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}{si #GET{actif}|oui}>
-    <a href="[(#URL_RUBRIQUE|parametre_url{id_evenement,#LISTE{#ID_EVENEMENT}})]">#TITRE</a>
-    </BOUCLE_rubrique>
-    </p>
+<BOUCLE_art_or (EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{id_article ?}{pardate_debut,date_fin}>
+	#SET{descriptif,''} #SET{titre,''}
+	<BOUCLE_article_lang(ARTICLES){id_article}>
+		#SET{id_rubrique,#ID_RUBRIQUE} 
+		<BOUCLE_trad(ARTICLES){traduction}{lang=#ENV{lang}}>
+			#SET{descriptif,#INTRODUCTION} #SET{titre,#TITRE} 
+		</BOUCLE_trad>
+		#SET{descriptif,#INTRODUCTION} #SET{titre,#TITRE}
+		<//B_trad> 
+		[<h4 class="upperspace">
+			[(#DATE_DEBUT|nom_jour),](#DATE_DEBUT|affdate{d}|unique)[ (#DATE_DEBUT|nom_mois)][(#DATE_DEBUT|affdate{Y})]
+		</h4>]
+		<p>
+			[(#HORAIRE|=={oui}|oui)[(#DATE_DEBUT|affdate{G:i})][(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|oui)[
+			- (#DATE_FIN|affdate{G:i})]]<br />]
+			<a href="#URL_ARTICLE">#GET{titre}</a>
+			[:(#INCLURE{fond=inclure/kuenstler,id_article})]
+			[<br />(#LIEU)]
+		</BOUCLE_article_lang>
+		[<br />(#DESCRIPTIF|sinon{#GET{descriptif}}|couper{100})]
+		[(#DATE_FIN|>={#ENV{date}}|oui)#SET{actif,yes}]
+		<BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}{si#GET{actif}|oui}>
+			<a href="[(#URL_RUBRIQUE|parametre_url{id_evenement,#LISTE{#ID_EVENEMENT}})]">#TITRE</a>
+		</BOUCLE_rubrique>
+		</p>
 </BOUCLE_art_or>
