@@ -3,9 +3,9 @@
 	<BOUCLE_article_lang(ARTICLES){id_article}>
 		#SET{id_rubrique,#ID_RUBRIQUE} 
 		<BOUCLE_trad(ARTICLES){traduction}{lang=#ENV{lang}}>
-			#SET{descriptif,#INTRODUCTION} #SET{titre,#TITRE} 
+			#SET{descriptif,#INTRODUCTION**} #SET{titre,#TITRE} 
 		</BOUCLE_trad>
-		#SET{descriptif,#INTRODUCTION} #SET{titre,#TITRE}
+		#SET{descriptif,#INTRODUCTION**} #SET{titre,#TITRE}
 		<//B_trad> 
 		[<h4 class="upperspace">
 			[(#DATE_DEBUT|nom_jour),](#DATE_DEBUT|affdate{d}|unique)[ (#DATE_DEBUT|nom_mois)][(#DATE_DEBUT|affdate{Y})]
@@ -18,7 +18,7 @@
 			[<br />(#LIEU)]
 			[<br />(#ADRESSE)]
 		</BOUCLE_article_lang>
-		[<br />(#DESCRIPTIF|sinon{#GET{descriptif}}|couper{100})]
+		[<p>(#DESCRIPTIF**|sinon{#GET{descriptif}}|couper{100})</p>]
 		[(#DATE_FIN|>={#ENV{date}}|oui)#SET{actif,yes}]
 		<BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}{si#GET{actif}|oui}>
 			<a href="[(#URL_RUBRIQUE|parametre_url{id_evenement,#LISTE{#ID_EVENEMENT}})]">#TITRE</a>
