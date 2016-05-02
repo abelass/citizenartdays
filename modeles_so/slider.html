@@ -1,7 +1,17 @@
-[<a href="[(#URL|sinon{#ID_OBJET|generer_url_entite{#OBJET}})]">(#ENV{logo_objet}|image_passe_partout{241,241}|image_recadre{241,241}|sinon{#ENV{logo_objet}|image_passe_partout{241,241}|image_recadre{241,241}|inserer_attribut{class,spip_logos}})</a>]
-<h3>#TITRE</h3>
+[<a href="[(#URL|sinon{#ID_OBJET|generer_url_entite{#OBJET}})]" title="#TITRE">
+	(#ENV{logo_objet}
+	|image_passe_partout{241,241}
+	|image_recadre{241,241}
+	|inserer_attribut{alt,#TITRE}	
+	|sinon{#ENV{logo_objet}
+	|image_passe_partout{241,241}
+	|image_recadre{241,241}
+	|inserer_attribut{class,spip_logos}
+	|inserer_attribut{alt,#TITRE}	
+	})</a>]
+<h3><a href="[(#URL|sinon{#ID_OBJET|generer_url_entite{#OBJET}})]">#TITRE</a></h3>
 [(#OBJET|=={article}|oui)
-  [<b>(#INCLURE{fond=inclure/kuenstler,id_article=#ID_OBJET}) </b><br>]
+	[<b>(#INCLURE{fond=inclure/kuenstler,id_article=#ID_OBJET}) </b><br>]
 ]
-    [(#DESCRIPTIF|sinon{#BIO})]
-    <a href="[(#URL|sinon{#ID_OBJET|generer_url_entite{#OBJET}})]"><:citizenartdays:mehr_ueber:> &bdquo;[(#TITRE|couper{30})]&rdquo;</a>
+[(#DESCRIPTIF|sinon{#BIO})]
+<a class="more" href="[(#URL|sinon{#ID_OBJET|generer_url_entite{#OBJET}})]"><:citizenartdays:mehr_ueber:> &bdquo;[(#TITRE|couper{30})]&rdquo;</a>
