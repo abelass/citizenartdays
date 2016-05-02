@@ -12,16 +12,14 @@
 		</h4>]
 		<p>
 			[(#HORAIRE|=={oui}|oui)[(#DATE_DEBUT|affdate{G:i})][(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|oui)[
-			- (#DATE_FIN|affdate{G:i})]]<br />]
-			<a href="#URL_ARTICLE">#GET{titre}</a>
-			[:(#INCLURE{fond=inclure/kuenstler,id_article})]
+			- (#DATE_FIN|affdate{G:i})]]<br />]<a href="#URL_ARTICLE">#GET{titre}</a>[: (#INCLURE{fond=inclure/kuenstler,id_article})]
 			[<br />(#LIEU)]
 			[<br />(#ADRESSE)]
 		</BOUCLE_article_lang>
-		[<p>(#DESCRIPTIF**|sinon{#GET{descriptif}}|couper{100})</p>]
+		[<br/>(#DESCRIPTIF**|sinon{#GET{descriptif}}|couper{100})</p>]
 		[(#DATE_FIN|>={#ENV{date}}|oui)#SET{actif,yes}]
 		<BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}{si#GET{actif}|oui}>
-		<p><a href="[(#URL_RUBRIQUE|parametre_url{id_evenement,#LISTE{#ID_EVENEMENT}})]">#TITRE</a></p>
+			<br /><a href="[(#URL_RUBRIQUE|parametre_url{id_evenement,#LISTE{#ID_EVENEMENT}})]">#TITRE</a>
 		</BOUCLE_rubrique>
 		</p>
 </BOUCLE_art_or>
