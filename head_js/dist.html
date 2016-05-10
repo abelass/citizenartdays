@@ -17,7 +17,7 @@ Ce bloc permet l'insertion de JS specifiques a une page
 </BOUCLE_rub></script>
 
 <script type="text/javascript">
-	jQuery(document).ready(function($) {
+	/*jQuery(document).ready(function($) {
 		if ($('#socialshareprivacy').length > 0) {
 			var settings = {
 				'services' : {
@@ -35,7 +35,7 @@ Ce bloc permet l'insertion de JS specifiques a une page
 
 			$('#socialshareprivacy').socialSharePrivacy(settings);
 		}
-	}); 
+	}); */
 </script>
 <script type="text/javascript">
 	// execute your scripts when the DOM is ready. this is mostly a good habit
@@ -48,8 +48,9 @@ Ce bloc permet l'insertion de JS specifiques a une page
 </script>
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		$('a.spip_out').attr('target', '_blank');
+	$(document).on('click', 'a.spip_out', function(e){ 
+		e.preventDefault(); 
+		var url = $(this).attr('href'); 
+		window.open(url, '_blank');
 	});
-
 </script>
