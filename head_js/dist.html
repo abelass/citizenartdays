@@ -17,25 +17,28 @@ Ce bloc permet l'insertion de JS specifiques a une page
 </BOUCLE_rub></script>
 
 <script type="text/javascript">
-	/*jQuery(document).ready(function($) {
-		if ($('#socialshareprivacy').length > 0) {
-			var settings = {
-				'services' : {
-					'facebook' : {
-						'dummy_img' : '#CHEMIN{javascript/socialshareprivacy/images/dummy_facebook.png}',
-					},
-					'twitter' : {
 
-						'dummy_img' : '#CHEMIN{javascript/socialshareprivacy/images/dummy_twitter.png}',
-
-					},
+jQuery(document).ready(function($){
+	if($('#socialshareprivacy').length > 0){
+		$('#socialshareprivacy').socialSharePrivacy({
+			'services' : {
+				'facebook' : {
+					'dummy_img' : '#CHEMIN{javascript/socialshareprivacy/images/dummy_facebook.png}',
 				},
-			};
-			;
+				'twitter' : {
+					'dummy_img' : '#CHEMIN{javascript/socialshareprivacy/images/dummy_twitter.png}',
+				},
+				'gplus' : {
+					'dummy_img' : '#CHEMIN{javascript/socialshareprivacy/images/dummy_gplus.png}',
+				},
+			},
+			"css_path"  : "#CSS{javascript/socialshareprivacy/socialshareprivacy.css}",
+			"lang_path" : "#EVAL{_DIR_RACINE}/#EVAL{_DIR_PLUGIN_CITIZENARTDAYS}javascript/socialshareprivacy/lang/",
+			"language"  : "#LANG"
+		});
+	}
+});	
 
-			$('#socialshareprivacy').socialSharePrivacy(settings);
-		}
-	}); */
 </script>
 <script type="text/javascript">
 	// execute your scripts when the DOM is ready. this is mostly a good habit
