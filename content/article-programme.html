@@ -63,14 +63,16 @@
 						}
 						)]
 					</p>
-					[(#LIEU|oui)#SET{lieu,#LIEU}]
+					[<h2 class="upperspace"><:citizenartdays:ort:></h2>
+					<p>
+						(#LIEU)
+						[<br />(#ADRESSE)]
+					</p>
+					]
+					[(#LIEU|oui)#SET{lieu,#LIEU|}]
 				</BOUCLE_events>
 				</B_events>
-			[<h2 class="upperspace"><:citizenartdays:ort:></h2>
-			<p>
-				(#GET{lieu})
-			</p>
-			]
+
 			<BOUCLE_rubrique(RUBRIQUES){id_trad=7}{lang}{tout}{si #COMPOSITION|=={programme}|oui}{si #GET{inscription}|=={1}|oui}>
 				<p class="reservation bkg_lila">
 					<a href="[(#URL_RUBRIQUE|parametre_url{id_evenement,#GET{id_evenement}})]">#TITRE</a>
