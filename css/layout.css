@@ -61,6 +61,11 @@ a:focus, a:active, a:hover {
 	margin: 0 auto;
 }
 
+.breadcrumb > li {
+	display: inline-block;
+	list-style: outside none none;
+}
+
 .fix{margin-left:0}
 
 .gray {
