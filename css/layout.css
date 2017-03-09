@@ -57,6 +57,10 @@ a:focus, a:active, a:hover {
 	background: none;
 }
 
+.page > .container {
+	margin: 0 auto;
+}
+
 .fix{margin-left:0}
 
 .gray {
@@ -115,7 +119,7 @@ blockquote.spip {
 	}
 
 .navbar .nav > li > a {
-  padding: 0;
+	padding: 0;
 }
 
 div#header {
@@ -187,7 +191,7 @@ ul#navigation li.on a:hover {
 
 
 .menuder li:hover, .menuder li.hover {
-    background-color: inherit;
+		background-color: inherit;
 }
 
 .menuder, .menuder ul {
@@ -220,7 +224,7 @@ ul#navigation li.on a:hover {
 }
 
 .menuder li ul ul {
-    margin: -1.75em 10em 0 0;
+		margin: -1.75em 10em 0 0;
 }
 
 ul#language {
@@ -254,14 +258,14 @@ ul#language li.on a, ul#language li.on a:link, ul#language li.on a:visited, ul#l
 	color: #000;
 }
 
- #header .menu-liste li li {
-    float: left;
+#header .menu-liste li li {
+		float: left;
 }
 
 /* -------------------------Begin Foms --------------------------------------*/
 
 .formulaire_spip .boutons {
-  margin: 0;
+	margin: 0;
 }
 /* ------------------------ BEGIN   CONTENT HOMEPAGE ------------------------*/
 
@@ -378,8 +382,8 @@ div.extra.lila {
 	margin: 0
 }
 /*div#extra img {
- margin-top:-30px;
- }*/
+margin-top:-30px;
+}*/
 .extra.lila h2 {
 	padding: 0;
 	margin-left: 0
@@ -638,7 +642,7 @@ div#wrapperHome .scrollable p {
 
 
 @media (min-width: 1200px) {
-	
+
 blockquote.spip {
 	margin: 20px 80px 10px 150px;
 }
@@ -651,25 +655,25 @@ blockquote.spip {
 		width: 250.3px;
 		margin:20px 20px 20px 0px;
 	}
-	
+
 	div#footer .wrapper,#top_menu .wrapper {
 		width: 1170px;
 	}
-	
+
 }
 
 @media (max-width: 979px) {
 	ul#navigation {
 		float: left;
 	}
-	
+
 	#header ul#language {
 		position: absolute;
 		top: -20px;
 		right: 0;
 		text-align: right;
 	}
-	
+
 	#header ul#language li {
 		padding: 0 0px 0 10px;
 	}
@@ -680,28 +684,28 @@ blockquote.spip {
 		background-repeat:no-repeat;
 		height:261px;
 		width:15px
-		
+
 	}
-	
+
 	a.browse:hover, a.browse:focus, a.browse:active {
 		background:rgba(0, 0, 0, 0.8) url(../img/slider/arrow-mid_standalone.png);
 		background-repeat:no-repeat;
 		background-position: 3px 50%;
 	}
-	
-	a.left, 
-	a.left.browse:hover, 
-	a.left.browse:focus, 
+
+	a.left,
+	a.left.browse:hover,
+	a.left.browse:focus,
 	a.left.browse:active {background-position:-17px 50%;}
-	
+
 	.scrollable{
 		height:280px
 	}
-	
+
 	.scrollable li{
 		height:248px
 	}
-	
+
 	.scrollable h3{
 		white-space: nowrap;
 		overflow: hidden;
@@ -713,12 +717,12 @@ blockquote.spip {
 	#ticker{
 		display:none;
 	}
-	
+
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
 	.fix{margin-left:20px;}
-	
+
 	.scrollable{
 		width:692px
 	}
@@ -740,46 +744,46 @@ blockquote.spip {
 	header.accueil {
 		text-align:center;
 		margin: 1em 0;
-		
+
 	}
-	
+
 	header hr {display:none}
-	
+
 	#top_menu .menu {float:none;text-align:center}
-	
+
 	#top_menu br{display:none}
-	
+
 	#top_menu .menu div {
 		margin-left:0;
 		margin-right: 0.5em;
 		float:none;
 		display:inline-block;
 	}
-	
+
 	.menuder li ul {
 		right: 0;
 		left: initial;
 		position:relative;
 	}
-	
-	.menuder li li:hover ul, 
-	.menuder li li li:hover ul, 
+
+	.menuder li li:hover ul,
+	.menuder li li li:hover ul,
 	.menuder li li li li:hover ul {
 		display:none
 	}
 	ul#navigation li, #header .menu-liste li {
 		float:none;
 	}
-	
+
 	.navbar-responsive {
 		right: 0;
 		top:-20px
 	}
-	
+
 	.collapse ul#navigation > li {
 		padding: 0 2px;
 	}
-	
+
 	.navbar-responsive.navbar-inverse .navbar-inner .nav-collapse {
 		background-color: #222222;
 		z-index: 150;
@@ -787,7 +791,7 @@ blockquote.spip {
 	.menuder li ul ul{
 		display:none
 	}
-	
+
 	#header ul#language {
 		right:33%;
 		font-size:90%;
@@ -811,19 +815,19 @@ blockquote.spip {
 		margin:20px 5px 20px 0px;
 		height:224px;
 	}
-	
+
 	.scrollable h3 {
 		margin: 5px 0 0;
 		padding:0;
 		font-size: 90%;
 	}
-	
+
 	.scrollable b, .scrollable br, .spip_document_129 img{
 		display:none
 	}
-	
+
 	a.browse {height: 235px;}
-	
+
 	div#footer .wrapper,#top_menu .wrapper {
 		width: 100%;
 	}
@@ -842,9 +846,9 @@ blockquote.spip {
 	.scrollable li {
 		height:135px;
 	}
-	
+
 	a.browse {height: 148px;}
-	
+
 	.scrollable .more{display:none}
 }
 
