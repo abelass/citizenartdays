@@ -3,77 +3,77 @@
 
 [(#REM)on cherche la racine pour le menu]
 <BOUCLE_rub_act(RUBRIQUES){id_rubrique}{tout}>
-    [(#BLOCK_SPALTE_RECHTS|oui)#SET{block_rechts,#BLOCK_SPALTE_RECHTS}]
-    #SET{racine_cq,#ID_RUBRIQUE}
-        <BOUCLE_niveler(RUBRIQUES){id_enfant}{id_parent!=0}{tout}{lang}>
-            [(#BLOCK_SPALTE_RECHTS|oui)#SET{block_rechts,#BLOCK_SPALTE_RECHTS}]
-            #SET{racine_cq,#ID_RUBRIQUE}
-            <BOUCLE_re_act(BOUCLE_niveler)>
-            </BOUCLE_re_act>
-        </BOUCLE_niveler>
+	[(#BLOCK_SPALTE_RECHTS|oui)#SET{block_rechts,#BLOCK_SPALTE_RECHTS}]
+	#SET{racine_cq,#ID_RUBRIQUE}
+	<BOUCLE_niveler(RUBRIQUES){id_enfant}{id_parent!=0}{tout}{lang}>
+		[(#BLOCK_SPALTE_RECHTS|oui)#SET{block_rechts,#BLOCK_SPALTE_RECHTS}]
+		#SET{racine_cq,#ID_RUBRIQUE}
+			<BOUCLE_re_act(BOUCLE_niveler)>
+		</BOUCLE_re_act>
+	</BOUCLE_niveler>
 </BOUCLE_rub_act>
 
 [(#REM)Le menu]
 <BOUCLE_rubriques(RUBRIQUES) {id_rubrique=#GET{racine_cq}}{tout}>
 [<div class="item">(#GET{block_rechts}|sinon{#BLOCK_SPALTE_RECHTS})</div>]
-    <B_racines>
-    <div class="item">
-        <h3>#TITRE</h3>
-        <ul class="auflistung">
-        <BOUCLE_racines(RUBRIQUES){id_parent=#ID_RUBRIQUE}{par num titre,date}{inverse #GET{trie}}{tout}{si #COMPOSITION|!={programme}|oui}>
-         #SET{id_rubrique,#ENV{id_rubrique}}
-        <li class="menu-entree">
-            <a href="#URL_RUBRIQUE"[ class="(#EXPOSE)"]>[(#TITRE|couper{80})]</a>
-            <B_sous_rubriques>
-            <ul>
-                <BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, date}{inverse #GET{trie}}><BOUCLE_test_expose(RUBRIQUES) {id_enfant}{tout}>#EXPOSE{' '}</BOUCLE_test_expose>
-              #SET{id_rubrique,#ID_PARENT}
-                    <li><a href="#URL_RUBRIQUE"[ class="(#EXPOSE)"]>[(#TITRE|couper{80})]</a><BOUCLE_re(BOUCLE_sous_rubriques)></BOUCLE_re> </li>
-                </B_test_expose></BOUCLE_sous_rubriques>
-            </ul>
-            </B_sous_rubriques>
-        <B_art_sousr>
-    
-            <ul>
-           <BOUCLE_art_sousr(ARTICLES){id_rubrique=#ID_RUBRIQUE}{id_rubrique=#GET{id_rubrique}}{si #COMPOSITION|=={programme}|non}{par num titre,date}{inverse #GET{trie}}>
-            <li><a href="#URL_ARTICLE"[ class="(#EXPOSE)"]>[(#TITRE|couper{80})]</a></li>
-           </BOUCLE_art_sousr>
-            </ul>
-        </B_art_sousr>            
-        </li>
-        </BOUCLE_racines>
-        </ul>
-        </div>
-        </B_racines>        
+	<B_racines>
+	<div class="item">
+		<h3>#TITRE</h3>
+		<ul class="auflistung">
+		<BOUCLE_racines(RUBRIQUES){id_parent=#ID_RUBRIQUE}{par num titre,date}{inverse #GET{trie}}{tout}{si #COMPOSITION|!={programme}|oui}>
+		#SET{id_rubrique,#ENV{id_rubrique}}
+		<li class="menu-entree">
+			<a href="#URL_RUBRIQUE"[ class="(#EXPOSE)"]>[(#TITRE|couper{80})]</a>
+			<B_sous_rubriques>
+			<ul>
+				<BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, date}{inverse #GET{trie}}><BOUCLE_test_expose(RUBRIQUES) {id_enfant}{tout}>#EXPOSE{' '}</BOUCLE_test_expose>
+				#SET{id_rubrique,#ID_PARENT}
+					<li><a href="#URL_RUBRIQUE"[ class="(#EXPOSE)"]>[(#TITRE|couper{80})]</a><BOUCLE_re(BOUCLE_sous_rubriques)></BOUCLE_re> </li>
+				</B_test_expose></BOUCLE_sous_rubriques>
+			</ul>
+			</B_sous_rubriques>
+		<B_art_sousr>
+		<ul>
+			<BOUCLE_art_sousr(ARTICLES){id_rubrique=#ID_RUBRIQUE}{id_rubrique=#GET{id_rubrique}}{si #COMPOSITION|=={programme}|non}{par num titre,date}{inverse #GET{trie}}>
+			<li><a href="#URL_ARTICLE"[ class="(#EXPOSE)"]>[(#TITRE|couper{80})]</a></li>
+			</BOUCLE_art_sousr>
+		</ul>
+		</B_art_sousr>
+		</li>
+		</BOUCLE_racines>
+		</ul>
+	</div>
+	</B_racines>
 </BOUCLE_rubriques>
 [(#REM)les sousrubriques]
 <B_rub>
 <div class="item">
+
 <BOUCLE_rub(RUBRIQUES){id_trad IN #ENV{id_rub_prog}}{si #COMPOSITION|=={programme}|ou{#COMPOSITION|=={archive_sr}}|et{#ID_TRAD|!={26}}|oui}{lang}>
-    <h3>#TITRE</h3>
-    <p>
-        <strong>
-        <BOUCLE_ev(EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{par date_debut}{0,1}>
-        [(#DATE_DEBUT|affdate{d.m})]
-        </BOUCLE_ev>
-        <BOUCLE_ev_last(EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{!par date_fin}{0,1}>
-        [- (#DATE_FIN|affdate{d.m})]
-        </BOUCLE_ev_last>
-        </strong>
-        [<br/><strong>(#LIEU)</strong>]    
-    </p>
+	<h3>#TITRE</h3>
+	<p>
+		<strong>
+		<BOUCLE_ev(EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{par date_debut}{0,1}>
+		[(#DATE_DEBUT|affdate{d.m})]
+		</BOUCLE_ev>
+		<BOUCLE_ev_last(EVENEMENTS){id_rubrique IN #ENV{id_rub_prog}}{!par date_fin}{0,1}>
+		[- (#DATE_FIN|affdate{d.m})]
+		</BOUCLE_ev_last>
+		</strong>
+		[<br/><strong>(#LIEU)</strong>]
+	</p>
 </BOUCLE_rub>
-    <B_art_or>
-    <ul class="auflistung">
-        <BOUCLE_art_or(ARTICLES){id_rubrique IN #ENV{id_rub_prog}}{par date}{doublons}>
-            <BOUCLE_trad(ARTICLES){traduction}{lang=#ENV{lang}}>
-            <li><a href="#URL_ARTICLE"[(#ENV{id_article}|=={#ID_ARTICLE}|oui) class="on"]>#TITRE</a></li>
-            </BOUCLE_trad>
-            <li><a href="#URL_ARTICLE"[(#ENV{id_article}|=={#ID_ARTICLE}|oui) class="on"]>#TITRE [#LANG]</a></li>
-            <//B_trad>          
-        </BOUCLE_art_or>
-    </ul>
-    </B_art_or>
+	<B_art_or>
+	<ul class="auflistung">
+		<BOUCLE_art_or(ARTICLES){id_rubrique IN #ENV{id_rub_prog}}{par date}{doublons}>
+			<BOUCLE_trad(ARTICLES){traduction}{lang=#ENV{lang}}>
+			<li><a href="#URL_ARTICLE"[(#ENV{id_article}|=={#ID_ARTICLE}|oui) class="on"]>#TITRE</a></li>
+			</BOUCLE_trad>
+			<li><a href="#URL_ARTICLE"[(#ENV{id_article}|=={#ID_ARTICLE}|oui) class="on"]>#TITRE [#LANG]</a></li>
+			<//B_trad>
+		</BOUCLE_art_or>
+	</ul>
+	</B_art_or>
 </div>
 </B_rub>
 
