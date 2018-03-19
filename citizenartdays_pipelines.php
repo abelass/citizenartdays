@@ -3,7 +3,7 @@
  * Utilisations de pipelines par Citizen Art Days
  *
  * @plugin     Citizen Art Days
- * @copyright  2013
+ * @copyright  2013 - 2018 - 2018
  * @author     Rainer Müller
  * @licence    GNU/GPL
  * @package    SPIP\Citizenartdays\Pipelines

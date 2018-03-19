@@ -3,7 +3,7 @@
  * Options du plugin Citizen Art Daysau chargement
  *
  * @plugin     Citizen Art Days
- * @copyright  2013
+ * @copyright  2013 - 2018
  * @author     Rainer Müller
  * @licence    GNU/GPL
  * @package    SPIP\Citizenartdays\Options
