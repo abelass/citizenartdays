@@ -16,7 +16,7 @@
 
 	<necessite nom="wsp_ml" compatibilite="[0.2.6;]" />
 	<necessite nom="wsps_html5" compatibilite="[1.1.16;]" />
-	<necessite nom="liaison_objet" compatibilite="[3.0.2;]" />
+	<necessite nom="liaison_objet" compatibilite="[2.0.2;]" />
 	<necessite nom="menuder" compatibilite="[2.2.0;]" />
 	<necessite nom="iextras" compatibilite="[3.3.4;]" />
 	<necessite nom="reservation_evenement" compatibilite="[1.21.8;]" />
