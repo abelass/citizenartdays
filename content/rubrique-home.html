@@ -1,33 +1,36 @@
+<BOUCLE_contenu_rubrique(RUBRIQUES){id_rubrique}{tout}>
 [(#REM) The slider]
-<B_slider>
+[<div class="#EDIT{texte} chapo">(#TEXTE)</div>]
+</BOUCLE_contenu_rubrique>
+
 <div id="wrapperHome">
 <!-- "previous page" action -->
 <a class="prev browse left"></a>
 <!-- root element for scrollable -->
-<div class="scrollable span12">   
-   <!-- root element for the items -->
-   <div class="items">
-             <div>
-          <ul> 
-    <BOUCLE_slider(LIAISON_OBJETS){objet_dest=rubrique}{id_objet_dest=#ID_RUBRIQUE}{type_lien=slider}{par ordre}>
-      [<li>(#ID_OBJET|generer_modele{#OBJET,modeles_so/slider,#ARRAY{descriptif,#DESCRIPTIF,titre,#TITRE,url,#URL}})</li>]
-    [(#COMPTEUR_BOUCLE|modulo{4}|=={0}|et{#TOTAL_BOUCLE|>{4}}|oui)
-        </ul>  
-    </div>      
-    <div>
-         <ul>]
-    </BOUCLE_slider>
-        </ul>  
-    </div>  
-   </div><!-- end items -->
+<div class="scrollable span12">
+	<!-- root element for the items -->
+	<div class="items">
+						<div>
+					<ul>
+		<BOUCLE_slider(LIAISON_OBJETS){objet_dest=rubrique}{id_objet_dest=#ID_RUBRIQUE}{type_lien=slider}{par ordre}>
+			[<li>(#ID_OBJET|generer_modele{#OBJET,modeles_so/slider,#ARRAY{descriptif,#DESCRIPTIF,titre,#TITRE,url,#URL}})</li>]
+		[(#COMPTEUR_BOUCLE|modulo{4}|=={0}|et{#TOTAL_BOUCLE|>{4}}|oui)
+				</ul>
+		</div>
+		<div>
+				<ul>]
+		</BOUCLE_slider>
+				</ul>
+		</div>
+	</div><!-- end items -->
 </div><!-- end scrollable -->
 <!-- "next page" action -->
-<a class="next browse right"></a>    
+<a class="next browse right"></a>
 </div><!-- end wrapperHome -->
 </B_slider>
 
 [(#REM) The boxes]
 <BOUCLE_lila(LIAISON_OBJETS){objet_dest=rubrique}{id_objet_dest=#ID_RUBRIQUE}{type_lien IN lila_box,text_box}{par ordre}>
-      [<div class="extra [(#TYPE_LIEN|=={lila_box}|?{lila,extra})]">(#ID_OBJET|generer_modele{#OBJET,modeles_so/#TYPE_LIEN,#ARRAY{descriptif,#DESCRIPTIF,titre,#TITRE,url,#URL}})</div>]
+			[<div class="extra [(#TYPE_LIEN|=={lila_box}|?{lila,extra})]">(#ID_OBJET|generer_modele{#OBJET,modeles_so/#TYPE_LIEN,#ARRAY{descriptif,#DESCRIPTIF,titre,#TITRE,url,#URL}})</div>]
 </BOUCLE_lila>
 
