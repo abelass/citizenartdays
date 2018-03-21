@@ -22,8 +22,8 @@
 	<necessite nom="reservation_evenement" compatibilite="[1.28.1;]" />
 	<necessite nom="reservation_communication" compatibilite="[1.0.6;]" />
 	<necessite nom="typoenluminee" compatibilite="[3.5.11;]" />
-	<necessite nom="sidr" compatibilite="[ 1.2.4;[" />
-	<necessite nom="message_personnalise" compatibilite="[ 1.0.1;[" />
+	<necessite nom="sidr" compatibilite="[ 1.2.4;]" />
+	<necessite nom="message_personnalise" compatibilite="[ 1.0.1;]" />
 
 	<utilise nom="zcore" compatibilite="[2.4.5;]" />
 
