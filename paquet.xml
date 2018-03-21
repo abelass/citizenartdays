@@ -1,7 +1,7 @@
 <paquet
 	prefix="citizenartdays"
 	categorie="squelette"
-	version="3.0.0"
+	version="3.1.0"
 	etat="stable"
 	compatibilite="[3.0.21;3.2.*]"
 	logo="prive/themes/spip/images/citizenartdays-64.png"
@@ -14,15 +14,16 @@
 
 	<licence>GNU/GPL</licence>
 
-	<necessite nom="wsp_ml" compatibilite="[0.2.6;]" />
-	<necessite nom="wsps_html5" compatibilite="[1.1.16;]" />
+	<necessite nom="wsp_ml" compatibilite="[0.2.9;]" />
+	<necessite nom="wsps_html5" compatibilite="[1.2.11;]" />
 	<necessite nom="liaison_objet" compatibilite="[2.0.2;]" />
-	<necessite nom="menuder" compatibilite="[2.2.0;]" />
-	<necessite nom="iextras" compatibilite="[3.3.4;]" />
-	<necessite nom="reservation_evenement" compatibilite="[1.21.8;]" />
-	<necessite nom="reservation_communication" compatibilite="[1.0.1;]" />
-	<necessite nom="typoenluminee" compatibilite="[3.5.4;]" />
+	<necessite nom="menuder" compatibilite="[2.4.0;]" />
+	<necessite nom="iextras" compatibilite="[3.5.3;]" />
+	<necessite nom="reservation_evenement" compatibilite="[1.28.1;]" />
+	<necessite nom="reservation_communication" compatibilite="[1.0.6;]" />
+	<necessite nom="typoenluminee" compatibilite="[3.5.11;]" />
 	<necessite nom="sidr" compatibilite="[ 1.2.4;[" />
+	<necessite nom="message_personnalise" compatibilite="[ 1.0.1;[" />
 
 	<utilise nom="zcore" compatibilite="[2.4.5;]" />
 
