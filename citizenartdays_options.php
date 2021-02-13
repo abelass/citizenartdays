@@ -1,6 +1,6 @@
 <?php
 /**
- * Options du plugin Citizen Art Daysau chargement
+ * Options du plugin Citizen Art Days au chargement
  *
  * @plugin     Citizen Art Days
  * @copyright  2013 - 2018
