@@ -1,7 +1,7 @@
 <paquet
 	prefix="citizenartdays"
 	categorie="squelette"
-	version="3.1.1"
+	version="3.2.0"
 	etat="stable"
 	compatibilite="[3.0.21;3.3.*]"
 	logo="prive/themes/spip/images/citizenartdays-64.png"
