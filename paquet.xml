@@ -3,7 +3,7 @@
 	categorie="squelette"
 	version="3.1.1"
 	etat="stable"
-	compatibilite="[3.0.21;3.2.*]"
+	compatibilite="[3.0.21;3.3.*]"
 	logo="prive/themes/spip/images/citizenartdays-64.png"
 	documentation=""
 	schema="1.0.0"
@@ -14,18 +14,19 @@
 
 	<licence>GNU/GPL</licence>
 
-	<necessite nom="wsp_ml" compatibilite="[0.2.9;]" />
-	<necessite nom="wsps_html5" compatibilite="[1.2.11;]" />
-	<necessite nom="liaison_objet" compatibilite="[2.0.2;]" />
+	<necessite nom="iextras" compatibilite="[3.5.8;]" />
+	<necessite nom="couteau_suisse" compatibilite="[1.10.19;]"
+	<necessite nom="liaison_objet" compatibilite="[2.0.6;]" />
 	<necessite nom="menuder" compatibilite="[2.4.0;]" />
-	<necessite nom="iextras" compatibilite="[3.5.3;]" />
-	<necessite nom="reservation_evenement" compatibilite="[1.28.1;]" />
-	<necessite nom="reservation_communication" compatibilite="[1.0.5;]" />
-	<necessite nom="typoenluminee" compatibilite="[3.5.11;]" />
+	<necessite nom="reservation_evenement" compatibilite="[2.0.1;]" />
+	<necessite nom="reservation_communication" compatibilite="[1.1.6;]" />
+	<necessite nom="typoenluminee" compatibilite="[3.6.3;]" />
 	<necessite nom="sidr" compatibilite="[ 1.2.4;]" />
-	<necessite nom="message_personnalise" compatibilite="[ 1.0.1;]" />
+	<necessite nom="message_personnalise" compatibilite="[ 1.1.0;]" />
+	<necessite nom="wsp_ml" compatibilite="[0.2.14;]" />
+	<necessite nom="wsps_html5" compatibilite="[1.2.11;]" />
 
-	<utilise nom="zcore" compatibilite="[2.4.5;]" />
+	<utilise nom="zcore" compatibilite="[2.4.5;2.*]" />
 
 	<pipeline nom="jquery_plugins" inclure="citizenartdays_pipelines.php" />
 
