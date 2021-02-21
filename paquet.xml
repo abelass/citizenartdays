@@ -26,6 +26,8 @@
 	<necessite nom="wsp_ml" compatibilite="[0.2.14;]" />
 	<necessite nom="wsps_html5" compatibilite="[1.2.11;]" />
 
+	<utilise nom="zcore" compatibilite="[2.8.7;2.*]" />
+
 
 	<pipeline nom="jquery_plugins" inclure="citizenartdays_pipelines.php" />
 
